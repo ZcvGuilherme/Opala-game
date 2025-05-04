@@ -1,3 +1,39 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Arquivos de cache e builds
+.import/
+.export/
+.export-template/
+.build/
+mono/
+
+# Arquivos específicos do sistema
+*.tmp
+*.log
+*.gid
+*.cfg
+*.bak
+
+# Sistema operacional (Linux, Windows, macOS)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos do Godot que podem ser regenerados
+*.translation
+*.converted.res
+*.converted.tres
+
+# Builds exportadas
+*.exe
+*.apk
+*.zip
+*.x86_64
+*.pck
+*.wasm
+*.html
+
+# Pasta de exportação padrão (ajuste se for diferente)
+bin/
