@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Jogo Parkour"
+run/main_scene="res://levels/fase_1.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=700
+window/size/viewport_height=400
 
 [dotnet]
 
