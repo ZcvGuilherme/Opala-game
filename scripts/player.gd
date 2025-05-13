@@ -4,7 +4,6 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -21,5 +20,15 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	# Animação
+	# Animação
+	if direction != 0:
+		$AnimacaoPlayer.play("running")
+		$AnimacaoPlayer.flip_h = direction < 0
+	else:
+		$AnimacaoPlayer.play("idle")
+	
 	move_and_slide()
+func _ready():
+	$AnimacaoPlayer.play("idle")
+	
