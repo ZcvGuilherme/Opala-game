@@ -7,12 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://cl4b5g1gnlusc" path="res://assets/player/idle/sprite_3.png" id="5_sgdvq"]
 [ext_resource type="Texture2D" uid="uid://b4snjhb4yr3e8" path="res://assets/player/idle/sprite_4.png" id="6_82vxp"]
 [ext_resource type="Texture2D" uid="uid://b7xlhn6m23err" path="res://assets/player/idle/sprite_5.png" id="7_gfanq"]
-[ext_resource type="Texture2D" uid="uid://12s81fq6b5uh" path="res://assets/player/moving/Running/sprite_0.png" id="8_0adt6"]
-[ext_resource type="Texture2D" uid="uid://byd05eoo3vw7u" path="res://assets/player/moving/Running/sprite_1.png" id="9_jskx6"]
-[ext_resource type="Texture2D" uid="uid://c1qcdmfnp8pg6" path="res://assets/player/moving/Running/sprite_2.png" id="10_tpd60"]
-[ext_resource type="Texture2D" uid="uid://bb8geennxnvvm" path="res://assets/player/moving/Running/sprite_3.png" id="11_p7s6i"]
-[ext_resource type="Texture2D" uid="uid://bnjwdhi0rivh1" path="res://assets/player/moving/Running/sprite_4.png" id="12_ptvkr"]
-[ext_resource type="Texture2D" uid="uid://qh7qmo5yb3qo" path="res://assets/player/moving/Running/sprite_5.png" id="13_eacpi"]
+[ext_resource type="Texture2D" uid="uid://qvxbf2rwyyix" path="res://assets/player/moving/Running/sprite_0.png" id="8_0adt6"]
+[ext_resource type="Texture2D" uid="uid://cl83fmoi2df3f" path="res://assets/player/moving/Running/sprite_1.png" id="9_jskx6"]
+[ext_resource type="Texture2D" uid="uid://dju104p4f4eyo" path="res://assets/player/moving/Running/sprite_2.png" id="10_tpd60"]
+[ext_resource type="Texture2D" uid="uid://eehwlceyxa7l" path="res://assets/player/moving/Running/sprite_3.png" id="11_p7s6i"]
+[ext_resource type="Texture2D" uid="uid://b8tvema2k5ldx" path="res://assets/player/moving/Running/sprite_4.png" id="12_ptvkr"]
+[ext_resource type="Texture2D" uid="uid://bokof2sbd1ohf" path="res://assets/player/moving/Running/sprite_5.png" id="13_eacpi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5s2kv"]
 
@@ -68,7 +68,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_eacpi")
 }],
-"loop": true,
+"loop": false,
 "name": &"running",
 "speed": 10.0
 }]
