@@ -94,6 +94,11 @@ scale = Vector2(0.0291748, 0.0323486)
 sprite_frames = SubResource("SpriteFrames_jskx6")
 animation = &"run"
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(17, -37)
+zoom = Vector2(2, 2)
+limit_smoothed = true
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(267, 275)
 
@@ -106,8 +111,3 @@ shape = SubResource("RectangleShape2D_ru54l")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-179.75, 236)
 shape = SubResource("RectangleShape2D_0adt6")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(81, 212)
-zoom = Vector2(2, 2)
-limit_smoothed = true
