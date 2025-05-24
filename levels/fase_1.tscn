@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dnilanhm8vbah"]
+[gd_scene load_steps=20 format=3 uid="uid://dnilanhm8vbah"]
 
 [ext_resource type="Script" uid="uid://df88wownggeo4" path="res://scripts/player.gd" id="1_1l4ar"]
 [ext_resource type="Texture2D" uid="uid://b6paqdlqca63v" path="res://assets/player/idle/sprite_0.png" id="2_1e422"]
@@ -7,12 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://cl4b5g1gnlusc" path="res://assets/player/idle/sprite_3.png" id="5_sgdvq"]
 [ext_resource type="Texture2D" uid="uid://b4snjhb4yr3e8" path="res://assets/player/idle/sprite_4.png" id="6_82vxp"]
 [ext_resource type="Texture2D" uid="uid://b7xlhn6m23err" path="res://assets/player/idle/sprite_5.png" id="7_gfanq"]
-[ext_resource type="Texture2D" uid="uid://qvxbf2rwyyix" path="res://assets/player/moving/Running/sprite_0.png" id="8_0adt6"]
-[ext_resource type="Texture2D" uid="uid://cl83fmoi2df3f" path="res://assets/player/moving/Running/sprite_1.png" id="9_jskx6"]
-[ext_resource type="Texture2D" uid="uid://dju104p4f4eyo" path="res://assets/player/moving/Running/sprite_2.png" id="10_tpd60"]
-[ext_resource type="Texture2D" uid="uid://eehwlceyxa7l" path="res://assets/player/moving/Running/sprite_3.png" id="11_p7s6i"]
-[ext_resource type="Texture2D" uid="uid://b8tvema2k5ldx" path="res://assets/player/moving/Running/sprite_4.png" id="12_ptvkr"]
-[ext_resource type="Texture2D" uid="uid://bokof2sbd1ohf" path="res://assets/player/moving/Running/sprite_5.png" id="13_eacpi"]
+[ext_resource type="Texture2D" uid="uid://12s81fq6b5uh" path="res://assets/player/moving/run/sprite_0.png" id="8_0adt6"]
+[ext_resource type="Texture2D" uid="uid://byd05eoo3vw7u" path="res://assets/player/moving/run/sprite_1.png" id="9_jskx6"]
+[ext_resource type="Texture2D" uid="uid://c1qcdmfnp8pg6" path="res://assets/player/moving/run/sprite_2.png" id="10_tpd60"]
+[ext_resource type="Texture2D" uid="uid://bb8geennxnvvm" path="res://assets/player/moving/run/sprite_3.png" id="11_p7s6i"]
+[ext_resource type="Texture2D" uid="uid://bnjwdhi0rivh1" path="res://assets/player/moving/run/sprite_4.png" id="12_ptvkr"]
+[ext_resource type="Texture2D" uid="uid://qh7qmo5yb3qo" path="res://assets/player/moving/run/sprite_5.png" id="13_eacpi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5s2kv"]
 
@@ -68,13 +68,16 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_eacpi")
 }],
-"loop": false,
-"name": &"running",
-"speed": 10.0
+"loop": true,
+"name": &"run",
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ru54l"]
-size = Vector2(532, 20)
+size = Vector2(1140.5, 22.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0adt6"]
+size = Vector2(54.5, 186)
 
 [node name="Fase1" type="Node2D"]
 
@@ -86,17 +89,25 @@ script = ExtResource("1_1l4ar")
 shape = SubResource("CapsuleShape2D_5s2kv")
 
 [node name="AnimacaoPlayer" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(0, -1)
-scale = Vector2(0.0307617, 0.0356445)
+position = Vector2(1, 5.27501e-06)
+scale = Vector2(0.0291748, 0.0323486)
 sprite_frames = SubResource("SpriteFrames_jskx6")
-animation = &"running"
+animation = &"run"
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(17, -37)
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
+limit_smoothed = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(267, 275)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(104.5, 40.25)
 shape = SubResource("RectangleShape2D_ru54l")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-179.75, 236)
+shape = SubResource("RectangleShape2D_0adt6")
