@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dnilanhm8vbah"]
+[gd_scene load_steps=26 format=3 uid="uid://dnilanhm8vbah"]
 
 [ext_resource type="Script" uid="uid://df88wownggeo4" path="res://scripts/player.gd" id="1_1l4ar"]
 [ext_resource type="Texture2D" uid="uid://b6paqdlqca63v" path="res://assets/player/idle/sprite_0.png" id="2_1e422"]
@@ -8,8 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://b4snjhb4yr3e8" path="res://assets/player/idle/sprite_4.png" id="6_82vxp"]
 [ext_resource type="Texture2D" uid="uid://b7xlhn6m23err" path="res://assets/player/idle/sprite_5.png" id="7_gfanq"]
 [ext_resource type="Texture2D" uid="uid://12s81fq6b5uh" path="res://assets/player/moving/run/sprite_0.png" id="8_0adt6"]
+[ext_resource type="Texture2D" uid="uid://cg30t0ygrbqit" path="res://assets/player/Pulo/falling_0.png" id="8_36roi"]
+[ext_resource type="Texture2D" uid="uid://cmtantuxu2xrq" path="res://assets/player/Pulo/sprite_2.png" id="9_eacpi"]
+[ext_resource type="Texture2D" uid="uid://c14vmner3g25o" path="res://assets/player/Pulo/falling_1.png" id="9_fmvhu"]
 [ext_resource type="Texture2D" uid="uid://byd05eoo3vw7u" path="res://assets/player/moving/run/sprite_1.png" id="9_jskx6"]
+[ext_resource type="Texture2D" uid="uid://diyj3oei42eka" path="res://assets/player/Pulo/sprite_1.png" id="10_36roi"]
 [ext_resource type="Texture2D" uid="uid://c1qcdmfnp8pg6" path="res://assets/player/moving/run/sprite_2.png" id="10_tpd60"]
+[ext_resource type="Texture2D" uid="uid://coreq2b5kxghw" path="res://assets/player/Pulo/falling_2.png" id="10_xlhgv"]
+[ext_resource type="Texture2D" uid="uid://bnqjf38bsf5d6" path="res://assets/player/Pulo/sprite_3.png" id="11_fmvhu"]
 [ext_resource type="Texture2D" uid="uid://bb8geennxnvvm" path="res://assets/player/moving/run/sprite_3.png" id="11_p7s6i"]
 [ext_resource type="Texture2D" uid="uid://bnjwdhi0rivh1" path="res://assets/player/moving/run/sprite_4.png" id="12_ptvkr"]
 [ext_resource type="Texture2D" uid="uid://qh7qmo5yb3qo" path="res://assets/player/moving/run/sprite_5.png" id="13_eacpi"]
@@ -51,6 +57,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("8_36roi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fmvhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xlhgv")
+}],
+"loop": false,
+"name": &"jump_down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_eacpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_36roi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fmvhu")
+}],
+"loop": false,
+"name": &"jump_up",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_36roi")
 }, {
 "duration": 1.0,
@@ -70,7 +104,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 8.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ru54l"]
@@ -92,7 +126,7 @@ shape = SubResource("CapsuleShape2D_5s2kv")
 position = Vector2(1, 5.27501e-06)
 scale = Vector2(0.0291748, 0.0323486)
 sprite_frames = SubResource("SpriteFrames_jskx6")
-animation = &"run"
+animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(17, -37)
