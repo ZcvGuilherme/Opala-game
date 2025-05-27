@@ -7,15 +7,22 @@ const ACCELERATION := 1200
 const FRICTION := 2000
 const JUMP_VELOCITY = -350.0
 const GRAVITY := 1000
-
+func handle_jump_animation(direction: float) -> void:
+	animacaoPlayer.flip_h = direction < 0
+	if velocity.y < 0:
+		if animacaoPlayer.animation != "jump_up":
+			animacaoPlayer.play("jump_up")
+	elif velocity.y >= 0:
+		if animacaoPlayer.animation != "jump_down":
+			animacaoPlayer.play("jump_down")
+			
 func handle_animation(direction: float) -> void:
-	if direction != 0:
+	if not is_on_floor():
+		handle_jump_animation(direction)
+	elif direction != 0:
 		animacaoPlayer.play("run")
 		animacaoPlayer.flip_h = direction < 0
 	else:
-		animacaoPlayer.play("idle")
-		
-	if not is_on_floor():
 		animacaoPlayer.play("idle")
 
 func _physics_process(delta: float) -> void:
