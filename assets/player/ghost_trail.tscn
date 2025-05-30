@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc4l1g2hjvflv"]
+
+[ext_resource type="Script" uid="uid://byu8jufm7buoa" path="res://scripts/ghost_trail.gd" id="1_y30ho"]
+[ext_resource type="Shader" uid="uid://jrm8y621e58k" path="res://assets/player/ghost_trail.gdshader" id="2_0gqmp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x7qpm"]
+shader = ExtResource("2_0gqmp")
+shader_parameter/colorize_color = Color(0, 0.5, 1, 1)
+shader_parameter/alpha = 0.4
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tm5m2"]
+
+[node name="ghost_trail" type="Node2D"]
+script = ExtResource("1_y30ho")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_x7qpm")
+sprite_frames = SubResource("SpriteFrames_tm5m2")
