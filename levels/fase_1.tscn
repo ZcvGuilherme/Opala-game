@@ -1,52 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnilanhm8vbah"]
+[gd_scene load_steps=4 format=3 uid="uid://dnilanhm8vbah"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://assets/player/Player.tscn" id="1_1l4ar"]
-[ext_resource type="Texture2D" uid="uid://cm4uhgswnw75i" path="res://assets/Cientista/Falando - cientista/sprite_2.png" id="2_nokqf"]
-[ext_resource type="Script" uid="uid://c1mptxa7jmw12" path="res://levels/cientista.gd" id="3_2yr5n"]
-[ext_resource type="Texture2D" uid="uid://da72aclmljwlu" path="res://assets/Cientista/Falando - cientista/sprite_1.png" id="3_uwl6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ru54l"]
 size = Vector2(1140.5, 22.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0adt6"]
 size = Vector2(54.5, 186)
-
-[sub_resource type="Animation" id="Animation_xalfv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_nokqf")]
-}
-
-[sub_resource type="Animation" id="Animation_2yr5n"]
-resource_name = "talking"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 0.9, 1.46667, 1.93333, 2.5, 2.96667, 3.8, 4.43333, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_nokqf"), ExtResource("3_uwl6w"), ExtResource("2_nokqf"), ExtResource("3_uwl6w"), ExtResource("2_nokqf"), ExtResource("3_uwl6w"), ExtResource("2_nokqf"), ExtResource("3_uwl6w"), ExtResource("2_nokqf")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_cwnlk"]
-_data = {
-&"RESET": SubResource("Animation_xalfv"),
-&"talking": SubResource("Animation_2yr5n")
-}
 
 [node name="Fase1" type="Node2D"]
 
@@ -58,22 +18,9 @@ position = Vector2(104.5, 40.25)
 shape = SubResource("RectangleShape2D_ru54l")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(5, -11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-179.75, 236)
 shape = SubResource("RectangleShape2D_0adt6")
 
 [node name="Player" parent="." instance=ExtResource("1_1l4ar")]
-position = Vector2(-5, 254)
-
-[node name="Cientista" type="Sprite2D" parent="."]
-position = Vector2(220, 177)
-scale = Vector2(0.03, 0.03)
-texture = ExtResource("2_nokqf")
-script = ExtResource("3_2yr5n")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Cientista"]
-libraries = {
-&"": SubResource("AnimationLibrary_cwnlk")
-}
