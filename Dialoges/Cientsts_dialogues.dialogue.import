@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://btfpeb1k64m4n"
+path="res://.godot/imported/Cientsts_dialogues.dialogue-0ce1a47c02fb7dc30cd2089d63987726.tres"
+
+[deps]
+
+source_file="res://Dialoges/Cientsts_dialogues.dialogue"
+dest_files=["res://.godot/imported/Cientsts_dialogues.dialogue-0ce1a47c02fb7dc30cd2089d63987726.tres"]
+
+[params]
+
+defaults=true
