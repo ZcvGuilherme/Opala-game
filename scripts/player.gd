@@ -10,26 +10,46 @@ const JUMP_VELOCITY = -350.0
 const GRAVITY := 1000
 const DASH_SPEED := 500
 const DASH_TIME := 0.2
+const DASH_VERTICAL_MULTIPLIER := 0.7
+const DASH_HORIZONTAL_MULTIPLIER := 1
 
 var isDashing = false
 var dashDirection := Vector2.ZERO
 var canDash := true
 var ghost_timer : float = 0.0
 var ghost_interval : float = 0.03
+var dash_timer := 0.0
 
 func _physics_process(delta: float) -> void:
 	var move_input := Input.get_vector("left", "right", "up", "down")
 	if is_on_floor():
 		canDash = true
-	if not is_on_floor() and !isDashing:
-		velocity.y += GRAVITY * delta
-
+	if isDashing:
+		dash_timer -= delta
+		ghost_timer -= delta
+		
+		if ghost_timer <= 0:
+			ghost_timer = ghost_interval
+			spawn_ghost_trail()
+			
+		velocity = Vector2(
+			dashDirection.x * DASH_SPEED * DASH_HORIZONTAL_MULTIPLIER,
+			dashDirection.y * DASH_SPEED * DASH_VERTICAL_MULTIPLIER
+		)
+		if dashDirection.y == 0:
+			velocity.y = 0
+		if dash_timer <= 0 :
+			isDashing = false
+	else:
+		if not is_on_floor():
+			velocity.y += GRAVITY * delta
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= 0.5
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	handle_dash(move_input)
+	if Input.is_action_just_pressed("dash") and not isDashing and canDash:
+		handle_dash(move_input)
 	
 	if !isDashing:
 		if move_input.x != 0:
@@ -37,8 +57,8 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 	
-		handle_animation(move_input.x)
-		move_and_slide()
+	handle_animation(move_input.x)
+	move_and_slide()
 
 func handle_jump_animation(direction: float) -> void:
 	animacaoPlayer.flip_h = direction < 0 
@@ -61,32 +81,15 @@ func handle_animation(direction: float) -> void:
 		animacaoPlayer.play("idle")
 
 func handle_dash(move_input: Vector2) -> void:
-	if Input.is_action_just_pressed("dash") and not isDashing and canDash:
-		canDash = false
-		if move_input == Vector2.ZERO:
-			dashDirection = Vector2.LEFT if animacaoPlayer.flip_h else Vector2.RIGHT
-		else: 
-			dashDirection = move_input.normalized()
-		start_dashing()
-func start_dashing() -> void:
+	canDash = false
 	isDashing = true
-	animacaoPlayer.play("dash")
+	dash_timer = DASH_TIME
 	ghost_timer = 0.0
-	var elapsed := 0.0
-	while elapsed < DASH_TIME:
-		var delta := get_process_delta_time()
-		elapsed += delta
-
-		ghost_timer -= delta
-		if ghost_timer <= 0:
-			ghost_timer = ghost_interval
-			spawn_ghost_trail()
-
-		velocity.x = dashDirection.x * DASH_SPEED
-		velocity.y = dashDirection.y * DASH_SPEED
-		move_and_slide()
-		await get_tree().process_frame
-	isDashing = false
+	
+	if move_input == Vector2.ZERO:
+		dashDirection = Vector2.LEFT if animacaoPlayer.flip_h else Vector2.RIGHT
+	else: 
+		dashDirection = move_input.normalized()
 
 func spawn_ghost_trail():
 	var ghost = ghost_trail_scene.instantiate()
