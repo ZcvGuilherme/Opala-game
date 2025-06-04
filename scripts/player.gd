@@ -98,3 +98,6 @@ func spawn_ghost_trail():
 	ghost.scale = scale
 	get_parent().add_child(ghost)
 	ghost.setup(animacaoPlayer)
+
+func die():
+	global_position = Vector2(100, 200)  # Posição segura
