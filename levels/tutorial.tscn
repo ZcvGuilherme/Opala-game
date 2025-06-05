@@ -1485,7 +1485,7 @@ shape = SubResource("RectangleShape2D_2fv1q")
 
 [node name="Player" parent="." groups=["checkpoints"] instance=ExtResource("1_khcq3")]
 z_index = 1
-position = Vector2(1002, 242)
+position = Vector2(156, 175)
 
 [node name="DeathZone" type="Area2D" parent="."]
 position = Vector2(2, 0)
