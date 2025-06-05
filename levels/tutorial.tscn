@@ -3304,10 +3304,16 @@ sources/2 = SubResource("TileSetAtlasSource_mtsth")
 [node name="Tutorial" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_khcq3")]
-[node name="Player" parent="." instance=ExtResource("1_khcq3")]
-z_index = 1
-position = Vector2(1769, -46)
-metadata/_edit_group_ = true
+position = Vector2(783, 174)
+
+[node name="CameraPlayer" type="Camera2D" parent="Player"]
+position = Vector2(1, -1)
+zoom = Vector2(2, 2)
+limit_left = 5
+limit_top = -50
+limit_right = 100000
+limit_bottom = 30
+limit_smoothed = true
 
 [node name="level" type="Node2D" parent="."]
 
