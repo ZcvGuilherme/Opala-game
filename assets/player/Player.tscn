@@ -297,6 +297,6 @@ frame_progress = 0.428269
 zoom = Vector2(2, 2)
 limit_left = 5
 limit_top = -50
-limit_right = 1690
+limit_right = 100000
 limit_bottom = 80
 limit_smoothed = true
