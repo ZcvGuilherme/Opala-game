@@ -3304,6 +3304,7 @@ sources/2 = SubResource("TileSetAtlasSource_mtsth")
 [node name="Tutorial" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_khcq3")]
+[node name="Player" parent="." instance=ExtResource("1_khcq3")]
 z_index = 1
 position = Vector2(1769, -46)
 metadata/_edit_group_ = true
