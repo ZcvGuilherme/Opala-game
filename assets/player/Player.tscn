@@ -292,11 +292,3 @@ scale = Vector2(0.0291748, 0.0323486)
 sprite_frames = SubResource("SpriteFrames_jskx6")
 animation = &"idle"
 frame_progress = 0.428269
-
-[node name="CameraPlayer" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-limit_left = 5
-limit_top = -50
-limit_right = 1690
-limit_bottom = 80
-limit_smoothed = true
