@@ -22,8 +22,7 @@ var dash_timer := 0.0
 
 func _physics_process(delta: float) -> void:
 	var move_input := Input.get_vector("left", "right", "up", "down")
-	if is_on_floor():
-		canDash = true
+	
 	if isDashing:
 		dash_timer -= delta
 		ghost_timer -= delta
@@ -43,6 +42,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		if not is_on_floor():
 			velocity.y += GRAVITY * delta
+	if is_on_floor() and not isDashing :
+		canDash = true
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= 0.5
 	
