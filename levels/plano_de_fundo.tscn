@@ -6,10 +6,10 @@
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_offset = Vector2(-21, 66)
-repeat_size = Vector2(500, 0)
-repeat_times = 5
+repeat_size = Vector2(1000, 0)
+repeat_times = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(762, 260)
+position = Vector2(2091, 260)
 scale = Vector2(2, 2)
 texture = ExtResource("1_uknsw")
