@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://q3cwals3fwo6" path="res://assets/2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/Dungeon_Tileset_at.png" id="17_hi7gy"]
 [ext_resource type="Texture2D" uid="uid://c5houmq444v62" path="res://assets/Free Industrial Zone Tileset/2 Background/2.png" id="24_we2w3"]
 [ext_resource type="Texture2D" uid="uid://b5pdy5fkh2fkp" path="res://assets/Free Industrial Zone Tileset/2 Background/3.png" id="25_4kisa"]
-[ext_resource type="PackedScene" uid="uid://8571smwwi113" path="res://levels/plano_de_fundo.tscn" id="27_rxgvf"]
+[ext_resource type="PackedScene" path="res://levels/plano_de_fundo.tscn" id="27_rxgvf"]
 [ext_resource type="Texture2D" uid="uid://c24xkjlwfdgul" path="res://assets/Free Industrial Zone Tileset/2 Background/Background.png" id="31_uc87h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46tuc"]
@@ -3304,7 +3304,8 @@ sources/2 = SubResource("TileSetAtlasSource_mtsth")
 [node name="Tutorial" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_khcq3")]
-position = Vector2(783, 174)
+position = Vector2(67, 230)
+wall_jump_force = Vector2(400, -400)
 
 [node name="CameraPlayer" type="Camera2D" parent="Player"]
 position = Vector2(1, -1)
