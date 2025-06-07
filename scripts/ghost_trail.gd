@@ -12,7 +12,9 @@ func setup(original_sprite: AnimatedSprite2D):
 	sprite.scale = original_sprite.scale
 	sprite.z_index = -1
 	
-	mat = sprite.material as ShaderMaterial
+
+	mat = sprite.material.duplicate() as ShaderMaterial
+	sprite.material = mat
 	if mat:
 		mat.set_shader_parameter("colorize_color", Color(0.0, 0.5, 1.0))
 		mat.set_shader_parameter("alpha", 0.6)

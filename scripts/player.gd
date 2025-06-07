@@ -32,13 +32,12 @@ func _physics_process(delta: float) -> void:
 	var is_touching_left_wall = ray_left.is_colliding()
 	var is_touching_right_wall = ray_right.is_colliding()
 	
-	
 	if isDashing:
 		dash_timer -= delta
 		ghost_timer -= delta
 		
 		if ghost_timer <= 0:
-			ghost_timer = ghost_interval
+			ghost_timer += ghost_interval
 			spawn_ghost_trail()
 			
 		velocity = Vector2(
@@ -129,6 +128,7 @@ func die():
 
 func start_wall_slide(left, right):
 	is_wall_sliding = true
+	canDash = true
 	velocity.y = min(velocity.y, wall_slide_speed)
 	wall_direction = 1	if left else -1
 	
