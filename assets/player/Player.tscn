@@ -295,7 +295,7 @@ ghost_trail_scene = ExtResource("2_vyepl")
 wall_jump_force = Vector2(500, -700)
 
 [node name="Colisor-Player" type="CollisionShape2D" parent="."]
-position = Vector2(1, 2)
+position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_5s2kv")
 
 [node name="AnimacaoPlayer" type="AnimatedSprite2D" parent="."]

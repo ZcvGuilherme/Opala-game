@@ -129,6 +129,7 @@ func die():
 
 func start_wall_slide(left, right):
 	is_wall_sliding = true
+	canDash = true
 	velocity.y = min(velocity.y, wall_slide_speed)
 	wall_direction = 1	if left else -1
 	
