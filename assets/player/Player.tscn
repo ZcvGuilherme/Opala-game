@@ -299,10 +299,10 @@ position = Vector2(1, 2)
 shape = SubResource("CapsuleShape2D_5s2kv")
 
 [node name="AnimacaoPlayer" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, 5.27501e-06)
+position = Vector2(1, 2)
 scale = Vector2(0.0291748, 0.0323486)
 sprite_frames = SubResource("SpriteFrames_jskx6")
-animation = &"dash"
+animation = &"awake"
 
 [node name="Ray_Left" type="RayCast2D" parent="."]
 modulate = Color(1, 0.0470588, 0, 1)
