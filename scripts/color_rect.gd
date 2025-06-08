@@ -1,7 +1,7 @@
 extends ColorRect
 
-var threshold = 0.0
+var radius = 1.0
 
 func _process(delta: float) -> void:
-	material.set("shader_parameter/threshold", threshold)
+	material.set("shader_parameter/radius", radius)
 	
