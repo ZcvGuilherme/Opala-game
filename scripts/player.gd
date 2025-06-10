@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var ray_right: RayCast2D = $Ray_Right
 @onready var animacaoPlayer = $AnimacaoPlayer
 
+#@onready var Player_scene = preload("res://actors/Player.tscn")
+
 @export var ghost_trail_scene : PackedScene
 @export var wall_slide_speed: float = 50.0
 @export var wall_jump_force: Vector2 = Vector2(250, -400)
@@ -25,6 +27,18 @@ var ghost_interval : float = 0.03
 var dash_timer := 0.0
 var is_wall_sliding: bool = false
 var wall_direction: int = 0
+
+#criando o checkpoint para o jogo
+var Player = null
+var current_checkpoint = null
+
+var Player_position = null
+
+func respawn_player ():
+	Player_position = Player.Player_position
+	if current_checkpoint != null:
+		Player.position = current_checkpoint.player_position
+	
 
 
 func _physics_process(delta: float) -> void:
@@ -80,7 +94,13 @@ func _physics_process(delta: float) -> void:
 	
 	handle_animation(move_input.x)
 	move_and_slide()
-
+	
+# Plataforma que cai
+	for plataforms in get_slide_collision_count():
+		var collisão = get_slide_collision(plataforms)
+		if collisão.get_collider().has_method("has_collided_with"):
+			collisão.get_collider().has_collided_with(collisão, self)
+		
 func handle_jump_animation(direction: float) -> void:
 	animacaoPlayer.flip_h = direction < 0 
 	if velocity.y < 0:
@@ -135,3 +155,32 @@ func start_wall_slide(left, right):
 func stop_wall_slide():
 	is_wall_sliding = false
 	wall_direction = 0
+
+#funcão ready = ciclo de vida 
+func _ready() -> void:
+	current_checkpoint = $Marker2D
+	Player = Player
+
+#Nova função criada
+func reload_game():
+	await get_tree().create_timer(1.0).timeout
+	#var player = player_scene.instantiate()
+	add_child(Player)
+	Player = Player
+	Player.respawn_player()
+	
+#Funcção de morte de player
+func handle_death_zone():
+	visible = false
+	set_physics_process(false)
+
+	await get_tree().create_timer(1.0).timeout
+
+	# Voltar para o checkpoint
+	if current_checkpoint != null:
+		global_position = current_checkpoint.global_position
+	else:
+		global_position = Vector2(100, 200)  # posição segura padrão
+
+	visible = true
+	set_physics_process(true)

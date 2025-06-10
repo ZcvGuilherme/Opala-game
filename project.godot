@@ -116,6 +116,10 @@ dialogic_default_action={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_2="plataforma_cai"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
