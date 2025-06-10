@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctovbsl45hos"]
+
+[ext_resource type="Script" uid="uid://cy2pkj4rspi5r" path="res://scripts/plataforma_cai.gd" id="1_a17oy"]
+[ext_resource type="Texture2D" uid="uid://bshfj1bl8y2le" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_79.png" id="1_iea1q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a17oy"]
+size = Vector2(32, 16)
+
+[sub_resource type="Animation" id="Animation_a17oy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textura:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iea1q"]
+resource_name = "tremor"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textura:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.1, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hj37n"]
+_data = {
+&"RESET": SubResource("Animation_a17oy"),
+&"tremor": SubResource("Animation_iea1q")
+}
+
+[node name="plataforma_cai" type="AnimatableBody2D"]
+collision_mask = 0
+script = ExtResource("1_a17oy")
+reset_timer = 3.0
+
+[node name="textura" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("1_iea1q")
+
+[node name="collisão" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_a17oy")
+one_way_collision = true
+
+[node name="respawn_timer" type="Timer" parent="."]
+
+[node name="animação" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hj37n")
+}
+
+[connection signal="timeout" from="respawn_timer" to="." method="_on_respawn_timer_timeout"]
+[connection signal="animation_finished" from="animação" to="." method="_on_animação_animation_finished"]
