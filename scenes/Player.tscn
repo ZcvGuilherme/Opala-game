@@ -1,8 +1,8 @@
-[gd_scene load_steps=66 format=3 uid="uid://cec0nusoho146"]
+[gd_scene load_steps=69 format=3 uid="uid://cec0nusoho146"]
 
 [ext_resource type="Script" uid="uid://df88wownggeo4" path="res://scripts/player.gd" id="1_s4p4p"]
 [ext_resource type="Texture2D" uid="uid://6bkvivxkqnxg" path="res://assets/player/acordando/sprite_00.png" id="2_smh0w"]
-[ext_resource type="PackedScene" uid="uid://cc4l1g2hjvflv" path="res://assets/player/ghost_trail.tscn" id="2_vyepl"]
+[ext_resource type="PackedScene" uid="uid://cc4l1g2hjvflv" path="res://scenes/ghost_trail.tscn" id="2_vyepl"]
 [ext_resource type="Texture2D" uid="uid://u5vbakkgay3v" path="res://assets/player/acordando/sprite_01.png" id="3_yn1vr"]
 [ext_resource type="Texture2D" uid="uid://het2jgfgm4ta" path="res://assets/player/acordando/sprite_02.png" id="4_g0702"]
 [ext_resource type="Texture2D" uid="uid://bu8eivomkusa5" path="res://assets/player/acordando/sprite_03.png" id="5_t4vf8"]
@@ -60,7 +60,10 @@
 [ext_resource type="Texture2D" uid="uid://bb8geennxnvvm" path="res://assets/player/moving/run/sprite_3.png" id="57_opwmn"]
 [ext_resource type="Texture2D" uid="uid://bnjwdhi0rivh1" path="res://assets/player/moving/run/sprite_4.png" id="58_kpwne"]
 [ext_resource type="Texture2D" uid="uid://qh7qmo5yb3qo" path="res://assets/player/moving/run/sprite_5.png" id="59_wnjjm"]
-[ext_resource type="Texture2D" uid="uid://brds006rbhoq3" path="res://assets/player/wall/slide.png" id="61_k4gmy"]
+[ext_resource type="Texture2D" uid="uid://bb37rpe7akoul" path="res://assets/player/deslize com particulas/sprite_0.png" id="61_jvyme"]
+[ext_resource type="Texture2D" uid="uid://dt403ut4gms5l" path="res://assets/player/deslize com particulas/sprite_1.png" id="62_swrsk"]
+[ext_resource type="Texture2D" uid="uid://bamoaomta56tf" path="res://assets/player/deslize com particulas/sprite_2.png" id="63_pkfac"]
+[ext_resource type="Texture2D" uid="uid://53lwhe87ah2v" path="res://assets/player/deslize com particulas/sprite_3.png" id="64_unhkg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5s2kv"]
 radius = 8.0
@@ -282,7 +285,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("61_k4gmy")
+"texture": ExtResource("61_jvyme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_swrsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_pkfac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_unhkg")
 }],
 "loop": true,
 "name": &"wall_slide",
@@ -302,7 +314,7 @@ shape = SubResource("CapsuleShape2D_5s2kv")
 position = Vector2(1, 2)
 scale = Vector2(0.0291748, 0.0323486)
 sprite_frames = SubResource("SpriteFrames_jskx6")
-animation = &"awake"
+animation = &"wall_slide"
 
 [node name="Ray_Left" type="RayCast2D" parent="."]
 modulate = Color(1, 0.0470588, 0, 1)
