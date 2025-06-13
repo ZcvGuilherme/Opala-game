@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://c5houmq444v62" path="res://assets/Free Industrial Zone Tileset/2 Background/2.png" id="24_we2w3"]
 [ext_resource type="Texture2D" uid="uid://b5pdy5fkh2fkp" path="res://assets/Free Industrial Zone Tileset/2 Background/3.png" id="25_4kisa"]
 [ext_resource type="PackedScene" uid="uid://8571smwwi113" path="res://scenes/plano_de_fundo.tscn" id="27_rxgvf"]
-[ext_resource type="PackedScene" uid="uid://fusworvtr21l" path="res://scenes/transition.tscn" id="28_giya0"]
+[ext_resource type="PackedScene" uid="uid://fusworvtr21l" path="res://scenes/respawn_transition.tscn" id="28_giya0"]
 [ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="29_arvqe"]
 [ext_resource type="Script" uid="uid://x074aglu8jga" path="res://scenes/levels/teclas.gd" id="30_4xybc"]
 [ext_resource type="Texture2D" uid="uid://b1mkmh4beaql7" path="res://assets/player/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_0.png" id="30_mu8ij"]

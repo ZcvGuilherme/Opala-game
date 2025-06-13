@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://fusworvtr21l"]
+
+[ext_resource type="Script" uid="uid://dk6w1rbq4y7sh" path="res://scripts/respawn_transition.gd" id="1_px735"]
+[ext_resource type="Shader" uid="uid://bbcykygiefa3k" path="res://shaders/respawn_transition.gdshader" id="1_rerct"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f0i4t"]
+shader = ExtResource("1_rerct")
+shader_parameter/radius = 1.5
+shader_parameter/center = Vector2(0.5, 0.5)
+
+[node name="transition" type="CanvasLayer"]
+script = ExtResource("1_px735")
+
+[node name="color_rect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_f0i4t")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
