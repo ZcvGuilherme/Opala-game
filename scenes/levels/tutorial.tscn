@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://byoi8ndri6upy"]
+[gd_scene load_steps=77 format=4 uid="uid://byoi8ndri6upy"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_khcq3"]
 [ext_resource type="Texture2D" uid="uid://bvog2yvparc27" path="res://assets/Tileset/tileplataforma.png" id="2_fpvtr"]
@@ -28,7 +28,17 @@
 [ext_resource type="PackedScene" uid="uid://8571smwwi113" path="res://scenes/plano_de_fundo.tscn" id="27_rxgvf"]
 [ext_resource type="PackedScene" uid="uid://fusworvtr21l" path="res://scenes/transition.tscn" id="28_giya0"]
 [ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="29_arvqe"]
+[ext_resource type="Script" uid="uid://x074aglu8jga" path="res://scenes/levels/teclas.gd" id="30_4xybc"]
+[ext_resource type="Texture2D" uid="uid://b1mkmh4beaql7" path="res://assets/player/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_0.png" id="30_mu8ij"]
+[ext_resource type="Texture2D" uid="uid://cadp0ffwgqt8m" path="res://assets/player/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_1.png" id="31_bqw4n"]
 [ext_resource type="Texture2D" uid="uid://c24xkjlwfdgul" path="res://assets/Free Industrial Zone Tileset/2 Background/Background.png" id="31_uc87h"]
+[ext_resource type="Texture2D" uid="uid://bcy65tj71q605" path="res://assets/player/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_3.png" id="33_x04ov"]
+[ext_resource type="Texture2D" uid="uid://brv3pqo6gxo6x" path="res://assets/player/teclas/projeto jogo - teclas animações/sprite_0.png" id="34_pmj0t"]
+[ext_resource type="Texture2D" uid="uid://2ethwyrby0do" path="res://assets/player/teclas/projeto jogo - teclas animações/sprite_1.png" id="35_t1oap"]
+[ext_resource type="Texture2D" uid="uid://c5w267sg3qtuv" path="res://assets/player/teclas/projeto jogo - teclas wasd w pressionando/sprite_0.png" id="36_ney7n"]
+[ext_resource type="Texture2D" uid="uid://djmh572ibyv22" path="res://assets/player/teclas/projeto jogo - teclas wasd w pressionando/sprite_1.png" id="37_8j442"]
+[ext_resource type="Texture2D" uid="uid://d2pbxyejxytp2" path="res://assets/player/teclas/projeto jogo - tecla shift/sprite_0.png" id="37_bqw4n"]
+[ext_resource type="Texture2D" uid="uid://bvvqu84bvflgk" path="res://assets/player/teclas/projeto jogo - tecla shift/sprite_1.png" id="38_4xybc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46tuc"]
 texture = ExtResource("2_fpvtr")
@@ -3303,10 +3313,104 @@ sources/0 = SubResource("TileSetAtlasSource_wfa2t")
 sources/1 = SubResource("TileSetAtlasSource_ir5xt")
 sources/2 = SubResource("TileSetAtlasSource_mtsth")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ts0k5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_mu8ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_mu8ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_bqw4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_bqw4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_x04ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_x04ov")
+}],
+"loop": true,
+"name": &"pressing",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hscia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_mu8ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_x04ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_x04ov")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhjpr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_pmj0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_t1oap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_t1oap")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2ubi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_ney7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_8j442")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_8j442")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x04ov"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_bqw4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_4xybc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_4xybc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [node name="Tutorial" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_khcq3")]
-position = Vector2(1844, 155)
+position = Vector2(115, 232)
 scale = Vector2(1.1, 1.1)
 wall_jump_force = Vector2(400, -400)
 
@@ -3335,3 +3439,38 @@ tile_set = SubResource("TileSet_f5lvq")
 
 [node name="goal" parent="." instance=ExtResource("29_arvqe")]
 next_level = "res://scenes/levels/fase_1.tscn"
+
+[node name="Teclas" type="Node2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+script = ExtResource("30_4xybc")
+
+[node name="A-D" type="AnimatedSprite2D" parent="Teclas"]
+position = Vector2(277, 118)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_ts0k5")
+animation = &"pressing"
+frame_progress = 0.570504
+
+[node name="D" type="AnimatedSprite2D" parent="Teclas"]
+position = Vector2(981, 63)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_hscia")
+frame_progress = 0.901923
+
+[node name="SPACE" type="AnimatedSprite2D" parent="Teclas"]
+position = Vector2(1074, 64)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_dhjpr")
+frame_progress = 0.390555
+
+[node name="W" type="AnimatedSprite2D" parent="Teclas"]
+position = Vector2(1515, 113)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_d2ubi")
+frame_progress = 0.470645
+
+[node name="SHIFT" type="AnimatedSprite2D" parent="Teclas"]
+position = Vector2(1579, 117)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_x04ov")
