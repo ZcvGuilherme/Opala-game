@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://cec0nusoho146"]
+[gd_scene load_steps=72 format=3 uid="uid://cec0nusoho146"]
 
 [ext_resource type="Script" uid="uid://df88wownggeo4" path="res://scripts/player.gd" id="1_s4p4p"]
 [ext_resource type="Texture2D" uid="uid://6bkvivxkqnxg" path="res://assets/player/acordando/sprite_00.png" id="2_smh0w"]
@@ -64,6 +64,9 @@
 [ext_resource type="Texture2D" uid="uid://dt403ut4gms5l" path="res://assets/player/deslize com particulas/sprite_1.png" id="62_swrsk"]
 [ext_resource type="Texture2D" uid="uid://bamoaomta56tf" path="res://assets/player/deslize com particulas/sprite_2.png" id="63_pkfac"]
 [ext_resource type="Texture2D" uid="uid://53lwhe87ah2v" path="res://assets/player/deslize com particulas/sprite_3.png" id="64_unhkg"]
+[ext_resource type="AudioStream" uid="uid://cq3jctot44ai0" path="res://assets/Sons/pulo/jump.wav" id="65_swrsk"]
+[ext_resource type="AudioStream" uid="uid://ch2kl5ev368lo" path="res://assets/Sons/dash/dash.mp3" id="66_pkfac"]
+[ext_resource type="AudioStream" uid="uid://bn48bxgw817m8" path="res://assets/Sons/slide/501105__evretro__8-bit-long-slide.wav" id="67_unhkg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5s2kv"]
 radius = 8.0
@@ -314,7 +317,7 @@ shape = SubResource("CapsuleShape2D_5s2kv")
 position = Vector2(1, 2)
 scale = Vector2(0.0291748, 0.0323486)
 sprite_frames = SubResource("SpriteFrames_jskx6")
-animation = &"wall_slide"
+animation = &"run"
 
 [node name="Ray_Left" type="RayCast2D" parent="."]
 modulate = Color(1, 0.0470588, 0, 1)
@@ -326,3 +329,15 @@ hit_from_inside = true
 [node name="Ray_Right" type="RayCast2D" parent="."]
 modulate = Color(0.61957, 0.00103404, 0.740727, 1)
 target_position = Vector2(10, 0)
+
+[node name="jump_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("65_swrsk")
+volume_db = -10.0
+
+[node name="dash_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("66_pkfac")
+volume_db = -15.0
+
+[node name="wall-slide_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("67_unhkg")
+volume_db = -10.0

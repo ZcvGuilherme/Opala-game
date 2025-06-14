@@ -2,6 +2,12 @@ extends CharacterBody2D
 @onready var ray_left: RayCast2D = $Ray_Left
 @onready var ray_right: RayCast2D = $Ray_Right
 @onready var animacaoPlayer = $AnimacaoPlayer
+@onready var jump_sfx: AudioStreamPlayer = $jump_sfx
+@onready var dash_sfx: AudioStreamPlayer = $dash_sfx
+@onready var wall_slide_sfx: AudioStreamPlayer = $"wall-slide_sfx"
+
+
+
 
 @export var ghost_trail_scene : PackedScene
 @export var wall_slide_speed: float = 50.0
@@ -56,6 +62,7 @@ func _physics_process(delta: float) -> void:
 		
 	if (is_touching_left_wall or is_touching_right_wall) and not is_on_floor() and velocity.y > 0:
 		start_wall_slide(is_touching_left_wall, is_touching_right_wall)
+		
 	elif is_wall_sliding and not (is_touching_left_wall or is_touching_right_wall):
 		stop_wall_slide() 
 		
@@ -64,13 +71,16 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_sfx.play()
 	
 	if is_wall_sliding and Input.is_action_just_pressed("jump"):
 		velocity = Vector2(wall_jump_force.x * wall_direction, wall_jump_force.y)
+		jump_sfx.play()
 		stop_wall_slide()
 		
 	if Input.is_action_just_pressed("dash") and not isDashing and canDash:
 		handle_dash(move_input)
+		dash_sfx.play()
 	
 	if !isDashing:
 		if move_input.x != 0:
@@ -80,6 +90,7 @@ func _physics_process(delta: float) -> void:
 	
 	handle_animation(move_input.x)
 	move_and_slide()
+
 
 func handle_jump_animation(direction: float) -> void:
 	animacaoPlayer.flip_h = direction < 0 
@@ -131,6 +142,7 @@ func start_wall_slide(left, right):
 	canDash = true
 	velocity.y = min(velocity.y, wall_slide_speed)
 	wall_direction = 1	if left else -1
+	
 	
 func stop_wall_slide():
 	is_wall_sliding = false
