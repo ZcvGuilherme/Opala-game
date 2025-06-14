@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnilanhm8vbah"]
+[gd_scene load_steps=7 format=3 uid="uid://dnilanhm8vbah"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_1l4ar"]
 [ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="2_nokqf"]
 [ext_resource type="PackedScene" uid="uid://fusworvtr21l" path="res://scenes/respawn_transition.tscn" id="3_5kpeh"]
+[ext_resource type="PackedScene" uid="uid://bddxs40f6ojro" path="res://scenes/traps/spike.tscn" id="4_n40sw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ru54l"]
 size = Vector2(1140.5, 22.5)
@@ -31,7 +32,10 @@ position = Vector2(-60, 273)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="goal" parent="." instance=ExtResource("2_nokqf")]
-position = Vector2(79, 281)
+position = Vector2(569, 288)
 next_level = "res://scenes/levels/tutorial.tscn"
 
 [node name="transition" parent="." instance=ExtResource("3_5kpeh")]
+
+[node name="Spike" parent="." instance=ExtResource("4_n40sw")]
+position = Vector2(180, 294)
