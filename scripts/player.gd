@@ -158,7 +158,7 @@ func stop_wall_slide():
 
 #funcão ready = ciclo de vida 
 func _ready() -> void:
-	current_checkpoint = $Marker2D
+	#current_checkpoint = $Marker2D
 	Player = Player
 
 #Nova função criada

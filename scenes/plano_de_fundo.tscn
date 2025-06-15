@@ -1,17 +1,10 @@
-[gd_scene format=3 uid="uid://8571smwwi113"]
+[gd_scene load_steps=2 format=3 uid="uid://8571smwwi113"]
+
+[ext_resource type="Texture2D" uid="uid://bvhdi801nmkqd" path="res://assets/paralax/fundo-cinza.jpg" id="1_kqpyy"]
 
 [node name="PlanoDeFundo" type="ParallaxBackground"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1.0
-offset_top = -98.0
-offset_right = 2649.0
-offset_bottom = 716.0
-color = Color(0.925781, 0.925781, 0.925781, 1)
-
-[node name="TextureRect" type="TextureRect" parent="ColorRect"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 102.0
-offset_right = 504.0
-offset_bottom = 398.0
+[node name="Fundo-cinza" type="Sprite2D" parent="."]
+position = Vector2(1303, 219)
+scale = Vector2(2.98667, 1.96047)
+texture = ExtResource("1_kqpyy")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://df88wownggeo4" path="res://scripts/player.gd" id="1_s4p4p"]
 [ext_resource type="Texture2D" uid="uid://6bkvivxkqnxg" path="res://assets/player/acordando/sprite_00.png" id="2_smh0w"]
-[ext_resource type="PackedScene" uid="uid://cc4l1g2hjvflv" path="res://assets/player/ghost_trail.tscn" id="2_vyepl"]
+[ext_resource type="PackedScene" uid="uid://cc4l1g2hjvflv" path="res://scenes/ghost_trail.tscn" id="2_vyepl"]
 [ext_resource type="Texture2D" uid="uid://u5vbakkgay3v" path="res://assets/player/acordando/sprite_01.png" id="3_yn1vr"]
 [ext_resource type="Texture2D" uid="uid://het2jgfgm4ta" path="res://assets/player/acordando/sprite_02.png" id="4_g0702"]
 [ext_resource type="Texture2D" uid="uid://bu8eivomkusa5" path="res://assets/player/acordando/sprite_03.png" id="5_t4vf8"]
