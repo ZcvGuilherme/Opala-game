@@ -1,13 +1,11 @@
 extends CharacterBody2D
+
 @onready var ray_left: RayCast2D = $Ray_Left
 @onready var ray_right: RayCast2D = $Ray_Right
 @onready var animacaoPlayer = $AnimacaoPlayer
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
 @onready var dash_sfx: AudioStreamPlayer = $dash_sfx
 @onready var wall_slide_sfx: AudioStreamPlayer = $"wall-slide_sfx"
-
-
-
 
 @export var ghost_trail_scene : PackedScene
 @export var wall_slide_speed: float = 50.0
@@ -63,6 +61,7 @@ func _physics_process(delta: float) -> void:
 	if (is_touching_left_wall or is_touching_right_wall) and not is_on_floor() and velocity.y > 0:
 		start_wall_slide(is_touching_left_wall, is_touching_right_wall)
 		
+		
 	elif is_wall_sliding and not (is_touching_left_wall or is_touching_right_wall):
 		stop_wall_slide() 
 		
@@ -87,7 +86,6 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, move_input.x * SPEED, ACCELERATION * delta)
 		else:
 			velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
-	
 	handle_animation(move_input.x)
 	move_and_slide()
 
@@ -139,11 +137,15 @@ func die():
 
 func start_wall_slide(left, right):
 	is_wall_sliding = true
+	
 	canDash = true
 	velocity.y = min(velocity.y, wall_slide_speed)
 	wall_direction = 1	if left else -1
-	
+	if not wall_slide_sfx.playing:
+		wall_slide_sfx.play()
 	
 func stop_wall_slide():
+	if wall_slide_sfx.playing:
+		wall_slide_sfx.stop()
 	is_wall_sliding = false
 	wall_direction = 0

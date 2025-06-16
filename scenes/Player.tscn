@@ -66,7 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://53lwhe87ah2v" path="res://assets/player/deslize com particulas/sprite_3.png" id="64_unhkg"]
 [ext_resource type="AudioStream" uid="uid://cq3jctot44ai0" path="res://assets/Sons/pulo/jump.wav" id="65_swrsk"]
 [ext_resource type="AudioStream" uid="uid://ch2kl5ev368lo" path="res://assets/Sons/dash/dash.mp3" id="66_pkfac"]
-[ext_resource type="AudioStream" uid="uid://bn48bxgw817m8" path="res://assets/Sons/slide/501105__evretro__8-bit-long-slide.wav" id="67_unhkg"]
+[ext_resource type="AudioStream" uid="uid://boi7q47es5buu" path="res://assets/Sons/slide/19_wall_slide.mp3" id="67_unhkg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5s2kv"]
 radius = 8.0
@@ -340,4 +340,4 @@ volume_db = -15.0
 
 [node name="wall-slide_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("67_unhkg")
-volume_db = -10.0
+volume_db = -17.61
