@@ -125,7 +125,23 @@ func spawn_ghost_trail():
 
 func die():
 	global_position = Vector2(100, 200)  # Posição segura
-
+	handle_death()
+func handle_death():
+	#chamar animação
+	die_animation()
+	#transição
+	transition_death()
+	pass
+func die_animation():
+	pass
+func transition_death():
+	#fechar a tela
+	#respawnar o player
+	respawn()
+	#abrir a tela
+	pass
+func respawn():
+	pass
 func start_wall_slide(left, right):
 	is_wall_sliding = true
 	canDash = true
