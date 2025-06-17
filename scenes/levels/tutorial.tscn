@@ -39,7 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://djmh572ibyv22" path="res://assets/player/teclas/projeto jogo - teclas wasd w pressionando/sprite_1.png" id="37_8j442"]
 [ext_resource type="Texture2D" uid="uid://d2pbxyejxytp2" path="res://assets/player/teclas/projeto jogo - tecla shift/sprite_0.png" id="37_bqw4n"]
 [ext_resource type="Texture2D" uid="uid://bvvqu84bvflgk" path="res://assets/player/teclas/projeto jogo - tecla shift/sprite_1.png" id="38_4xybc"]
-[ext_resource type="AudioStream" uid="uid://dxj478mnjbncx" path="res://assets/Sons/musica de fundo/Deltarune OST： 13 - Field of Hopes and Dreams.mp3" id="40_x04ov"]
+[ext_resource type="AudioStream" uid="uid://cql16e84h5e0s" path="res://assets/Sons/musica de fundo/Stickerbush Symphony Restored to HD [lndBgOrTWxo].mp3" id="40_x04ov"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46tuc"]
 texture = ExtResource("2_fpvtr")
