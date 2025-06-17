@@ -419,9 +419,7 @@ z_index = 1
 position = Vector2(1, 2)
 scale = Vector2(0.0291748, 0.0323486)
 sprite_frames = SubResource("SpriteFrames_jskx6")
-animation = &"death"
-frame = 18
-frame_progress = 0.237592
+animation = &"idle"
 
 [node name="Colisor-Player" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1)
