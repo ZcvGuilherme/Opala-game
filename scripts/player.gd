@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var dash_sfx: AudioStreamPlayer = $dash_sfx
 @onready var wall_slide_sfx: AudioStreamPlayer = $"wall-slide_sfx"
 
+
 @export var ghost_trail_scene : PackedScene
 @export var wall_slide_speed: float = 50.0
 @export var wall_jump_force: Vector2 = Vector2(250, -400)
@@ -133,27 +134,29 @@ func spawn_ghost_trail():
 	ghost.setup(animacaoPlayer)
 
 func die():
-	handle_death()
-func handle_death():
-	# Para o personagem imediatamente
+	
 	velocity = Vector2.ZERO
 	set_physics_process(false)  # Desativa movimento durante a animação
 	die_animation()
+	
 func die_animation():
-	animacaoPlayer.play("death")  # Reproduz a animação de morte
-	# Aguarda a duração da animação (por exemplo, 1 segundo) antes de chamar a transição
+	animacaoPlayer.play("death")
 	await animacaoPlayer.animation_finished
 	transition_death()
+	
 func transition_death():
-	#fechar a tela
-	#respawnar o player
+	await RespawnTransition.close_scene(0.1)
 	respawn()
 	
 func respawn():
 	global_position = Vector2(100, 200)  # Teleporta para a posição segura
 	velocity = Vector2.ZERO
+	
+	await RespawnTransition.show_new_scene()
+	animacaoPlayer.play("awake")  # Recomeça em animação neutra
+	await animacaoPlayer.animation_finished
+	
 	set_physics_process(true)  # Reativa movimento
-	animacaoPlayer.play("idle")  # Recomeça em animação neutra
 	
 func start_wall_slide(left, right):
 	is_wall_sliding = true
