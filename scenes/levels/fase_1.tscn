@@ -40,6 +40,7 @@ next_level = "res://scenes/levels/tutorial.tscn"
 
 [node name="Spike" parent="." instance=ExtResource("4_n40sw")]
 position = Vector2(180, 294)
+repeat_interval = 0.0
 
 [node name="Fallzone" parent="." instance=ExtResource("5_ga7mg")]
 position = Vector2(1166, 340)
