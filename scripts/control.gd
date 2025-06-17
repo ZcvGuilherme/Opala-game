@@ -6,9 +6,6 @@ extends Control
 var minutes = 0
 var seconds = 0
 
-func _ready() -> void:
-	clock_timer.timeout.connect(_on_clock_timer_timeout)
-
 func _on_clock_timer_timeout() -> void:
 	seconds += 1
 	if seconds > 59:

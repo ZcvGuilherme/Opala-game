@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://cec0nusoho146"]
+[gd_scene load_steps=97 format=3 uid="uid://cec0nusoho146"]
 
 [ext_resource type="Script" uid="uid://df88wownggeo4" path="res://scripts/player.gd" id="1_s4p4p"]
 [ext_resource type="Texture2D" uid="uid://6bkvivxkqnxg" path="res://assets/player/acordando/sprite_00.png" id="2_smh0w"]
@@ -44,33 +44,54 @@
 [ext_resource type="Texture2D" uid="uid://dhf2nmimy7ngs" path="res://assets/player/dash/sprite_5.png" id="41_y5mew"]
 [ext_resource type="Texture2D" uid="uid://b6paqdlqca63v" path="res://assets/player/idle/sprite_0.png" id="42_hu6ip"]
 [ext_resource type="Texture2D" uid="uid://d5ewhgkvsens" path="res://assets/player/idle/sprite_1.png" id="43_jneso"]
+[ext_resource type="Texture2D" uid="uid://bbrnvj8u6wvtu" path="res://assets/player/Morrendo/sprite_00.png" id="43_qabq5"]
 [ext_resource type="Texture2D" uid="uid://bvkl4yvb8xtew" path="res://assets/player/idle/sprite_2.png" id="44_b6wk2"]
+[ext_resource type="Texture2D" uid="uid://dbfq8ds8f264i" path="res://assets/player/Morrendo/sprite_01.png" id="44_bqny8"]
 [ext_resource type="Texture2D" uid="uid://cl4b5g1gnlusc" path="res://assets/player/idle/sprite_3.png" id="45_6afuo"]
+[ext_resource type="Texture2D" uid="uid://dmd5rao8eidms" path="res://assets/player/Morrendo/sprite_02.png" id="45_mgg3w"]
 [ext_resource type="Texture2D" uid="uid://b4snjhb4yr3e8" path="res://assets/player/idle/sprite_4.png" id="46_gr3ww"]
+[ext_resource type="Texture2D" uid="uid://cncweaqpwfi3w" path="res://assets/player/Morrendo/sprite_03.png" id="46_kpppk"]
 [ext_resource type="Texture2D" uid="uid://b7xlhn6m23err" path="res://assets/player/idle/sprite_5.png" id="47_pdwxm"]
+[ext_resource type="Texture2D" uid="uid://kj2kt217dlc" path="res://assets/player/Morrendo/sprite_04.png" id="47_sm57i"]
 [ext_resource type="Texture2D" uid="uid://cg30t0ygrbqit" path="res://assets/player/Pulo/falling_0.png" id="48_1uc4r"]
+[ext_resource type="Texture2D" uid="uid://cd4mi1yyt6kpe" path="res://assets/player/Morrendo/sprite_05.png" id="48_xdlf2"]
 [ext_resource type="Texture2D" uid="uid://c14vmner3g25o" path="res://assets/player/Pulo/falling_1.png" id="49_82ye1"]
+[ext_resource type="Texture2D" uid="uid://b2vf0lm5wx5uv" path="res://assets/player/Morrendo/sprite_06.png" id="49_e2ifm"]
+[ext_resource type="Texture2D" uid="uid://d345tsnp6x340" path="res://assets/player/Morrendo/sprite_07.png" id="50_1vqve"]
 [ext_resource type="Texture2D" uid="uid://coreq2b5kxghw" path="res://assets/player/Pulo/falling_2.png" id="50_3xwxo"]
 [ext_resource type="Texture2D" uid="uid://cmtantuxu2xrq" path="res://assets/player/Pulo/sprite_2.png" id="51_kvp46"]
+[ext_resource type="Texture2D" uid="uid://cxbmrdj331yhn" path="res://assets/player/Morrendo/sprite_08.png" id="51_xfjxt"]
+[ext_resource type="Texture2D" uid="uid://b6uudvkiuw8ac" path="res://assets/player/Morrendo/sprite_09.png" id="52_i5kac"]
 [ext_resource type="Texture2D" uid="uid://diyj3oei42eka" path="res://assets/player/Pulo/sprite_1.png" id="52_w0aoi"]
 [ext_resource type="Texture2D" uid="uid://bnqjf38bsf5d6" path="res://assets/player/Pulo/sprite_3.png" id="53_202kr"]
+[ext_resource type="Texture2D" uid="uid://bvtrylsv2axga" path="res://assets/player/Morrendo/sprite_10.png" id="53_qycqj"]
+[ext_resource type="Texture2D" uid="uid://b3ifmxfapjmrd" path="res://assets/player/Morrendo/sprite_11.png" id="54_24r77"]
 [ext_resource type="Texture2D" uid="uid://12s81fq6b5uh" path="res://assets/player/moving/run/sprite_0.png" id="54_ynlr2"]
+[ext_resource type="Texture2D" uid="uid://cy1dql5fjrbcn" path="res://assets/player/Morrendo/sprite_12.png" id="55_07ay5"]
 [ext_resource type="Texture2D" uid="uid://byd05eoo3vw7u" path="res://assets/player/moving/run/sprite_1.png" id="55_uti0i"]
+[ext_resource type="Texture2D" uid="uid://cj8bdxreiv5q" path="res://assets/player/Morrendo/sprite_13.png" id="56_onyu1"]
 [ext_resource type="Texture2D" uid="uid://c1qcdmfnp8pg6" path="res://assets/player/moving/run/sprite_2.png" id="56_rmqdl"]
+[ext_resource type="Texture2D" uid="uid://vgpwclxu703q" path="res://assets/player/Morrendo/sprite_14.png" id="57_2cdbf"]
 [ext_resource type="Texture2D" uid="uid://bb8geennxnvvm" path="res://assets/player/moving/run/sprite_3.png" id="57_opwmn"]
 [ext_resource type="Texture2D" uid="uid://bnjwdhi0rivh1" path="res://assets/player/moving/run/sprite_4.png" id="58_kpwne"]
+[ext_resource type="Texture2D" uid="uid://cu7xdaxukocrq" path="res://assets/player/Morrendo/sprite_15.png" id="58_ksomn"]
+[ext_resource type="Texture2D" uid="uid://bkiajowmcqvsh" path="res://assets/player/Morrendo/sprite_16.png" id="59_we1n3"]
 [ext_resource type="Texture2D" uid="uid://qh7qmo5yb3qo" path="res://assets/player/moving/run/sprite_5.png" id="59_wnjjm"]
+[ext_resource type="Texture2D" uid="uid://cuwcokjn02lj7" path="res://assets/player/Morrendo/sprite_17.png" id="60_1lbfo"]
+[ext_resource type="Texture2D" uid="uid://c7ohqyrnwcja8" path="res://assets/player/Morrendo/sprite_18.png" id="61_53r4w"]
 [ext_resource type="Texture2D" uid="uid://bb37rpe7akoul" path="res://assets/player/deslize com particulas/sprite_0.png" id="61_jvyme"]
+[ext_resource type="Texture2D" uid="uid://cu1vy7sn7oo7n" path="res://assets/player/Morrendo/sprite_19.png" id="62_36yat"]
 [ext_resource type="Texture2D" uid="uid://dt403ut4gms5l" path="res://assets/player/deslize com particulas/sprite_1.png" id="62_swrsk"]
+[ext_resource type="Texture2D" uid="uid://bqosyg4gr5gn4" path="res://assets/player/Morrendo/sprite_20.png" id="63_aybtq"]
 [ext_resource type="Texture2D" uid="uid://bamoaomta56tf" path="res://assets/player/deslize com particulas/sprite_2.png" id="63_pkfac"]
 [ext_resource type="Texture2D" uid="uid://53lwhe87ah2v" path="res://assets/player/deslize com particulas/sprite_3.png" id="64_unhkg"]
+[ext_resource type="Texture2D" uid="uid://cmmish2pjdmly" path="res://assets/player/Morrendo/sprite_21.png" id="64_wy8pi"]
+[ext_resource type="Texture2D" uid="uid://bwanjenqxyq4k" path="res://assets/player/Morrendo/sprite_22.png" id="65_eav3a"]
 [ext_resource type="AudioStream" uid="uid://cq3jctot44ai0" path="res://assets/Sons/pulo/jump.wav" id="65_swrsk"]
 [ext_resource type="AudioStream" uid="uid://b2rm68853yolu" path="res://assets/Sons/dash/dash.wav" id="66_pkfac"]
+[ext_resource type="Texture2D" uid="uid://bk8ibvc74j8e1" path="res://assets/player/Morrendo/sprite_23.png" id="66_t8j6b"]
 [ext_resource type="AudioStream" uid="uid://0dtphwh8j1m1" path="res://assets/Sons/slide/Possibilidade.mp3" id="67_unhkg"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5s2kv"]
-radius = 8.0
-height = 28.0
+[ext_resource type="Texture2D" uid="uid://bf66dtqfm3uq7" path="res://assets/player/Morrendo/sprite_24.png" id="67_yoxdq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0adt6"]
 atlas = ExtResource("42_hu6ip")
@@ -214,6 +235,86 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("43_qabq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_bqny8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_mgg3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_kpppk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_sm57i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_xdlf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_e2ifm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_1vqve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_xfjxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_i5kac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_qycqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_24r77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_07ay5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_onyu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_2cdbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_ksomn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_we1n3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_1lbfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_53r4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_36yat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_aybtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_wy8pi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_eav3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_t8j6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_yoxdq")
+}],
+"loop": false,
+"name": &"death",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0adt6")
 }, {
 "duration": 1.0,
@@ -304,21 +405,25 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5s2kv"]
+radius = 8.0
+height = 28.0
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_s4p4p")
 ghost_trail_scene = ExtResource("2_vyepl")
 wall_jump_force = Vector2(500, -700)
-
-[node name="Colisor-Player" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
-shape = SubResource("CapsuleShape2D_5s2kv")
 
 [node name="AnimacaoPlayer" type="AnimatedSprite2D" parent="."]
 z_index = 1
 position = Vector2(1, 2)
 scale = Vector2(0.0291748, 0.0323486)
 sprite_frames = SubResource("SpriteFrames_jskx6")
-animation = &"run"
+animation = &"idle"
+
+[node name="Colisor-Player" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_5s2kv")
 
 [node name="Ray_Left" type="RayCast2D" parent="."]
 modulate = Color(1, 0.0470588, 0, 1)
