@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://byoi8ndri6upy"]
+[gd_scene load_steps=78 format=4 uid="uid://byoi8ndri6upy"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_khcq3"]
 [ext_resource type="Texture2D" uid="uid://bvog2yvparc27" path="res://assets/Tileset/tileplataforma.png" id="2_fpvtr"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://djmh572ibyv22" path="res://assets/player/teclas/projeto jogo - teclas wasd w pressionando/sprite_1.png" id="37_8j442"]
 [ext_resource type="Texture2D" uid="uid://d2pbxyejxytp2" path="res://assets/player/teclas/projeto jogo - tecla shift/sprite_0.png" id="37_bqw4n"]
 [ext_resource type="Texture2D" uid="uid://bvvqu84bvflgk" path="res://assets/player/teclas/projeto jogo - tecla shift/sprite_1.png" id="38_4xybc"]
+[ext_resource type="AudioStream" uid="uid://cql16e84h5e0s" path="res://assets/Sons/musica de fundo/Stickerbush Symphony Restored to HD [lndBgOrTWxo].mp3" id="40_x04ov"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46tuc"]
 texture = ExtResource("2_fpvtr")
@@ -3474,3 +3475,8 @@ frame_progress = 0.470645
 position = Vector2(1579, 117)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_x04ov")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("40_x04ov")
+volume_db = -20.0
+autoplay = true
