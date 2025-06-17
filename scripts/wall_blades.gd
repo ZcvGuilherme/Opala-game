@@ -10,14 +10,19 @@ func _ready() -> void:
 	animation_player.animation_finished.connect(_on_animation_player_animation_finished)
 	timer.wait_time = repeat_interval
 	timer.timeout.connect(_on_timer_timeout)
-	timer.start()
+	if repeat_interval == 0:
+		animation_player.play("active")
+		timer.stop()
+	else:
+		timer.start()
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "activating":
 		animation_player.play("active")
 		get_tree().create_timer(active_duration).timeout.connect(deactive)
 	elif anim_name == "deactivate":
-		timer.start()
+		if repeat_interval > 0:
+			timer.start()
 func deactive():
 	animation_player.play("deactivate")
 func _on_timer_timeout() -> void:
