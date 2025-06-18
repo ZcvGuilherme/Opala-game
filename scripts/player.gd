@@ -134,29 +134,26 @@ func spawn_ghost_trail():
 	ghost.setup(animacaoPlayer)
 
 func die():
-	
 	velocity = Vector2.ZERO
-	set_physics_process(false)  # Desativa movimento durante a animação
-	die_animation()
-	
-func die_animation():
+	set_physics_process(false)  
 	animacaoPlayer.play("death")
-	await animacaoPlayer.animation_finished
-	transition_death()
 	
-func transition_death():
+	await get_tree().create_timer(0.7).timeout
+	
 	await RespawnTransition.close_scene(0.1)
-	respawn()
+	
+	await respawn()
 	
 func respawn():
-	global_position = Vector2(100, 200)  # Teleporta para a posição segura
+	global_position = Vector2(100, 200)
 	velocity = Vector2.ZERO
-	
+
 	await RespawnTransition.show_new_scene()
-	animacaoPlayer.play("awake")  # Recomeça em animação neutra
+	
+	animacaoPlayer.play("awake")
 	await animacaoPlayer.animation_finished
 	
-	set_physics_process(true)  # Reativa movimento
+	set_physics_process(true)  
 	
 func start_wall_slide(left, right):
 	is_wall_sliding = true

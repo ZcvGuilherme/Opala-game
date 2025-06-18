@@ -3441,6 +3441,7 @@ tile_set = SubResource("TileSet_f5lvq")
 [node name="transition" parent="." instance=ExtResource("28_giya0")]
 
 [node name="goal" parent="." instance=ExtResource("29_arvqe")]
+position = Vector2(2582, 233)
 next_level = "res://scenes/levels/fase_1.tscn"
 
 [node name="Teclas" type="Node2D" parent="."]
