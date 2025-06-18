@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2pbxyejxytp2"
-path="res://.godot/imported/sprite_0.png-be17c25c33933ffdcab6a408d30dd4dc.ctex"
+uid="uid://djmh572ibyv22"
+path="res://.godot/imported/sprite_1.png-5a2d25ea6b1f2c0355fde2befc6feda1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/teclas/projeto jogo - tecla shift/sprite_0.png"
-dest_files=["res://.godot/imported/sprite_0.png-be17c25c33933ffdcab6a408d30dd4dc.ctex"]
+source_file="res://assets/teclas/projeto jogo - teclas wasd w pressionando/sprite_1.png"
+dest_files=["res://.godot/imported/sprite_1.png-5a2d25ea6b1f2c0355fde2befc6feda1.ctex"]
 
 [params]
 
