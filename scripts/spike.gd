@@ -9,9 +9,7 @@ extends Area2D
 @onready var timer: Timer = $Timer
 
 func _ready() -> void:
-	animation_player.animation_finished.connect(_on_animation_player_animation_finished)
 	timer.wait_time = repeat_interval
-	timer.timeout.connect(_on_timer_timeout)
 	if repeat_interval == 0:
 		animation_player.play("idle")
 		timer.stop()

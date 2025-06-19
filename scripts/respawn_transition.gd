@@ -5,13 +5,17 @@ func _ready() -> void:
 	show_new_scene()
 
 func change_scene(packed_scene: PackedScene, delay := 0.5):
+	
+	await close_scene(delay)
+	get_tree().change_scene_to_packed(packed_scene)
+
+func close_scene(delay):
 	var tween = get_tree().create_tween()
 	tween.tween_property(
 		color_rect.material, "shader_parameter/radius", 0.0, 1.0
 	).set_delay(delay)
 	await tween.finished
-	get_tree().change_scene_to_packed(packed_scene)
-
+	
 func show_new_scene():
 	var tween = get_tree().create_tween()
 	tween.tween_property(
