@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=4 uid="uid://byoi8ndri6upy"]
+[gd_scene load_steps=83 format=4 uid="uid://byoi8ndri6upy"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_khcq3"]
 [ext_resource type="Texture2D" uid="uid://bvog2yvparc27" path="res://assets/Tileset/tileplataforma.png" id="2_fpvtr"]
@@ -29,17 +29,18 @@
 [ext_resource type="PackedScene" uid="uid://fusworvtr21l" path="res://scenes/respawn_transition.tscn" id="28_giya0"]
 [ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="29_arvqe"]
 [ext_resource type="Script" uid="uid://x074aglu8jga" path="res://scenes/levels/teclas.gd" id="30_4xybc"]
-[ext_resource type="Texture2D" uid="uid://b1mkmh4beaql7" path="res://assets/player/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_0.png" id="30_mu8ij"]
-[ext_resource type="Texture2D" uid="uid://cadp0ffwgqt8m" path="res://assets/player/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_1.png" id="31_bqw4n"]
+[ext_resource type="Texture2D" uid="uid://b1mkmh4beaql7" path="res://assets/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_0.png" id="31_ts0k5"]
 [ext_resource type="Texture2D" uid="uid://c24xkjlwfdgul" path="res://assets/Free Industrial Zone Tileset/2 Background/Background.png" id="31_uc87h"]
-[ext_resource type="Texture2D" uid="uid://bcy65tj71q605" path="res://assets/player/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_3.png" id="33_x04ov"]
-[ext_resource type="Texture2D" uid="uid://brv3pqo6gxo6x" path="res://assets/player/teclas/projeto jogo - teclas animações/sprite_0.png" id="34_pmj0t"]
-[ext_resource type="Texture2D" uid="uid://2ethwyrby0do" path="res://assets/player/teclas/projeto jogo - teclas animações/sprite_1.png" id="35_t1oap"]
-[ext_resource type="Texture2D" uid="uid://c5w267sg3qtuv" path="res://assets/player/teclas/projeto jogo - teclas wasd w pressionando/sprite_0.png" id="36_ney7n"]
-[ext_resource type="Texture2D" uid="uid://djmh572ibyv22" path="res://assets/player/teclas/projeto jogo - teclas wasd w pressionando/sprite_1.png" id="37_8j442"]
-[ext_resource type="Texture2D" uid="uid://d2pbxyejxytp2" path="res://assets/player/teclas/projeto jogo - tecla shift/sprite_0.png" id="37_bqw4n"]
-[ext_resource type="Texture2D" uid="uid://bvvqu84bvflgk" path="res://assets/player/teclas/projeto jogo - tecla shift/sprite_1.png" id="38_4xybc"]
+[ext_resource type="Texture2D" uid="uid://cadp0ffwgqt8m" path="res://assets/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_1.png" id="32_hscia"]
+[ext_resource type="Texture2D" uid="uid://bnfmc81kgl5qd" path="res://assets/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_2.png" id="33_dhjpr"]
+[ext_resource type="Texture2D" uid="uid://bcy65tj71q605" path="res://assets/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_3.png" id="34_d2ubi"]
+[ext_resource type="Texture2D" uid="uid://brv3pqo6gxo6x" path="res://assets/teclas/projeto jogo - teclas animações/sprite_0.png" id="35_ivwb6"]
+[ext_resource type="Texture2D" uid="uid://2ethwyrby0do" path="res://assets/teclas/projeto jogo - teclas animações/sprite_1.png" id="36_hhicy"]
+[ext_resource type="Texture2D" uid="uid://c5w267sg3qtuv" path="res://assets/teclas/projeto jogo - teclas wasd w pressionando/sprite_0.png" id="37_440id"]
+[ext_resource type="Texture2D" uid="uid://djmh572ibyv22" path="res://assets/teclas/projeto jogo - teclas wasd w pressionando/sprite_1.png" id="38_xrhv2"]
+[ext_resource type="Texture2D" uid="uid://d2pbxyejxytp2" path="res://assets/teclas/projeto jogo - tecla shift/sprite_0.png" id="39_6817e"]
 [ext_resource type="AudioStream" uid="uid://cql16e84h5e0s" path="res://assets/Sons/musica de fundo/Stickerbush Symphony Restored to HD [lndBgOrTWxo].mp3" id="40_x04ov"]
+[ext_resource type="Texture2D" uid="uid://bvvqu84bvflgk" path="res://assets/teclas/projeto jogo - tecla shift/sprite_1.png" id="40_y3nfp"]
 [ext_resource type="Script" uid="uid://dys17irfjwn24" path="res://scripts/control.gd" id="41_pmj0t"]
 [ext_resource type="FontFile" uid="uid://3eqmusd2djdg" path="res://shaders/digital_7/digital-7 (italic).ttf" id="42_ney7n"]
 [ext_resource type="FontFile" uid="uid://myd1opyyypwv" path="res://shaders/digital_7/digital-7 (mono).ttf" id="43_8j442"]
@@ -3320,22 +3321,25 @@ sources/2 = SubResource("TileSetAtlasSource_mtsth")
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("30_mu8ij")
+"texture": ExtResource("31_ts0k5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_mu8ij")
+"texture": ExtResource("31_ts0k5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_bqw4n")
+"texture": ExtResource("32_hscia")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_bqw4n")
+"texture": ExtResource("32_hscia")
 }, {
 "duration": 1.0,
-"texture": ExtResource("33_x04ov")
+"texture": ExtResource("33_dhjpr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("33_x04ov")
+"texture": ExtResource("34_d2ubi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_d2ubi")
 }],
 "loop": true,
 "name": &"pressing",
@@ -3346,13 +3350,13 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("30_mu8ij")
+"texture": ExtResource("31_ts0k5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("33_x04ov")
+"texture": ExtResource("34_d2ubi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("33_x04ov")
+"texture": ExtResource("34_d2ubi")
 }],
 "loop": true,
 "name": &"default",
@@ -3363,13 +3367,13 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("34_pmj0t")
+"texture": ExtResource("35_ivwb6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_t1oap")
+"texture": ExtResource("36_hhicy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_t1oap")
+"texture": ExtResource("36_hhicy")
 }],
 "loop": true,
 "name": &"default",
@@ -3380,13 +3384,13 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("36_ney7n")
+"texture": ExtResource("37_440id")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_8j442")
+"texture": ExtResource("38_xrhv2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_8j442")
+"texture": ExtResource("38_xrhv2")
 }],
 "loop": true,
 "name": &"default",
@@ -3397,13 +3401,13 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("37_bqw4n")
+"texture": ExtResource("39_6817e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_4xybc")
+"texture": ExtResource("40_y3nfp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_4xybc")
+"texture": ExtResource("40_y3nfp")
 }],
 "loop": true,
 "name": &"default",
