@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dt837hdi022xs" path="res://assets/Flower/sprite_0.png" id="1_g06cr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dymws"]
-radius = 16.4924
+radius = 19.105
 
 [sub_resource type="Animation" id="Animation_dymws"]
 length = 0.001
@@ -44,7 +44,6 @@ _data = {
 }
 
 [node name="goal" type="Area2D"]
-position = Vector2(110, 174)
 script = ExtResource("1_dymws")
 
 [node name="sprite" type="Sprite2D" parent="."]
@@ -54,7 +53,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1024, 1024)
 
 [node name="colision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_dymws")
 
 [node name="anim" type="AnimationPlayer" parent="."]

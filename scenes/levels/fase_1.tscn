@@ -33,7 +33,7 @@ position = Vector2(-60, 273)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="goal" parent="." instance=ExtResource("2_nokqf")]
-position = Vector2(569, 288)
+position = Vector2(353, 280)
 next_level = "res://scenes/levels/tutorial.tscn"
 
 [node name="transition" parent="." instance=ExtResource("3_5kpeh")]

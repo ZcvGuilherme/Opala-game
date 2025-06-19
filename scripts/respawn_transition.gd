@@ -1,14 +1,12 @@
 extends CanvasLayer
 @onready var color_rect: ColorRect = $color_rect
 
-func _ready() -> void:
-	show_new_scene()
-
 func change_scene(packed_scene: PackedScene, delay := 0.5):
 	
 	await close_scene(delay)
 	get_tree().change_scene_to_packed(packed_scene)
-
+	show_new_scene()
+	
 func close_scene(delay):
 	var tween = get_tree().create_tween()
 	tween.tween_property(
