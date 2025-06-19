@@ -7,7 +7,6 @@ extends CharacterBody2D
 @onready var dash_sfx: AudioStreamPlayer = $dash_sfx
 @onready var wall_slide_sfx: AudioStreamPlayer = $"wall-slide_sfx"
 
-
 @export var ghost_trail_scene : PackedScene
 @export var wall_slide_speed: float = 50.0
 @export var wall_jump_force: Vector2 = Vector2(250, -400)
@@ -21,6 +20,7 @@ const DASH_SPEED := 500
 const DASH_TIME := 0.2
 const DASH_VERTICAL_MULTIPLIER := 0.7
 const DASH_HORIZONTAL_MULTIPLIER := 1
+const KNOCKBACK_MULTIPLIER := 3
 
 var isDashing = false
 var dashDirection := Vector2.ZERO
@@ -30,12 +30,17 @@ var ghost_interval : float = 0.03
 var dash_timer := 0.0
 var is_wall_sliding: bool = false
 var wall_direction: int = 0
+var knockback_vector := Vector2.ZERO
 
+var facing_direction := 1
 
 func _physics_process(delta: float) -> void:
 	var move_input := Input.get_vector("left", "right", "up", "down")
 	var is_touching_left_wall = ray_left.is_colliding()
 	var is_touching_right_wall = ray_right.is_colliding()
+	
+	if move_input.x != 0:
+		facing_direction = sign(move_input.x)
 	
 	if isDashing:
 		dash_timer -= delta
@@ -87,8 +92,12 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, move_input.x * SPEED, ACCELERATION * delta)
 		else:
 			velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
+			
+	if knockback_vector != Vector2.ZERO:
+		velocity = knockback_vector
 	handle_animation(move_input.x)
 	move_and_slide()
+
 
 
 func handle_jump_animation(direction: float) -> void:
@@ -110,7 +119,7 @@ func handle_animation(direction: float) -> void:
 		handle_jump_animation(direction)
 	elif direction != 0:
 		animacaoPlayer.play("run")
-		animacaoPlayer.flip_h = direction < 0
+		animacaoPlayer.flip_h = facing_direction < 0
 	else:
 		animacaoPlayer.play("idle")
 
@@ -134,8 +143,15 @@ func spawn_ghost_trail():
 	ghost.setup(animacaoPlayer)
 
 func die():
+	var knockback = Vector2(-facing_direction * 200, -400)
+	
+	#await knockback_effect(Vector2(global_position.x * KNOCKBACK_MULTIPLIER, -400))
+
+	#await knockback_effect(Vector2(-global_position.x * KNOCKBACK_MULTIPLIER, -400))
+	await knockback_effect(knockback)
 	velocity = Vector2.ZERO
 	set_physics_process(false)  
+	
 	animacaoPlayer.play("death")
 	
 	await get_tree().create_timer(0.7).timeout
@@ -144,6 +160,14 @@ func die():
 	
 	await respawn()
 	
+func knockback_effect(knockback_force := Vector2.ZERO, duration := 0.25):
+	if knockback_force != Vector2.ZERO:
+		knockback_vector = knockback_force
+		
+		var knockback_tween := get_tree().create_tween() 
+		knockback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+		await knockback_tween.finished
+		
 func respawn():
 	global_position = Vector2(100, 200)
 	velocity = Vector2.ZERO
