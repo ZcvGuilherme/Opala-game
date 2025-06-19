@@ -32,10 +32,15 @@ var is_wall_sliding: bool = false
 var wall_direction: int = 0
 var knockback_vector := Vector2.ZERO
 
+var facing_direction := 1
+
 func _physics_process(delta: float) -> void:
 	var move_input := Input.get_vector("left", "right", "up", "down")
 	var is_touching_left_wall = ray_left.is_colliding()
 	var is_touching_right_wall = ray_right.is_colliding()
+	
+	if move_input.x != 0:
+		facing_direction = sign(move_input.x)
 	
 	if isDashing:
 		dash_timer -= delta
@@ -114,7 +119,7 @@ func handle_animation(direction: float) -> void:
 		handle_jump_animation(direction)
 	elif direction != 0:
 		animacaoPlayer.play("run")
-		animacaoPlayer.flip_h = direction < 0
+		animacaoPlayer.flip_h = facing_direction < 0
 	else:
 		animacaoPlayer.play("idle")
 
@@ -138,12 +143,12 @@ func spawn_ghost_trail():
 	ghost.setup(animacaoPlayer)
 
 func die():
-	if animacaoPlayer.flip_h:
-		#await knockback_effect(Vector2(global_position.x * KNOCKBACK_MULTIPLIER, -400))
-		await knockback_effect(Vector2(200, -400))
-	else:
-		#await knockback_effect(Vector2(-global_position.x * KNOCKBACK_MULTIPLIER, -400))
-		await knockback_effect(Vector2(-200, -400))
+	var knockback = Vector2(-facing_direction * 200, -400)
+	
+	#await knockback_effect(Vector2(global_position.x * KNOCKBACK_MULTIPLIER, -400))
+
+	#await knockback_effect(Vector2(-global_position.x * KNOCKBACK_MULTIPLIER, -400))
+	await knockback_effect(knockback)
 	velocity = Vector2.ZERO
 	set_physics_process(false)  
 	
