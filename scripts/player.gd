@@ -9,7 +9,7 @@ extends CharacterBody2D
 
 @export var ghost_trail_scene : PackedScene
 @export var wall_slide_speed: float = 50.0
-@export var wall_jump_force: Vector2 = Vector2(250, -400)
+@export var wall_jump_force: Vector2 = Vector2(400, -400)
 
 const SPEED := 200
 const ACCELERATION := 1200
@@ -19,7 +19,7 @@ const GRAVITY := 1000
 const DASH_SPEED := 500
 const DASH_TIME := 0.2
 const DASH_VERTICAL_MULTIPLIER := 0.7
-const DASH_HORIZONTAL_MULTIPLIER := 1
+const DASH_HORIZONTAL_MULTIPLIER := 0.9
 const KNOCKBACK_MULTIPLIER := 3
 
 var isDashing = false
