@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
 @onready var dash_sfx: AudioStreamPlayer = $dash_sfx
 @onready var wall_slide_sfx: AudioStreamPlayer = $"wall-slide_sfx"
+@onready var die_sfx: AudioStreamPlayer = $die_sfx
+
 
 @export var ghost_trail_scene : PackedScene
 @export var wall_slide_speed: float = 50.0
@@ -145,6 +147,7 @@ func spawn_ghost_trail():
 func die():
 	Globals.death_count += 1
 	var knockback = Vector2(-facing_direction * 200, -400)
+	die_sfx.play()
 	
 	#await knockback_effect(Vector2(global_position.x * KNOCKBACK_MULTIPLIER, -400))
 
