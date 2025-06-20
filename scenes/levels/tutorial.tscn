@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=4 uid="uid://byoi8ndri6upy"]
+[gd_scene load_steps=81 format=4 uid="uid://byoi8ndri6upy"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_khcq3"]
 [ext_resource type="Texture2D" uid="uid://bvog2yvparc27" path="res://assets/Tileset/tileplataforma.png" id="2_fpvtr"]
@@ -41,9 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://d2pbxyejxytp2" path="res://assets/teclas/projeto jogo - tecla shift/sprite_0.png" id="39_6817e"]
 [ext_resource type="AudioStream" uid="uid://cql16e84h5e0s" path="res://assets/Sons/musica de fundo/Stickerbush Symphony Restored to HD [lndBgOrTWxo].mp3" id="40_x04ov"]
 [ext_resource type="Texture2D" uid="uid://bvvqu84bvflgk" path="res://assets/teclas/projeto jogo - tecla shift/sprite_1.png" id="40_y3nfp"]
-[ext_resource type="Script" uid="uid://dys17irfjwn24" path="res://scripts/control.gd" id="41_pmj0t"]
-[ext_resource type="FontFile" uid="uid://3eqmusd2djdg" path="res://shaders/digital_7/digital-7 (italic).ttf" id="42_ney7n"]
-[ext_resource type="FontFile" uid="uid://myd1opyyypwv" path="res://shaders/digital_7/digital-7 (mono).ttf" id="43_8j442"]
 [ext_resource type="PackedScene" uid="uid://cbmcsbvcq62h4" path="res://scenes/fallzone.tscn" id="44_8j442"]
 [ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="46_hscia"]
 
@@ -3491,53 +3488,8 @@ autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("41_pmj0t")
-
-[node name="clock_timer" type="Timer" parent="CanvasLayer/Control"]
-autostart = true
-
-[node name="container" type="MarginContainer" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="timer_container" type="HBoxContainer" parent="CanvasLayer/Control/container"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="timer_label" type="Label" parent="CanvasLayer/Control/container/timer_container"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("42_ney7n")
-theme_override_font_sizes/font_size = 29
-text = "TIME:"
-
-[node name="timer_counter" type="Label" parent="CanvasLayer/Control/container/timer_container"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("43_8j442")
-theme_override_font_sizes/font_size = 29
-text = "00:00"
-
 [node name="Fallzone" parent="." instance=ExtResource("44_8j442")]
 position = Vector2(1973, 322)
 scale = Vector2(30, 3)
 
 [node name="pause" parent="." instance=ExtResource("46_hscia")]
-
-[connection signal="timeout" from="CanvasLayer/Control/clock_timer" to="CanvasLayer/Control" method="_on_clock_timer_timeout"]
