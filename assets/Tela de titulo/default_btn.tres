@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://clkqlyjtf2mc8"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://clkqlyjtf2mc8"]
+
+[ext_resource type="FontFile" uid="uid://cs3b66q3uty2s" path="res://shaders/RevMiniPixel.ttf" id="1_dvrmd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4lrb"]
 bg_color = Color(0.360784, 0.215686, 0.831373, 1)
@@ -42,6 +44,7 @@ expand_margin_bottom = 2.0
 
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("1_dvrmd")
 Button/styles/focus = SubResource("StyleBoxFlat_s4lrb")
 Button/styles/hover = SubResource("StyleBoxFlat_mgrm8")
 Button/styles/normal = SubResource("StyleBoxFlat_dc4i4")
