@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://unlst3p21f17"]
+
+[ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_827cs"]
+[ext_resource type="PackedScene" uid="uid://b81bpplah8k8a" path="res://scenes/traps/wall_blades.tscn" id="2_ic6hl"]
+[ext_resource type="PackedScene" uid="uid://bddxs40f6ojro" path="res://scenes/traps/spike.tscn" id="3_ppaly"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18ueg"]
+size = Vector2(143, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi3tm"]
+size = Vector2(60, 282.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejvh1"]
+size = Vector2(28, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jb1uh"]
+size = Vector2(213, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjoyt"]
+size = Vector2(90, 20)
+
+[node name="Room02" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_827cs")]
+wall_jump_force = Vector2(400, -400)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(61.5, 29)
+shape = SubResource("RectangleShape2D_18ueg")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-57, -99)
+shape = SubResource("RectangleShape2D_wi3tm")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(97, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(15, -161.5)
+shape = SubResource("RectangleShape2D_ejvh1")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(381.5, -171)
+shape = SubResource("RectangleShape2D_jb1uh")
+
+[node name="Wall_blades" parent="." instance=ExtResource("2_ic6hl")]
+position = Vector2(101, -124)
+
+[node name="Wall_blades2" parent="." instance=ExtResource("2_ic6hl")]
+position = Vector2(101, -156)
+
+[node name="Wall_blades3" parent="." instance=ExtResource("2_ic6hl")]
+position = Vector2(101, -188)
+
+[node name="Wall_blades4" parent="." instance=ExtResource("2_ic6hl")]
+position = Vector2(101, -220)
+
+[node name="Spike" parent="." instance=ExtResource("3_ppaly")]
+position = Vector2(445, -195)
+
+[node name="Spike3" parent="." instance=ExtResource("3_ppaly")]
+position = Vector2(381, -195)
+
+[node name="Spike5" parent="." instance=ExtResource("3_ppaly")]
+position = Vector2(317, -195)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(579, -195)
+shape = SubResource("RectangleShape2D_tjoyt")
