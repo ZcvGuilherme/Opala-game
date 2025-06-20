@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://clwdy0qq4vcmi"]
+
+[ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_3xyoa"]
+[ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="2_8kgn8"]
+[ext_resource type="PackedScene" uid="uid://bddxs40f6ojro" path="res://scenes/traps/spike.tscn" id="3_n5f83"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kgn8"]
+size = Vector2(146, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xyoa"]
+size = Vector2(83, 274)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5f83"]
+size = Vector2(173, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngdmr"]
+size = Vector2(36.875, 179.688)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpr26"]
+size = Vector2(43, 330.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwtuu"]
+size = Vector2(212, 20)
+
+[node name="Room01" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_3xyoa")]
+wall_jump_force = Vector2(400, -400)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(59, 45)
+shape = SubResource("RectangleShape2D_8kgn8")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-56.5, -70)
+shape = SubResource("RectangleShape2D_3xyoa")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(384, 12)
+shape = SubResource("RectangleShape2D_n5f83")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(694, -142.156)
+shape = SubResource("RectangleShape2D_ngdmr")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(829, -70)
+shape = SubResource("RectangleShape2D_dpr26")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(959, -224)
+shape = SubResource("RectangleShape2D_nwtuu")
+
+[node name="goal" parent="." instance=ExtResource("2_8kgn8")]
+position = Vector2(1030, -250)
+
+[node name="Spike" parent="." instance=ExtResource("3_n5f83")]
+position = Vector2(666, -69)
+rotation = 4.71239
+
+[node name="Spike2" parent="." instance=ExtResource("3_n5f83")]
+position = Vector2(666, -101)
+rotation = 4.71239
+
+[node name="Spike3" parent="." instance=ExtResource("3_n5f83")]
+position = Vector2(666, -133)
+rotation = 4.71239
+
+[node name="Spike4" parent="." instance=ExtResource("3_n5f83")]
+position = Vector2(666, -165)
+rotation = 4.71239
+
+[node name="Spike5" parent="." instance=ExtResource("3_n5f83")]
+position = Vector2(666, -197)
+rotation = 4.71239
