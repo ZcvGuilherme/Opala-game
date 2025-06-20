@@ -143,6 +143,7 @@ func spawn_ghost_trail():
 	ghost.setup(animacaoPlayer)
 
 func die():
+	Globals.death_count += 1
 	var knockback = Vector2(-facing_direction * 200, -400)
 	
 	#await knockback_effect(Vector2(global_position.x * KNOCKBACK_MULTIPLIER, -400))
