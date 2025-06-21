@@ -68,8 +68,8 @@ glossary/default_case_sensitive=true
 
 [display]
 
-window/size/viewport_width=500
-window/size/viewport_height=300
+window/size/viewport_width=1908
+window/size/viewport_height=954
 
 [dotnet]
 
