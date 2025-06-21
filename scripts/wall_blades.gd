@@ -2,15 +2,15 @@ extends Area2D
 
 @export var active_duration: float = 1.0
 @export var repeat_interval: float = 2.0
+@export var eternal := false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var timer: Timer = $Timer
 
 func _ready() -> void:
-	animation_player.animation_finished.connect(_on_animation_player_animation_finished)
 	timer.wait_time = repeat_interval
-	timer.timeout.connect(_on_timer_timeout)
-	if repeat_interval == 0:
+
+	if eternal:
 		animation_player.play("active")
 		timer.stop()
 	else:
