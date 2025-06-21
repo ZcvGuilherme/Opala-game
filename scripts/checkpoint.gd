@@ -1,15 +1,14 @@
 extends Area2D
 
 var checkpoint_manager
-
-var player
+# Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
 	checkpoint_manager = get_parent().get_parent().get_node("CheckManager")
-	player = get_parent().get_node("Player")
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		body.die()
-
-func KillPlayer():
-	player.position = checkpoint_manager.last_location
+		body.global_position
+		checkpoint_manager.last_location = $RespawnPoint.global_position
+		print("Player chegou aqui.")
+	
