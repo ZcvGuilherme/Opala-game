@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://cec0nusoho146"]
+[gd_scene load_steps=98 format=3 uid="uid://cec0nusoho146"]
 
 [ext_resource type="Script" uid="uid://df88wownggeo4" path="res://scripts/player.gd" id="1_s4p4p"]
 [ext_resource type="Texture2D" uid="uid://6bkvivxkqnxg" path="res://assets/player/acordando/sprite_00.png" id="2_smh0w"]
@@ -92,6 +92,7 @@
 [ext_resource type="Texture2D" uid="uid://bk8ibvc74j8e1" path="res://assets/player/Morrendo/sprite_23.png" id="66_t8j6b"]
 [ext_resource type="AudioStream" uid="uid://0dtphwh8j1m1" path="res://assets/Sons/slide/Possibilidade.mp3" id="67_unhkg"]
 [ext_resource type="Texture2D" uid="uid://bf66dtqfm3uq7" path="res://assets/player/Morrendo/sprite_24.png" id="67_yoxdq"]
+[ext_resource type="AudioStream" uid="uid://6djkaylvqnd5" path="res://assets/Sons/morte/morreu_plin.mp3" id="93_bqny8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0adt6"]
 atlas = ExtResource("42_hu6ip")
@@ -449,3 +450,7 @@ volume_db = -15.0
 [node name="wall-slide_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("67_unhkg")
 volume_db = -40.0
+
+[node name="die_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("93_bqny8")
+volume_db = -10.0
