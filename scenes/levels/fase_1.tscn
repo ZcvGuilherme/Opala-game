@@ -32,6 +32,7 @@ shape = SubResource("RectangleShape2D_0adt6")
 
 [node name="Player" parent="." instance=ExtResource("1_1l4ar")]
 position = Vector2(-60, 273)
+wall_jump_force = Vector2(400, -400)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
@@ -43,6 +44,7 @@ next_level = "res://scenes/levels/tutorial.tscn"
 
 [node name="Spike" parent="." instance=ExtResource("4_n40sw")]
 position = Vector2(180, 294)
+eternal = true
 
 [node name="Fallzone" parent="." instance=ExtResource("5_ga7mg")]
 position = Vector2(1166, 340)
