@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=4 uid="uid://byoi8ndri6upy"]
+[gd_scene load_steps=83 format=4 uid="uid://byoi8ndri6upy"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_khcq3"]
 [ext_resource type="Texture2D" uid="uid://bvog2yvparc27" path="res://assets/Tileset/tileplataforma.png" id="2_fpvtr"]
@@ -42,6 +42,8 @@
 [ext_resource type="AudioStream" uid="uid://cql16e84h5e0s" path="res://assets/Sons/musica de fundo/Stickerbush Symphony Restored to HD [lndBgOrTWxo].mp3" id="40_x04ov"]
 [ext_resource type="Texture2D" uid="uid://bvvqu84bvflgk" path="res://assets/teclas/projeto jogo - tecla shift/sprite_1.png" id="40_y3nfp"]
 [ext_resource type="PackedScene" uid="uid://cbmcsbvcq62h4" path="res://scenes/fallzone.tscn" id="44_8j442"]
+[ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="44_ts0k5"]
+[ext_resource type="PackedScene" uid="uid://va3hkxibxej6" path="res://scenes/checkpoint.tscn" id="45_hscia"]
 [ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="46_hscia"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46tuc"]
@@ -3493,3 +3495,14 @@ position = Vector2(1973, 322)
 scale = Vector2(30, 3)
 
 [node name="pause" parent="." instance=ExtResource("46_hscia")]
+
+[node name="CheckpointManager" parent="." instance=ExtResource("44_ts0k5")]
+
+[node name="Checkpoint_01" parent="CheckpointManager" instance=ExtResource("45_hscia")]
+position = Vector2(2253, 222)
+scale = Vector2(2.81529, 2.87383)
+respawn_offset = Vector2(0, 20)
+
+[node name="Checkpoint_02" parent="CheckpointManager" instance=ExtResource("45_hscia")]
+position = Vector2(1413, -34)
+scale = Vector2(4.12564, 0.946267)

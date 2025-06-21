@@ -8,7 +8,6 @@ extends CharacterBody2D
 @onready var wall_slide_sfx: AudioStreamPlayer = $"wall-slide_sfx"
 @onready var die_sfx: AudioStreamPlayer = $die_sfx
 
-
 @export var ghost_trail_scene : PackedScene
 @export var wall_slide_speed: float = 50.0
 @export var wall_jump_force: Vector2 = Vector2(250, -400)
@@ -33,9 +32,13 @@ var dash_timer := 0.0
 var is_wall_sliding: bool = false
 var wall_direction: int = 0
 var knockback_vector := Vector2.ZERO
-
 var facing_direction := 1
 
+var checkpoint_manager
+
+func _ready() -> void:
+	checkpoint_manager = get_parent().get_node("CheckpointManager")
+	
 func _physics_process(delta: float) -> void:
 	var move_input := Input.get_vector("left", "right", "up", "down")
 	var is_touching_left_wall = ray_left.is_colliding()
@@ -150,7 +153,6 @@ func die():
 	die_sfx.play()
 	
 	#await knockback_effect(Vector2(global_position.x * KNOCKBACK_MULTIPLIER, -400))
-
 	#await knockback_effect(Vector2(-global_position.x * KNOCKBACK_MULTIPLIER, -400))
 	await knockback_effect(knockback)
 	velocity = Vector2.ZERO
@@ -173,7 +175,9 @@ func knockback_effect(knockback_force := Vector2.ZERO, duration := 0.25):
 		await knockback_tween.finished
 		
 func respawn():
-	global_position = Vector2(100, 200)
+	#global_position = Vector2(100, 200)
+
+	global_position = checkpoint_manager.last_location
 	velocity = Vector2.ZERO
 
 	await RespawnTransition.show_new_scene()

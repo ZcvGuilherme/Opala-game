@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bddxs40f6ojro" path="res://scenes/traps/spike.tscn" id="4_n40sw"]
 [ext_resource type="PackedScene" uid="uid://cbmcsbvcq62h4" path="res://scenes/fallzone.tscn" id="5_ga7mg"]
 [ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="6_puiwa"]
-[ext_resource type="Script" uid="uid://bpiqmimon4xdv" path="res://scripts/checkpoint_manager.gd" id="7_ti0he"]
+[ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="7_omirp"]
 [ext_resource type="PackedScene" uid="uid://va3hkxibxej6" path="res://scenes/checkpoint.tscn" id="8_omirp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ru54l"]
@@ -50,8 +50,9 @@ scale = Vector2(22.444, -1.48982)
 
 [node name="pause" parent="." instance=ExtResource("6_puiwa")]
 
-[node name="CheckpointManager" type="Node2D" parent="."]
-script = ExtResource("7_ti0he")
+[node name="CheckpointManager" parent="." instance=ExtResource("7_omirp")]
 
 [node name="Checkpoint" parent="CheckpointManager" instance=ExtResource("8_omirp")]
-position = Vector2(31, 270)
+position = Vector2(33, 290)
+rotation = 3.14159
+scale = Vector2(0.808637, -4.65021)

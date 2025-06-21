@@ -3,16 +3,17 @@
 [ext_resource type="Script" uid="uid://bjtsnh5xgru1" path="res://scripts/checkpoint.gd" id="1_yyywg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xam77"]
-size = Vector2(24, 76.5)
+size = Vector2(48, 76.5)
 
 [node name="Checkpoint" type="Area2D"]
 script = ExtResource("1_yyywg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -21.25)
 shape = SubResource("RectangleShape2D_xam77")
 
 [node name="RespawnPoint" type="Marker2D" parent="."]
-position = Vector2(49, -18)
+modulate = Color(1, 0.117647, 1, 1)
+self_modulate = Color(0, 0.663628, 0.663736, 1)
+show_behind_parent = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
