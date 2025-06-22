@@ -1,62 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhfilao31kfd8"]
+[gd_scene load_steps=3 format=3 uid="uid://dhfilao31kfd8"]
 
 [ext_resource type="Script" uid="uid://315l7en15tmy" path="res://scripts/pause.gd" id="1_r8yp4"]
 [ext_resource type="Theme" uid="uid://ccklhxakyjnje" path="res://shaders/pause.tres" id="2_m0klm"]
-[ext_resource type="Script" uid="uid://dys17irfjwn24" path="res://scripts/control.gd" id="3_jn4bt"]
-[ext_resource type="FontFile" uid="uid://3eqmusd2djdg" path="res://shaders/digital_7/digital-7 (italic).ttf" id="4_r1fnm"]
-[ext_resource type="FontFile" uid="uid://myd1opyyypwv" path="res://shaders/digital_7/digital-7 (mono).ttf" id="5_wen6a"]
 
 [node name="pause" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_r8yp4")
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 3
-script = ExtResource("3_jn4bt")
-
-[node name="clock_timer" type="Timer" parent="Control"]
-autostart = true
-
-[node name="container" type="MarginContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -81.5
-offset_right = 81.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="timer_container" type="HBoxContainer" parent="Control/container"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="timer_label" type="Label" parent="Control/container/timer_container"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("4_r1fnm")
-theme_override_font_sizes/font_size = 40
-text = "TIME:"
-
-[node name="timer_counter" type="Label" parent="Control/container/timer_container"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("5_wen6a")
-theme_override_font_sizes/font_size = 40
-text = "00:00"
 
 [node name="bg" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -88,6 +37,5 @@ layout_mode = 2
 theme = ExtResource("2_m0klm")
 text = "SAIR"
 
-[connection signal="timeout" from="Control/clock_timer" to="Control" method="_on_clock_timer_timeout"]
 [connection signal="pressed" from="menu_holder/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="menu_holder/quit" to="." method="_on_quit_pressed"]
