@@ -1,15 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://8571smwwi113"]
+[gd_scene load_steps=3 format=3 uid="uid://8571smwwi113"]
 
-[ext_resource type="Texture2D" uid="uid://c24xkjlwfdgul" path="res://assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_uknsw"]
+[sub_resource type="Gradient" id="Gradient_3cm1d"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kqpyy"]
+gradient = SubResource("Gradient_3cm1d")
+fill_from = Vector2(0.3, 1)
+fill_to = Vector2(0, 0)
+metadata/_snap_enabled = true
 
 [node name="PlanoDeFundo" type="ParallaxBackground"]
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-scroll_offset = Vector2(-21, 66)
-repeat_size = Vector2(1000, 0)
-repeat_times = 7
+scroll_offset = Vector2(-362, -85)
+repeat_size = Vector2(3000, 0)
+repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(2091, 270)
-scale = Vector2(2, 2.3858)
-texture = ExtResource("1_uknsw")
+position = Vector2(1469, 177.5)
+scale = Vector2(53.0313, 19.6406)
+texture = SubResource("GradientTexture2D_kqpyy")
