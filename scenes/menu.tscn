@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://d4m326hhwqtdn"]
 
-[ext_resource type="Script" uid="uid://d3y2dm27qfrcd" path="res://scenes/botoes.gd" id="1_4ytvr"]
+[ext_resource type="Script" uid="uid://d3y2dm27qfrcd" path="res://scripts/botoes.gd" id="1_4ytvr"]
 [ext_resource type="Theme" uid="uid://clkqlyjtf2mc8" path="res://assets/Tela de titulo/default_btn.tres" id="1_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://c24xkjlwfdgul" path="res://assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://lhl3a58xmrxc" path="res://assets/Tela de titulo/projeto jogo - sprite titulo.png" id="2_con2f"]

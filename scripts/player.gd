@@ -38,7 +38,7 @@ var checkpoint_manager
 
 func _ready() -> void:
 	checkpoint_manager = get_parent().get_node("CheckpointManager")
-	
+
 func _physics_process(delta: float) -> void:
 	var move_input := Input.get_vector("left", "right", "up", "down")
 	var is_touching_left_wall = ray_left.is_colliding()
@@ -149,6 +149,7 @@ func spawn_ghost_trail():
 
 func die():
 	Globals.death_count += 1
+	
 	var knockback = Vector2(-facing_direction * 200, -400)
 	die_sfx.play()
 	
