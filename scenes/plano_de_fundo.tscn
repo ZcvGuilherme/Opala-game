@@ -1,21 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://8571smwwi113"]
+[gd_scene load_steps=2 format=3 uid="uid://8571smwwi113"]
 
-[sub_resource type="Gradient" id="Gradient_3cm1d"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_kqpyy"]
-gradient = SubResource("Gradient_3cm1d")
-fill_from = Vector2(0.3, 1)
-fill_to = Vector2(0, 0)
-metadata/_snap_enabled = true
+[ext_resource type="Texture2D" uid="uid://c5sbcg6ubuj64" path="res://assets/Paralax/fundo-cinza.jpg" id="1_kqpyy"]
 
 [node name="PlanoDeFundo" type="ParallaxBackground"]
+offset = Vector2(-21, 66)
+transform = Transform2D(1, 0, 0, 1, -21, 66)
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-scroll_offset = Vector2(-362, -85)
-repeat_size = Vector2(3000, 0)
-repeat_times = 2
+repeat_size = Vector2(1600, 0)
+repeat_times = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(1469, 177.5)
-scale = Vector2(53.0313, 19.6406)
-texture = SubResource("GradientTexture2D_kqpyy")
+position = Vector2(841, 200)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("1_kqpyy")
