@@ -1,7 +1,7 @@
 extends Area2D
+
 @export var respawn_offset: Vector2 = Vector2.ZERO
-
-
+@export var ROOM_SIZE := Vector2(400, 500)
 @onready var respawn_point: Marker2D = $RespawnPoint
 
 var checkpoint_manager

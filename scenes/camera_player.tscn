@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpukxr4slfheb"]
+
+[ext_resource type="Script" uid="uid://cly6kpiq0vhxc" path="res://scripts/camera_player.gd" id="1_dumx3"]
+
+[node name="CameraPlayer" type="Camera2D"]
+scale = Vector2(1.1, 1.1)
+zoom = Vector2(2, 2)
+limit_left = 5
+limit_top = -50
+limit_right = 2650
+limit_bottom = 0
+limit_smoothed = true
+script = ExtResource("1_dumx3")
+room_position = Vector2(-350, 0)
+room_size = Vector2(3500, 1080)
