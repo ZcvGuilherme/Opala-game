@@ -3422,7 +3422,7 @@ animations = [{
 [node name="Tutorial" type="Node2D"]
 
 [node name="PlanoDeFundo" parent="." instance=ExtResource("27_rxgvf")]
-position = Vector2(-2, -106)
+position = Vector2(8, -108)
 
 [node name="Player" parent="." instance=ExtResource("1_khcq3")]
 position = Vector2(54, 239)
