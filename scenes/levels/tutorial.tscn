@@ -3421,6 +3421,9 @@ animations = [{
 
 [node name="Tutorial" type="Node2D"]
 
+[node name="PlanoDeFundo" parent="." instance=ExtResource("27_rxgvf")]
+position = Vector2(-2, -106)
+
 [node name="Player" parent="." instance=ExtResource("1_khcq3")]
 position = Vector2(54, 239)
 scale = Vector2(1.1, 1.1)
@@ -3444,8 +3447,6 @@ tile_set = SubResource("TileSet_xwxsl")
 
 [node name="deco" type="TileMapLayer" parent="level"]
 tile_set = SubResource("TileSet_f5lvq")
-
-[node name="PlanoDeFundo" parent="." instance=ExtResource("27_rxgvf")]
 
 [node name="transition" parent="." instance=ExtResource("28_giya0")]
 
@@ -3517,7 +3518,7 @@ anchor_bottom = 1.0
 offset_left = 3.0
 offset_top = -3.0
 offset_right = 3.0
-offset_bottom = -3.0
+offset_bottom = -70.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 8
