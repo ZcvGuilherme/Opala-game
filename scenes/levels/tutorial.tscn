@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=4 uid="uid://byoi8ndri6upy"]
+[gd_scene load_steps=89 format=4 uid="uid://byoi8ndri6upy"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_khcq3"]
 [ext_resource type="Texture2D" uid="uid://bvog2yvparc27" path="res://assets/Tileset/tileplataforma.png" id="2_fpvtr"]
@@ -50,6 +50,7 @@
 [ext_resource type="PackedScene" uid="uid://va3hkxibxej6" path="res://scenes/checkpoint.tscn" id="45_hscia"]
 [ext_resource type="FontFile" uid="uid://dnl5j86pwt7fi" path="res://shaders/new_font_file.tres" id="45_ivwb6"]
 [ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="46_hscia"]
+[ext_resource type="PackedScene" uid="uid://dpukxr4slfheb" path="res://scenes/camera_player.tscn" id="51_440id"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46tuc"]
 texture = ExtResource("2_fpvtr")
@@ -3429,14 +3430,11 @@ position = Vector2(54, 239)
 scale = Vector2(1.1, 1.1)
 wall_jump_force = Vector2(400, -400)
 
-[node name="CameraPlayer" type="Camera2D" parent="Player"]
-position = Vector2(1, -1)
-zoom = Vector2(2, 2)
-limit_left = 5
-limit_top = -50
-limit_right = 2650
-limit_bottom = 0
-limit_smoothed = true
+[node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("51_440id")]
+player = NodePath("../Player")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(203, -74)
 
 [node name="level" type="Node2D" parent="."]
 
@@ -3585,5 +3583,7 @@ respawn_offset = Vector2(0, 20)
 [node name="Checkpoint_02" parent="CheckpointManager" instance=ExtResource("45_hscia")]
 position = Vector2(1413, -34)
 scale = Vector2(4.12564, 0.946267)
+
+[node name="goal2" parent="." instance=ExtResource("29_arvqe")]
 
 [connection signal="timeout" from="HUD/HUDControl/clock_timer" to="HUD/HUDControl" method="_on_clock_timer_timeout"]
