@@ -1,15 +1,17 @@
 [gd_scene load_steps=2 format=3 uid="uid://8571smwwi113"]
 
-[ext_resource type="Texture2D" uid="uid://5a1nlx5yvnni" path="res://assets/Paralax/fundo.jpg" id="1_kqpyy"]
+[ext_resource type="Texture2D" uid="uid://c24xkjlwfdgul" path="res://assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_kqpyy"]
 
 [node name="ParallaxBackground" type="Node2D"]
 
 [node name="ParallaxLayer" type="Parallax2D" parent="."]
 z_index = -1
 scroll_offset = Vector2(0, -75)
-repeat_size = Vector2(710, 0)
-repeat_times = 3
+repeat_size = Vector2(595, 0)
+repeat_times = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(0, 81)
+scale = Vector2(1.03646, 1.26235)
 texture = ExtResource("1_kqpyy")
 centered = false
