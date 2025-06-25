@@ -102,7 +102,11 @@ func _physics_process(delta: float) -> void:
 		velocity = knockback_vector
 	handle_animation(move_input.x)
 	move_and_slide()
-
+	
+	for platforms in get_slide_collision_count():
+		var collision = get_slide_collision(platforms)
+		if collision.get_collider().has_method("has_collided_with"):
+			collision.get_collider().has_collided_with(collision, self)
 
 
 func handle_jump_animation(direction: float) -> void:

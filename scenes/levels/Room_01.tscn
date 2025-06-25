@@ -1,6 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://clwdy0qq4vcmi"]
+[gd_scene load_steps=38 format=3 uid="uid://clwdy0qq4vcmi"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_3xyoa"]
+[ext_resource type="PackedScene" uid="uid://csofo5xhaaxen" path="res://scenes/falling_platform.tscn" id="1_tquwy"]
 [ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="2_8kgn8"]
 [ext_resource type="PackedScene" uid="uid://bddxs40f6ojro" path="res://scenes/traps/spike.tscn" id="3_n5f83"]
 [ext_resource type="PackedScene" uid="uid://1ud85f1qvtus" path="res://scenes/plano_de_fundo_01.tscn" id="4_ngdmr"]
@@ -145,6 +146,9 @@ texture = ExtResource("16_fuam3")
 sources/0 = SubResource("TileSetAtlasSource_tquwy")
 
 [node name="Room01" type="Node2D"]
+
+[node name="falling-platform" parent="." instance=ExtResource("1_tquwy")]
+position = Vector2(208, 9)
 
 [node name="Player" parent="." instance=ExtResource("1_3xyoa")]
 position = Vector2(3, -3)
