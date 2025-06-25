@@ -8,10 +8,10 @@
 z_index = -1
 scroll_offset = Vector2(0, -75)
 repeat_size = Vector2(595, 0)
-repeat_times = 6
+repeat_times = 11
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(0, 81)
-scale = Vector2(1.03646, 1.26235)
+position = Vector2(590, 27)
+scale = Vector2(1.03646, 1.42902)
 texture = ExtResource("1_kqpyy")
 centered = false
