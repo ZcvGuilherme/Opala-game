@@ -3426,7 +3426,7 @@ animations = [{
 position = Vector2(8, -108)
 
 [node name="Player" parent="." instance=ExtResource("1_khcq3")]
-position = Vector2(54, 239)
+position = Vector2(83, 239)
 scale = Vector2(1.1, 1.1)
 wall_jump_force = Vector2(400, -400)
 
