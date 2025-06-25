@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnilanhm8vbah"]
+[gd_scene load_steps=19 format=3 uid="uid://dnilanhm8vbah"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_1l4ar"]
 [ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="2_nokqf"]
@@ -8,12 +8,91 @@
 [ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="6_puiwa"]
 [ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="7_omirp"]
 [ext_resource type="PackedScene" uid="uid://va3hkxibxej6" path="res://scenes/checkpoint.tscn" id="8_omirp"]
+[ext_resource type="PackedScene" uid="uid://b5ul6spv07dux" path="res://scenes/plataformamovel.tscn" id="9_7wwkh"]
+[ext_resource type="PackedScene" uid="uid://b18dy3l1de7n1" path="res://scenes/plataformasubindo.tscn" id="10_72ss2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ru54l"]
 size = Vector2(1140.5, 22.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0adt6"]
 size = Vector2(54.5, 186)
+
+[sub_resource type="Animation" id="Animation_7wwkh"]
+resource_name = "plata_movel"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(996, 319), Vector2(1449, 319)]
+}
+
+[sub_resource type="Animation" id="Animation_72ss2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(996, 319)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sl7v6"]
+_data = {
+&"RESET": SubResource("Animation_72ss2"),
+&"plata_movel": SubResource("Animation_7wwkh")
+}
+
+[sub_resource type="Animation" id="Animation_sl7v6"]
+resource_name = "plata_subindo"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1653, 271), Vector2(1653, -22)]
+}
+
+[sub_resource type="Animation" id="Animation_a560k"]
+length = 0.001
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1653, 271)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ayq7k"]
+_data = {
+&"RESET": SubResource("Animation_a560k"),
+&"plata_subindo": SubResource("Animation_sl7v6")
+}
 
 [node name="Fase1" type="Node2D"]
 
@@ -31,7 +110,7 @@ position = Vector2(-179.75, 236)
 shape = SubResource("RectangleShape2D_0adt6")
 
 [node name="Player" parent="." instance=ExtResource("1_1l4ar")]
-position = Vector2(-60, 273)
+position = Vector2(-127, 283)
 wall_jump_force = Vector2(400, -400)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -58,3 +137,23 @@ scale = Vector2(22.444, -1.48982)
 position = Vector2(33, 290)
 rotation = 3.14159
 scale = Vector2(0.808637, -4.65021)
+
+[node name="Plataformamovel" parent="." instance=ExtResource("9_7wwkh")]
+position = Vector2(996, 319)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Plataformamovel"]
+libraries = {
+&"": SubResource("AnimationLibrary_sl7v6")
+}
+autoplay = "plata_movel"
+speed_scale = 0.3
+
+[node name="plataformasubindo" parent="." instance=ExtResource("10_72ss2")]
+position = Vector2(1653, 271)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="plataformasubindo"]
+libraries = {
+&"": SubResource("AnimationLibrary_ayq7k")
+}
+autoplay = "RESET"
+speed_scale = 0.5
