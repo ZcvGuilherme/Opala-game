@@ -11,7 +11,7 @@ repeat_size = Vector2(595, 0)
 repeat_times = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(0, 81)
-scale = Vector2(1.03646, 1.26235)
+position = Vector2(0, 23)
+scale = Vector2(1.03646, 1.44136)
 texture = ExtResource("1_kqpyy")
 centered = false
