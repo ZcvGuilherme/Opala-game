@@ -1,10 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://clwdy0qq4vcmi"]
+[gd_scene load_steps=37 format=3 uid="uid://clwdy0qq4vcmi"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_3xyoa"]
 [ext_resource type="PackedScene" uid="uid://csofo5xhaaxen" path="res://scenes/falling_platform.tscn" id="1_tquwy"]
 [ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="2_8kgn8"]
 [ext_resource type="PackedScene" uid="uid://bddxs40f6ojro" path="res://scenes/traps/spike.tscn" id="3_n5f83"]
-[ext_resource type="PackedScene" uid="uid://1ud85f1qvtus" path="res://scenes/plano_de_fundo_01.tscn" id="4_ngdmr"]
 [ext_resource type="Texture2D" uid="uid://dq0hblkh3ro8m" path="res://assets/Tileset/level_tileset.png" id="5_dpr26"]
 [ext_resource type="Texture2D" uid="uid://cw8knhs30kjor" path="res://assets/Tileset/Individual_PNGs/Level_Tileset/tile000.png" id="6_xspyh"]
 [ext_resource type="Texture2D" uid="uid://ck3vdq6v8q8j0" path="res://assets/Tileset/Individual_PNGs/Level_Tileset/tile010.png" id="7_fuam3"]
@@ -215,8 +214,6 @@ rotation = 4.71239
 [node name="Spike5" parent="." instance=ExtResource("3_n5f83")]
 position = Vector2(666, -197)
 rotation = 4.71239
-
-[node name="plano de fundo 01" parent="." instance=ExtResource("4_ngdmr")]
 
 [node name="TelaCenario" type="Node2D" parent="."]
 
