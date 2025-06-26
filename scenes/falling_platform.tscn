@@ -54,6 +54,7 @@ region_rect = Rect2(0, 0, 32, 9.30256)
 
 [node name="collision" type="CollisionShape2D" parent="."]
 light_mask = 3
+position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_4u4ee")
 one_way_collision = true
 
