@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://bq3qqdmwwxtb4"]
+
+[ext_resource type="Script" uid="uid://vw5hsuy68m8e" path="res://scripts/tela_final.gd" id="1_4niyf"]
+[ext_resource type="FontFile" uid="uid://cs3b66q3uty2s" path="res://shaders/RevMiniPixel.ttf" id="1_dqpfq"]
+[ext_resource type="Theme" uid="uid://ccklhxakyjnje" path="res://shaders/pause.tres" id="3_xwrri"]
+[ext_resource type="Texture2D" uid="uid://5r407i6tqmqa" path="res://assets/Tela de titulo/YPEEEE.png" id="4_8na46"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xwrri"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qblif"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1n2v"]
+
+[node name="tela_final" type="CanvasLayer"]
+script = ExtResource("1_4niyf")
+
+[node name="bg" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.254902)
+metadata/_edit_use_anchors_ = true
+
+[node name="menu_holder" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.369767
+anchor_top = 0.439577
+anchor_right = 0.629457
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="menu_holder"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.184314, 0.960784, 0.862745, 1)
+theme_override_fonts/font = ExtResource("1_dqpfq")
+theme_override_font_sizes/font_size = 40
+text = "OBRIGADO POR JOGAR!!"
+
+[node name="HSeparator" type="HSeparator" parent="menu_holder"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xwrri")
+
+[node name="HSeparator2" type="HSeparator" parent="menu_holder"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qblif")
+
+[node name="HSeparator3" type="HSeparator" parent="menu_holder"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_e1n2v")
+
+[node name="voltar" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme = ExtResource("3_xwrri")
+text = "VOLTAR AO MENU"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 491.0
+offset_top = 350.0
+offset_right = 814.0
+offset_bottom = 658.0
+texture = ExtResource("4_8na46")
+
+[connection signal="pressed" from="menu_holder/voltar" to="." method="_on_voltar_pressed"]

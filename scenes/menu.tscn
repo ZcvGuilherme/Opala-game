@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://d3y2dm27qfrcd" path="res://scripts/botoes.gd" id="1_4ytvr"]
 [ext_resource type="Theme" uid="uid://clkqlyjtf2mc8" path="res://assets/Tela de titulo/default_btn.tres" id="1_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://c24xkjlwfdgul" path="res://assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_yqeox"]
-[ext_resource type="Texture2D" uid="uid://lhl3a58xmrxc" path="res://assets/Tela de titulo/projeto jogo - sprite titulo.png" id="2_con2f"]
 [ext_resource type="Texture2D" uid="uid://lo8b1atc7x08" path="res://assets/Tela de titulo/projeto jogo - logo (2).png" id="3_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://bvcd5yga3iy77" path="res://assets/Tela de titulo/cabeça logo.png" id="4_4ytvr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhnvy"]
 
@@ -73,11 +73,12 @@ grow_vertical = 2
 texture = ExtResource("1_yqeox")
 
 [node name="robo_logo" type="TextureRect" parent="."]
-offset_left = 1581.0
-offset_top = 646.0
-offset_right = 1971.0
-offset_bottom = 961.0
-texture = ExtResource("2_con2f")
+layout_mode = 0
+offset_left = 976.0
+offset_top = 451.0
+offset_right = 1307.0
+offset_bottom = 662.0
+texture = ExtResource("4_4ytvr")
 expand_mode = 2
 stretch_mode = 4
 flip_h = true
