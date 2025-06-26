@@ -51,6 +51,7 @@ position = Vector2(1166, 340)
 scale = Vector2(22.444, -1.48982)
 
 [node name="pause" parent="." instance=ExtResource("6_puiwa")]
+visible = false
 
 [node name="CheckpointManager" parent="." instance=ExtResource("7_omirp")]
 
