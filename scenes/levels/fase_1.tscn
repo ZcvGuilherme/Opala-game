@@ -1,61 +1,259 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnilanhm8vbah"]
+[gd_scene load_steps=17 format=3 uid="uid://dnilanhm8vbah"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_1l4ar"]
-[ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="2_nokqf"]
-[ext_resource type="PackedScene" uid="uid://fusworvtr21l" path="res://scenes/respawn_transition.tscn" id="3_5kpeh"]
+[ext_resource type="PackedScene" uid="uid://dpukxr4slfheb" path="res://scenes/camera_player.tscn" id="2_n40sw"]
 [ext_resource type="PackedScene" uid="uid://bddxs40f6ojro" path="res://scenes/traps/spike.tscn" id="4_n40sw"]
-[ext_resource type="PackedScene" uid="uid://cbmcsbvcq62h4" path="res://scenes/fallzone.tscn" id="5_ga7mg"]
+[ext_resource type="PackedScene" uid="uid://b81bpplah8k8a" path="res://scenes/traps/wall_blades.tscn" id="6_omirp"]
 [ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="6_puiwa"]
+[ext_resource type="PackedScene" uid="uid://csofo5xhaaxen" path="res://scenes/falling_platform.tscn" id="6_ti0he"]
 [ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="7_omirp"]
-[ext_resource type="PackedScene" uid="uid://va3hkxibxej6" path="res://scenes/checkpoint.tscn" id="8_omirp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ru54l"]
-size = Vector2(1140.5, 22.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n40sw"]
+size = Vector2(151, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0adt6"]
-size = Vector2(54.5, 186)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ga7mg"]
+size = Vector2(137, 382)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puiwa"]
+size = Vector2(81, 174.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ti0he"]
+size = Vector2(28, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omirp"]
+size = Vector2(205, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wwkh"]
+size = Vector2(22.5, 355)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72ss2"]
+size = Vector2(31.25, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl7v6"]
+size = Vector2(177, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a560k"]
+size = Vector2(25.5, 478.25)
 
 [node name="Fase1" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(267, 275)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(104.5, 40.25)
-shape = SubResource("RectangleShape2D_ru54l")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-179.75, 236)
-shape = SubResource("RectangleShape2D_0adt6")
-
 [node name="Player" parent="." instance=ExtResource("1_1l4ar")]
-position = Vector2(-60, 273)
+position = Vector2(1535, -443)
 wall_jump_force = Vector2(400, -400)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-
-[node name="goal" parent="." instance=ExtResource("2_nokqf")]
-position = Vector2(353, 280)
-next_level = "res://scenes/levels/tutorial.tscn"
-
-[node name="transition" parent="." instance=ExtResource("3_5kpeh")]
-
-[node name="Spike" parent="." instance=ExtResource("4_n40sw")]
-position = Vector2(180, 294)
-eternal = true
-
-[node name="Fallzone" parent="." instance=ExtResource("5_ga7mg")]
-position = Vector2(1166, 340)
-scale = Vector2(22.444, -1.48982)
+[node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_n40sw")]
+limit_left = -15
+limit_top = -600
+limit_right = 6000
+limit_bottom = 40
+player = NodePath("../Player")
+room_position = Vector2(-350, -1000)
+room_size = Vector2(3500, 2000)
 
 [node name="pause" parent="." instance=ExtResource("6_puiwa")]
 visible = false
 
 [node name="CheckpointManager" parent="." instance=ExtResource("7_omirp")]
 
-[node name="Checkpoint" parent="CheckpointManager" instance=ExtResource("8_omirp")]
-position = Vector2(33, 290)
+[node name="traps" type="Node2D" parent="."]
+
+[node name="Spike" parent="traps" instance=ExtResource("4_n40sw")]
+position = Vector2(737, 137)
+rotation = -1.5708
+eternal = true
+
+[node name="Spike2" parent="traps" instance=ExtResource("4_n40sw")]
+position = Vector2(737, 105)
+rotation = -1.5708
+eternal = true
+
+[node name="Spike3" parent="traps" instance=ExtResource("4_n40sw")]
+position = Vector2(737, 73)
+rotation = -1.5708
+eternal = true
+
+[node name="Spike4" parent="traps" instance=ExtResource("4_n40sw")]
+position = Vector2(737, 41)
+rotation = -1.5708
+eternal = true
+
+[node name="Spike5" parent="traps" instance=ExtResource("4_n40sw")]
+position = Vector2(737, 9)
+rotation = -1.5708
+eternal = true
+
+[node name="Spike6" parent="traps" instance=ExtResource("4_n40sw")]
+position = Vector2(737, -23)
+rotation = -1.5708
+eternal = true
+
+[node name="Spike7" parent="traps" instance=ExtResource("4_n40sw")]
+position = Vector2(737, -55)
+rotation = -1.5708
+eternal = true
+
+[node name="Spike8" parent="traps" instance=ExtResource("4_n40sw")]
+position = Vector2(737, -87)
+rotation = -1.5708
+eternal = true
+
+[node name="Spike9" parent="traps" instance=ExtResource("4_n40sw")]
+position = Vector2(737, -119)
+rotation = -1.5708
+eternal = true
+
+[node name="Spike10" parent="traps" instance=ExtResource("4_n40sw")]
+position = Vector2(737, -151)
+rotation = -1.5708
+eternal = true
+
+[node name="Spike11" parent="traps" instance=ExtResource("4_n40sw")]
+position = Vector2(1372, -296)
 rotation = 3.14159
-scale = Vector2(0.808637, -4.65021)
+eternal = true
+
+[node name="Wall_blades" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, -408)
+eternal = true
+
+[node name="Wall_blades16" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1665, -406)
+eternal = true
+
+[node name="Wall_blades2" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, -376)
+eternal = true
+
+[node name="Wall_blades3" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, -344)
+eternal = true
+
+[node name="Wall_blades4" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, -312)
+eternal = true
+
+[node name="Wall_blades5" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, -280)
+eternal = true
+
+[node name="Wall_blades6" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, -248)
+eternal = true
+
+[node name="Wall_blades7" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, -216)
+eternal = true
+
+[node name="Wall_blades8" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, -184)
+eternal = true
+
+[node name="Wall_blades9" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, -152)
+eternal = true
+
+[node name="Wall_blades10" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, -120)
+eternal = true
+
+[node name="Wall_blades11" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, -88)
+eternal = true
+
+[node name="Wall_blades12" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, -56)
+eternal = true
+
+[node name="Wall_blades13" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, -24)
+eternal = true
+
+[node name="Wall_blades14" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, 8)
+eternal = true
+
+[node name="Wall_blades15" parent="traps" instance=ExtResource("6_omirp")]
+position = Vector2(1588, 40)
+eternal = true
+
+[node name="paredes" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="paredes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D"]
+position = Vector2(41.5, 34)
+shape = SubResource("RectangleShape2D_n40sw")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="paredes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D2"]
+position = Vector2(-84.5, -106)
+shape = SubResource("RectangleShape2D_ga7mg")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="paredes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D3"]
+position = Vector2(242, 76)
+shape = SubResource("RectangleShape2D_puiwa")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="paredes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D4"]
+position = Vector2(477, 18)
+shape = SubResource("RectangleShape2D_puiwa")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="paredes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D6"]
+position = Vector2(554, -274)
+shape = SubResource("RectangleShape2D_ti0he")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="paredes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D7"]
+position = Vector2(642, -179)
+shape = SubResource("RectangleShape2D_omirp")
+one_way_collision = true
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="paredes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D5"]
+position = Vector2(758.75, -10.5)
+shape = SubResource("RectangleShape2D_7wwkh")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="paredes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D8"]
+position = Vector2(1372.38, -360)
+shape = SubResource("RectangleShape2D_72ss2")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="paredes"]
+position = Vector2(1477, -409)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D9"]
+shape = SubResource("RectangleShape2D_sl7v6")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="paredes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D10"]
+position = Vector2(1575, -184)
+shape = SubResource("RectangleShape2D_a560k")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="paredes/StaticBody2D10"]
+position = Vector2(1678, -322)
+shape = SubResource("RectangleShape2D_a560k")
+
+[node name="Elementos" type="Node2D" parent="."]
+
+[node name="falling-platform" parent="Elementos" instance=ExtResource("6_ti0he")]
+position = Vector2(857, -177)
+reset_time = 5.0
+
+[node name="falling-platform2" parent="Elementos" instance=ExtResource("6_ti0he")]
+position = Vector2(1001, -201)
+
+[node name="falling-platform3" parent="Elementos" instance=ExtResource("6_ti0he")]
+position = Vector2(1161, -113)
+
+[node name="falling-platform4" parent="Elementos" instance=ExtResource("6_ti0he")]
+position = Vector2(1305, -161)
