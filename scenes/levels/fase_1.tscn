@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dnilanhm8vbah"]
+[gd_scene load_steps=21 format=4 uid="uid://dnilanhm8vbah"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_1l4ar"]
 [ext_resource type="PackedScene" uid="uid://dpukxr4slfheb" path="res://scenes/camera_player.tscn" id="2_n40sw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://csofo5xhaaxen" path="res://scenes/falling_platform.tscn" id="6_ti0he"]
 [ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="7_omirp"]
 [ext_resource type="Texture2D" uid="uid://dq0hblkh3ro8m" path="res://assets/Tileset/level_tileset.png" id="8_omirp"]
+[ext_resource type="PackedScene" uid="uid://cbmcsbvcq62h4" path="res://scenes/fallzone.tscn" id="9_7wwkh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n40sw"]
 size = Vector2(144, 21)
@@ -723,3 +724,21 @@ tile_set = SubResource("TileSet_72ss2")
 
 [node name="deco" type="TileMapLayer" parent="Node"]
 position = Vector2(0, -6)
+
+[node name="Fallzone" parent="." instance=ExtResource("9_7wwkh")]
+position = Vector2(222, 70)
+scale = Vector2(30.64, 1)
+
+[node name="Fallzone2" parent="." instance=ExtResource("9_7wwkh")]
+position = Vector2(562, 71)
+scale = Vector2(18.4, 1)
+
+[node name="Fallzone3" parent="." instance=ExtResource("9_7wwkh")]
+position = Vector2(1158, -42)
+scale = Vector2(42.6952, 1.50925)
+
+[node name="Fallzone4" parent="." instance=ExtResource("9_7wwkh")]
+
+[node name="Fallzone5" parent="." instance=ExtResource("9_7wwkh")]
+position = Vector2(1638, 37)
+scale = Vector2(6.23999, 1)
