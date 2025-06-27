@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://6tmt1m4t3qeu" path="res://assets/Traps/Individual_PNGs/laser_spikes_deactivate/tile007.png" id="28_0tp7c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_au41i"]
-size = Vector2(32, 15)
+size = Vector2(34, 15)
 
 [sub_resource type="Animation" id="Animation_gl8ej"]
 length = 0.001
