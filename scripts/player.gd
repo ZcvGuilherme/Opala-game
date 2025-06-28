@@ -73,7 +73,7 @@ func _physics_process(delta: float) -> void:
 		start_wall_slide(is_touching_left_wall, is_touching_right_wall)
 		
 		
-	elif is_wall_sliding and not (is_touching_left_wall or is_touching_right_wall):
+	elif is_wall_sliding and not (is_touching_left_wall or is_touching_right_wall) or is_on_floor():
 		stop_wall_slide() 
 		
 	if Input.is_action_just_released("jump") and velocity.y < 0:

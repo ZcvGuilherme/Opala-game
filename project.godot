@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jogo Parkour"
-run/main_scene="res://scenes/levels/fase_1.tscn"
+run/main_scene="uid://d4m326hhwqtdn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
