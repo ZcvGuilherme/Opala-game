@@ -577,17 +577,17 @@ sources/9 = SubResource("TileSetAtlasSource_yhjt5")
 position = Vector2(2, -6)
 
 [node name="Player" parent="." instance=ExtResource("1_1l4ar")]
-position = Vector2(-2, 8)
+position = Vector2(3218, -304)
 wall_jump_force = Vector2(400, -400)
 
 [node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_n40sw")]
-limit_left = -15
+limit_left = -100
 limit_top = -600
 limit_right = 6000
 limit_bottom = 40
 player = NodePath("../Player")
-room_position = Vector2(-350, -1000)
-room_size = Vector2(3500, 2000)
+room_position = Vector2(-400, -1000)
+room_size = Vector2(4500, 2000)
 
 [node name="pause" parent="." instance=ExtResource("6_puiwa")]
 visible = false
