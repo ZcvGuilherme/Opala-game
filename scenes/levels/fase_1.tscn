@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://dnilanhm8vbah"]
+[gd_scene load_steps=49 format=4 uid="uid://dnilanhm8vbah"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_1l4ar"]
 [ext_resource type="PackedScene" uid="uid://dpukxr4slfheb" path="res://scenes/camera_player.tscn" id="2_n40sw"]
@@ -56,6 +56,9 @@ size = Vector2(278.976, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5teiu"]
 size = Vector2(259.634, 41.0279)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh6k0"]
+size = Vector2(29.5273, 244)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wwkh"]
 texture = ExtResource("8_omirp")
@@ -577,7 +580,7 @@ sources/9 = SubResource("TileSetAtlasSource_yhjt5")
 position = Vector2(2, -6)
 
 [node name="Player" parent="." instance=ExtResource("1_1l4ar")]
-position = Vector2(3218, -304)
+position = Vector2(1749, -73)
 wall_jump_force = Vector2(400, -400)
 
 [node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_n40sw")]
@@ -971,35 +974,44 @@ position = Vector2(3273.37, -226.028)
 position = Vector2(31.6343, 31.0279)
 shape = SubResource("RectangleShape2D_5teiu")
 
+[node name="StaticBody2D11" type="StaticBody2D" parent="paredes"]
+position = Vector2(1216.95, -390.112)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D11"]
+position = Vector2(56.0547, -73.8884)
+shape = SubResource("RectangleShape2D_lh6k0")
+
 [node name="Elementos" type="Node2D" parent="."]
 
 [node name="falling-platform" parent="Elementos" instance=ExtResource("6_ti0he")]
-position = Vector2(857, -177)
+position = Vector2(807, -177)
 reset_time = 5.0
 
 [node name="falling-platform2" parent="Elementos" instance=ExtResource("6_ti0he")]
-position = Vector2(1001, -201)
-
-[node name="falling-platform3" parent="Elementos" instance=ExtResource("6_ti0he")]
-position = Vector2(1161, -113)
+position = Vector2(1034, -155)
 
 [node name="falling-platform4" parent="Elementos" instance=ExtResource("6_ti0he")]
-position = Vector2(1289, -158)
+position = Vector2(1285, -152)
 
 [node name="falling-platform5" parent="Elementos" instance=ExtResource("6_ti0he")]
-position = Vector2(2529.54, -309.738)
+position = Vector2(2534, -319)
 
 [node name="moving_platform" parent="Elementos" instance=ExtResource("9_sl7v6")]
 position = Vector2(1999, -119)
 move_speed = 4.0
-distance = 150
+distance = 120
 move_horizontal = false
 
 [node name="moving_platform2" parent="Elementos" instance=ExtResource("9_sl7v6")]
-position = Vector2(2193.09, -217.774)
+position = Vector2(2158, -216)
+move_speed = 4.0
+distance = 120
 
 [node name="falling-platform6" parent="Elementos" instance=ExtResource("6_ti0he")]
-position = Vector2(2875.63, -306.817)
+position = Vector2(2875.63, -318.817)
+
+[node name="falling-platform7" parent="Elementos" instance=ExtResource("6_ti0he")]
+position = Vector2(915, -203)
 
 [node name="Node" type="Node" parent="."]
 
@@ -1020,7 +1032,7 @@ position = Vector2(562, 71)
 scale = Vector2(18.4, 1)
 
 [node name="Fallzone3" parent="." instance=ExtResource("9_7wwkh")]
-position = Vector2(1158, -42)
+position = Vector2(1140, 35)
 scale = Vector2(42.6952, 1.50925)
 
 [node name="Fallzone5" parent="." instance=ExtResource("9_7wwkh")]
