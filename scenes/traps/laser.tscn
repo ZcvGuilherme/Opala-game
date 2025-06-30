@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxakgldjoyaif"]
+
+[ext_resource type="Texture2D" uid="uid://b5mjqk3i63hoo" path="res://assets/Traps/Individual_PNGs/laser_activate/tile000.png" id="1_gkgrv"]
+[ext_resource type="Texture2D" uid="uid://deodttgdxn6ch" path="res://assets/Traps/laser_activate.png" id="2_p5r0o"]
+
+[node name="laser" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_gkgrv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="LaserActivate" type="Sprite2D" parent="."]
+position = Vector2(-17, 51)
+texture = ExtResource("2_p5r0o")
