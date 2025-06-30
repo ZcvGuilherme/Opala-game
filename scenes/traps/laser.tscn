@@ -1,0 +1,177 @@
+[gd_scene load_steps=37 format=3 uid="uid://dxakgldjoyaif"]
+
+[ext_resource type="Script" uid="uid://mmvx87fpdwo2" path="res://scripts/laser.gd" id="1_1cf1v"]
+[ext_resource type="Texture2D" uid="uid://b5mjqk3i63hoo" path="res://assets/Traps/Individual_PNGs/laser_activate/tile000.png" id="1_gkgrv"]
+[ext_resource type="Texture2D" uid="uid://b5ghj6o6lcr7d" path="res://assets/Traps/Individual_PNGs/laser_activate/tile001.png" id="1_utqt2"]
+[ext_resource type="Texture2D" uid="uid://c733fvsdmcca3" path="res://assets/Traps/Individual_PNGs/laser_activate/tile002.png" id="3_wjdl7"]
+[ext_resource type="Texture2D" uid="uid://dtafayeua0c67" path="res://assets/Traps/Individual_PNGs/laser_activate/tile003.png" id="4_7yg2c"]
+[ext_resource type="Texture2D" uid="uid://4d8umn7is554" path="res://assets/Traps/Individual_PNGs/laser_activate/tile004.png" id="5_lvw2h"]
+[ext_resource type="Texture2D" uid="uid://ckgwwqcxbiekv" path="res://assets/Traps/Individual_PNGs/laser_activate/tile005.png" id="6_kuon3"]
+[ext_resource type="Texture2D" uid="uid://dim5j1dhsfc8v" path="res://assets/Traps/Individual_PNGs/laser_activate/tile006.png" id="7_vlcq1"]
+[ext_resource type="Texture2D" uid="uid://xnd6so6a86yf" path="res://assets/Traps/Individual_PNGs/laser_activate/tile007.png" id="8_scaie"]
+[ext_resource type="Texture2D" uid="uid://cn5q051biwb0r" path="res://assets/Traps/Individual_PNGs/laser_activate/tile008.png" id="9_mcx3h"]
+[ext_resource type="Texture2D" uid="uid://bymb8uti0kne6" path="res://assets/Traps/Individual_PNGs/laser_activate/tile009.png" id="10_saww4"]
+[ext_resource type="Texture2D" uid="uid://dpwe6qgi0c5vx" path="res://assets/Traps/Individual_PNGs/laser_activate/tile010.png" id="11_0qdvu"]
+[ext_resource type="Texture2D" uid="uid://o77r80dmbana" path="res://assets/Traps/Individual_PNGs/laser_activate/tile011.png" id="12_2h5ee"]
+[ext_resource type="Texture2D" uid="uid://blswdrh3gq2rd" path="res://assets/Traps/Individual_PNGs/laser_idle/tile000.png" id="13_saww4"]
+[ext_resource type="Texture2D" uid="uid://c2jx7ucqn1set" path="res://assets/Traps/Individual_PNGs/laser_idle/tile001.png" id="14_0qdvu"]
+[ext_resource type="Texture2D" uid="uid://b54deubagvydo" path="res://assets/Traps/Individual_PNGs/laser_idle/tile002.png" id="15_2h5ee"]
+[ext_resource type="Texture2D" uid="uid://bqfnmq6eseo3r" path="res://assets/Traps/Individual_PNGs/laser_idle/tile003.png" id="16_oiogv"]
+[ext_resource type="Texture2D" uid="uid://co2xywowbuju" path="res://assets/Traps/Individual_PNGs/laser_idle/tile004.png" id="17_yuo41"]
+[ext_resource type="Texture2D" uid="uid://cy26c840if5nu" path="res://assets/Traps/Individual_PNGs/laser_deactivate/tile005.png" id="18_3nipr"]
+[ext_resource type="Texture2D" uid="uid://csqxwa7xcmgu4" path="res://assets/Traps/Individual_PNGs/laser_idle/tile005.png" id="18_gg8oj"]
+[ext_resource type="Texture2D" uid="uid://cseym20jpfrhl" path="res://assets/Traps/Individual_PNGs/laser_deactivate/tile006.png" id="19_1cf1v"]
+[ext_resource type="Texture2D" uid="uid://bcx4h2wrsv077" path="res://assets/Traps/Individual_PNGs/laser_idle/tile006.png" id="19_wx84v"]
+[ext_resource type="Texture2D" uid="uid://bm4sv2xxpi4sk" path="res://assets/Traps/Individual_PNGs/laser_idle/tile007.png" id="20_0aypa"]
+[ext_resource type="Texture2D" uid="uid://dhr5dxecxy00b" path="res://assets/Traps/Individual_PNGs/laser_deactivate/tile007.png" id="20_pyn45"]
+[ext_resource type="Texture2D" uid="uid://drwbml06xo056" path="res://assets/Traps/Individual_PNGs/laser_deactivate/tile000.png" id="21_gg8oj"]
+[ext_resource type="Texture2D" uid="uid://d1a2tt3iimtar" path="res://assets/Traps/Individual_PNGs/laser_deactivate/tile008.png" id="21_ull3j"]
+[ext_resource type="Texture2D" uid="uid://cskxva5rus1me" path="res://assets/Traps/Individual_PNGs/laser_deactivate/tile001.png" id="22_wx84v"]
+[ext_resource type="Texture2D" uid="uid://bgt42uo185d7w" path="res://assets/Traps/Individual_PNGs/laser_deactivate/tile002.png" id="23_0aypa"]
+[ext_resource type="Texture2D" uid="uid://ljpab8mm7r26" path="res://assets/Traps/Individual_PNGs/laser_deactivate/tile003.png" id="24_4v102"]
+[ext_resource type="Texture2D" uid="uid://cit2t0u8yvcaq" path="res://assets/Traps/Individual_PNGs/laser_deactivate/tile004.png" id="25_3nipr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utqt2"]
+size = Vector2(12, 44)
+
+[sub_resource type="Animation" id="Animation_yuo41"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_utqt2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_oiogv"]
+resource_name = "activating"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_gkgrv"), ExtResource("1_gkgrv"), ExtResource("1_utqt2"), ExtResource("1_utqt2"), ExtResource("1_utqt2"), ExtResource("1_utqt2"), ExtResource("3_wjdl7"), ExtResource("3_wjdl7"), ExtResource("3_wjdl7"), ExtResource("4_7yg2c"), ExtResource("4_7yg2c"), ExtResource("4_7yg2c"), ExtResource("4_7yg2c"), ExtResource("5_lvw2h"), ExtResource("5_lvw2h"), ExtResource("6_kuon3"), ExtResource("6_kuon3"), ExtResource("6_kuon3"), ExtResource("7_vlcq1"), ExtResource("7_vlcq1"), ExtResource("8_scaie"), ExtResource("8_scaie"), ExtResource("9_mcx3h"), ExtResource("9_mcx3h"), ExtResource("10_saww4"), ExtResource("10_saww4"), ExtResource("10_saww4"), ExtResource("11_0qdvu"), ExtResource("11_0qdvu"), ExtResource("11_0qdvu"), ExtResource("12_2h5ee")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0333333, 0, 0.559277, 0.631811, 0.668078, 0.99639),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, false, false]
+}
+
+[sub_resource type="Animation" id="Animation_1cf1v"]
+resource_name = "deactivating"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("21_gg8oj"), ExtResource("21_gg8oj"), ExtResource("21_gg8oj"), ExtResource("21_gg8oj"), ExtResource("21_gg8oj"), ExtResource("22_wx84v"), ExtResource("22_wx84v"), ExtResource("22_wx84v"), ExtResource("22_wx84v"), ExtResource("23_0aypa"), ExtResource("23_0aypa"), ExtResource("23_0aypa"), ExtResource("23_0aypa"), ExtResource("23_0aypa"), ExtResource("24_4v102"), ExtResource("24_4v102"), ExtResource("24_4v102"), ExtResource("24_4v102"), ExtResource("24_4v102"), ExtResource("24_4v102"), ExtResource("24_4v102"), ExtResource("24_4v102"), ExtResource("25_3nipr"), ExtResource("25_3nipr"), ExtResource("25_3nipr"), ExtResource("25_3nipr"), ExtResource("25_3nipr"), ExtResource("25_3nipr"), ExtResource("25_3nipr"), ExtResource("18_3nipr"), ExtResource("18_3nipr"), ExtResource("18_3nipr"), ExtResource("18_3nipr"), ExtResource("18_3nipr"), ExtResource("18_3nipr"), ExtResource("18_3nipr"), ExtResource("19_1cf1v"), ExtResource("19_1cf1v"), ExtResource("19_1cf1v"), ExtResource("19_1cf1v"), ExtResource("20_pyn45"), ExtResource("20_pyn45"), ExtResource("20_pyn45"), ExtResource("20_pyn45"), ExtResource("20_pyn45"), ExtResource("21_ull3j")]
+}
+
+[sub_resource type="Animation" id="Animation_4v102"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_saww4"), ExtResource("13_saww4"), ExtResource("13_saww4"), ExtResource("13_saww4"), ExtResource("13_saww4"), ExtResource("13_saww4"), ExtResource("13_saww4"), ExtResource("14_0qdvu"), ExtResource("14_0qdvu"), ExtResource("14_0qdvu"), ExtResource("14_0qdvu"), ExtResource("15_2h5ee"), ExtResource("15_2h5ee"), ExtResource("15_2h5ee"), ExtResource("16_oiogv"), ExtResource("16_oiogv"), ExtResource("16_oiogv"), ExtResource("16_oiogv"), ExtResource("17_yuo41"), ExtResource("17_yuo41"), ExtResource("17_yuo41"), ExtResource("18_gg8oj"), ExtResource("18_gg8oj"), ExtResource("18_gg8oj"), ExtResource("18_gg8oj"), ExtResource("19_wx84v"), ExtResource("19_wx84v"), ExtResource("19_wx84v"), ExtResource("19_wx84v"), ExtResource("20_0aypa"), ExtResource("20_0aypa")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gg8oj"]
+_data = {
+&"RESET": SubResource("Animation_yuo41"),
+&"activating": SubResource("Animation_oiogv"),
+&"deactivating": SubResource("Animation_1cf1v"),
+&"idle": SubResource("Animation_4v102")
+}
+
+[node name="laser" type="Node2D"]
+script = ExtResource("1_1cf1v")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_utqt2")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("1_utqt2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gg8oj")
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
