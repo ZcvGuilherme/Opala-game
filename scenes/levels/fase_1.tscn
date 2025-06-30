@@ -1184,5 +1184,7 @@ parameters/looping = true
 [node name="laser" parent="." instance=ExtResource("31_2ehen")]
 position = Vector2(262, -41)
 scale = Vector2(1.5, 1.5)
+active_duration = 5.0
+repeat_interval = 3.0
 
 [connection signal="timeout" from="HUD/HUDControl/clock_timer" to="HUD/HUDControl" method="_on_clock_timer_timeout"]
