@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://dnilanhm8vbah"]
+[gd_scene load_steps=55 format=4 uid="uid://dnilanhm8vbah"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_1l4ar"]
 [ext_resource type="PackedScene" uid="uid://dpukxr4slfheb" path="res://scenes/camera_player.tscn" id="2_n40sw"]
@@ -30,7 +30,6 @@
 [ext_resource type="FontFile" uid="uid://dnl5j86pwt7fi" path="res://shaders/new_font_file.tres" id="26_xgv28"]
 [ext_resource type="PackedScene" uid="uid://8571smwwi113" path="res://scenes/plano_de_fundo.tscn" id="29_ajcyp"]
 [ext_resource type="AudioStream" uid="uid://4pi1q2i7bp2h" path="res://assets/Sons/musica de fundo/B8bit (mp3cut.net).mp3" id="30_xgv28"]
-[ext_resource type="PackedScene" uid="uid://dxakgldjoyaif" path="res://scenes/traps/laser.tscn" id="31_2ehen"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n40sw"]
 size = Vector2(144, 21)
@@ -1180,11 +1179,5 @@ stream = ExtResource("30_xgv28")
 volume_db = -15.0
 autoplay = true
 parameters/looping = true
-
-[node name="laser" parent="." instance=ExtResource("31_2ehen")]
-position = Vector2(262, -41)
-scale = Vector2(1.5, 1.5)
-active_duration = 5.0
-repeat_interval = 3.0
 
 [connection signal="timeout" from="HUD/HUDControl/clock_timer" to="HUD/HUDControl" method="_on_clock_timer_timeout"]
