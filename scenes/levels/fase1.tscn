@@ -1,0 +1,134 @@
+[gd_scene load_steps=12 format=3 uid="uid://hrb3be14ita6"]
+
+[ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_f125c"]
+[ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="2_bnu8c"]
+[ext_resource type="PackedScene" uid="uid://dpukxr4slfheb" path="res://scenes/camera_player.tscn" id="3_051w3"]
+[ext_resource type="PackedScene" uid="uid://va3hkxibxej6" path="res://scenes/checkpoint.tscn" id="4_4bc74"]
+[ext_resource type="PackedScene" uid="uid://bddxs40f6ojro" path="res://scenes/traps/spike.tscn" id="4_bnu8c"]
+[ext_resource type="PackedScene" uid="uid://csofo5xhaaxen" path="res://scenes/falling_platform.tscn" id="5_051w3"]
+[ext_resource type="PackedScene" uid="uid://cbmcsbvcq62h4" path="res://scenes/fallzone.tscn" id="6_745wh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_745wh"]
+size = Vector2(77.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnu8c"]
+size = Vector2(172, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_051w3"]
+size = Vector2(525, 150.419)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bc74"]
+size = Vector2(45.6137, 448)
+
+[node name="Fase1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_f125c")]
+wall_jump_force = Vector2(400, -400)
+
+[node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_051w3")]
+limit_left = -100
+limit_top = -600
+limit_right = 6000
+limit_bottom = 40
+player = NodePath("../Player")
+room_position = Vector2(-400, -1000)
+room_size = Vector2(4500, 2000)
+
+[node name="CheckpointManager" parent="." instance=ExtResource("2_bnu8c")]
+
+[node name="Checkpoint" parent="CheckpointManager" instance=ExtResource("4_4bc74")]
+position = Vector2(520, -184)
+scale = Vector2(2.56612, 0.809021)
+respawn_offset = Vector2(150, -55)
+
+[node name="Collision" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Collision"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/StaticBody2D"]
+position = Vector2(26.25, 28)
+shape = SubResource("RectangleShape2D_745wh")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Collision"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/StaticBody2D2"]
+position = Vector2(656, -92)
+shape = SubResource("RectangleShape2D_bnu8c")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Collision"]
+position = Vector2(429.702, -160.419)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/StaticBody2D3"]
+position = Vector2(-194.202, -1.58131)
+shape = SubResource("RectangleShape2D_051w3")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Collision"]
+position = Vector2(-67.6137, -159.076)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/StaticBody2D4"]
+position = Vector2(12.8069, -8.92383)
+scale = Vector2(-1.10015, 1.27685)
+shape = SubResource("RectangleShape2D_4bc74")
+
+[node name="traps" type="Node2D" parent="."]
+
+[node name="Spike" parent="traps" instance=ExtResource("4_bnu8c")]
+position = Vector2(416, -246)
+eternal = true
+
+[node name="Spike2" parent="traps" instance=ExtResource("4_bnu8c")]
+position = Vector2(320, -246)
+eternal = true
+
+[node name="Spike3" parent="traps" instance=ExtResource("4_bnu8c")]
+position = Vector2(242, -246)
+eternal = true
+
+[node name="Spike4" parent="traps" instance=ExtResource("4_bnu8c")]
+position = Vector2(17, -246)
+eternal = true
+
+[node name="Spike5" parent="traps" instance=ExtResource("4_bnu8c")]
+position = Vector2(51, -246)
+eternal = true
+
+[node name="Spike6" parent="traps" instance=ExtResource("4_bnu8c")]
+position = Vector2(84, -246)
+eternal = true
+
+[node name="Spike7" parent="traps" instance=ExtResource("4_bnu8c")]
+position = Vector2(119, -246)
+eternal = true
+
+[node name="Spike8" parent="traps" instance=ExtResource("4_bnu8c")]
+position = Vector2(153, -246)
+eternal = true
+
+[node name="platforms" type="Node2D" parent="."]
+
+[node name="falling-platform" parent="platforms" instance=ExtResource("5_051w3")]
+position = Vector2(119, 23)
+
+[node name="falling-platform2" parent="platforms" instance=ExtResource("5_051w3")]
+position = Vector2(191, 23)
+
+[node name="falling-platform3" parent="platforms" instance=ExtResource("5_051w3")]
+position = Vector2(255, 23)
+
+[node name="falling-platform4" parent="platforms" instance=ExtResource("5_051w3")]
+position = Vector2(319, 23)
+
+[node name="falling-platform5" parent="platforms" instance=ExtResource("5_051w3")]
+position = Vector2(383, 23)
+
+[node name="falling-platform6" parent="platforms" instance=ExtResource("5_051w3")]
+position = Vector2(447, 23)
+
+[node name="falling-platform7" parent="platforms" instance=ExtResource("5_051w3")]
+position = Vector2(511, 23)
+
+[node name="fallzones" type="Node2D" parent="."]
+
+[node name="Fallzone" parent="fallzones" instance=ExtResource("6_745wh")]
+position = Vector2(368, 96)
+scale = Vector2(35.672, 1.56818)

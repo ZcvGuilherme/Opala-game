@@ -1,35 +1,35 @@
 [gd_scene load_steps=55 format=4 uid="uid://dnilanhm8vbah"]
 
-[ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_1l4ar"]
-[ext_resource type="PackedScene" uid="uid://dpukxr4slfheb" path="res://scenes/camera_player.tscn" id="2_n40sw"]
-[ext_resource type="PackedScene" uid="uid://bddxs40f6ojro" path="res://scenes/traps/spike.tscn" id="4_n40sw"]
-[ext_resource type="PackedScene" uid="uid://va3hkxibxej6" path="res://scenes/checkpoint.tscn" id="5_72ss2"]
-[ext_resource type="PackedScene" uid="uid://b81bpplah8k8a" path="res://scenes/traps/wall_blades.tscn" id="6_omirp"]
-[ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="6_puiwa"]
-[ext_resource type="PackedScene" uid="uid://csofo5xhaaxen" path="res://scenes/falling_platform.tscn" id="6_ti0he"]
-[ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="7_omirp"]
-[ext_resource type="Texture2D" uid="uid://dq0hblkh3ro8m" path="res://assets/Tileset/level_tileset.png" id="8_omirp"]
-[ext_resource type="PackedScene" uid="uid://cbmcsbvcq62h4" path="res://scenes/fallzone.tscn" id="9_7wwkh"]
-[ext_resource type="PackedScene" uid="uid://b86x6mdk1t5k6" path="res://scenes/moving_platform.tscn" id="9_sl7v6"]
-[ext_resource type="Texture2D" uid="uid://cw8knhs30kjor" path="res://assets/Tileset/Individual_PNGs/Level_Tileset/tile000.png" id="11_xuap2"]
-[ext_resource type="Texture2D" uid="uid://c07ld2sxofyhd" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_09.png" id="12_hq2km"]
-[ext_resource type="Texture2D" uid="uid://b1neq8hgtqdmb" path="res://assets/Tileset/Individual_PNGs/Level_Tileset/tile001.png" id="12_yiso5"]
-[ext_resource type="Texture2D" uid="uid://cctsynpektag8" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_31.png" id="13_5teiu"]
-[ext_resource type="Texture2D" uid="uid://bupcd8plxkgk3" path="res://assets/Tileset/Individual_PNGs/Level_Tileset/tile003.png" id="13_jg3e3"]
-[ext_resource type="Texture2D" uid="uid://yvke1r1px36w" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_33.png" id="14_cnh1q"]
-[ext_resource type="Texture2D" uid="uid://n72pkau08um6" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_74.png" id="15_useg7"]
-[ext_resource type="Texture2D" uid="uid://dsq7j6hwojogp" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_75.png" id="16_684s2"]
-[ext_resource type="Texture2D" uid="uid://chpuj8tt53awm" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_76.png" id="17_lh6k0"]
-[ext_resource type="Texture2D" uid="uid://bugf8c4pwjpi4" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_80.png" id="18_yiso5"]
-[ext_resource type="Texture2D" uid="uid://tywf3rdssy6l" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_81.png" id="19_jg3e3"]
-[ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="21_hq2km"]
-[ext_resource type="Script" uid="uid://dys17irfjwn24" path="res://scripts/control.gd" id="22_lh6k0"]
-[ext_resource type="FontFile" uid="uid://3eqmusd2djdg" path="res://shaders/digital_7/digital-7 (italic).ttf" id="23_yiso5"]
-[ext_resource type="FontFile" uid="uid://myd1opyyypwv" path="res://shaders/digital_7/digital-7 (mono).ttf" id="24_jg3e3"]
-[ext_resource type="Texture2D" uid="uid://b3rdlp5jfm67i" path="res://assets/player/icone morto/sprite_0.png" id="25_ajcyp"]
-[ext_resource type="FontFile" uid="uid://dnl5j86pwt7fi" path="res://shaders/new_font_file.tres" id="26_xgv28"]
-[ext_resource type="PackedScene" uid="uid://8571smwwi113" path="res://scenes/plano_de_fundo.tscn" id="29_ajcyp"]
-[ext_resource type="AudioStream" uid="uid://4pi1q2i7bp2h" path="res://assets/Sons/musica de fundo/B8bit (mp3cut.net).mp3" id="30_xgv28"]
+[ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_epl52"]
+[ext_resource type="PackedScene" uid="uid://dpukxr4slfheb" path="res://scenes/camera_player.tscn" id="2_nbj0r"]
+[ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="3_bocla"]
+[ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="4_v3clm"]
+[ext_resource type="PackedScene" uid="uid://va3hkxibxej6" path="res://scenes/checkpoint.tscn" id="5_aptqx"]
+[ext_resource type="PackedScene" uid="uid://bddxs40f6ojro" path="res://scenes/traps/spike.tscn" id="6_tyl20"]
+[ext_resource type="PackedScene" uid="uid://b81bpplah8k8a" path="res://scenes/traps/wall_blades.tscn" id="7_d4fs8"]
+[ext_resource type="PackedScene" uid="uid://csofo5xhaaxen" path="res://scenes/falling_platform.tscn" id="8_lta7d"]
+[ext_resource type="PackedScene" uid="uid://b86x6mdk1t5k6" path="res://scenes/moving_platform.tscn" id="9_o3hg6"]
+[ext_resource type="Texture2D" uid="uid://dq0hblkh3ro8m" path="res://assets/Tileset/level_tileset.png" id="10_p0dah"]
+[ext_resource type="Texture2D" uid="uid://cw8knhs30kjor" path="res://assets/Tileset/Individual_PNGs/Level_Tileset/tile000.png" id="11_uju0k"]
+[ext_resource type="Texture2D" uid="uid://b1neq8hgtqdmb" path="res://assets/Tileset/Individual_PNGs/Level_Tileset/tile001.png" id="12_kcwa7"]
+[ext_resource type="Texture2D" uid="uid://bupcd8plxkgk3" path="res://assets/Tileset/Individual_PNGs/Level_Tileset/tile003.png" id="13_b0cyi"]
+[ext_resource type="Texture2D" uid="uid://c07ld2sxofyhd" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_09.png" id="14_3lhax"]
+[ext_resource type="Texture2D" uid="uid://cctsynpektag8" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_31.png" id="15_y81tf"]
+[ext_resource type="Texture2D" uid="uid://yvke1r1px36w" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_33.png" id="16_iwdl3"]
+[ext_resource type="Texture2D" uid="uid://n72pkau08um6" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_74.png" id="17_4edxl"]
+[ext_resource type="Texture2D" uid="uid://dsq7j6hwojogp" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_75.png" id="18_b6ski"]
+[ext_resource type="Texture2D" uid="uid://chpuj8tt53awm" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_76.png" id="19_6mged"]
+[ext_resource type="Texture2D" uid="uid://bugf8c4pwjpi4" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_80.png" id="20_4u45q"]
+[ext_resource type="Texture2D" uid="uid://tywf3rdssy6l" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_81.png" id="21_dplkx"]
+[ext_resource type="PackedScene" uid="uid://cbmcsbvcq62h4" path="res://scenes/fallzone.tscn" id="22_men3a"]
+[ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="23_cpg78"]
+[ext_resource type="Script" uid="uid://dys17irfjwn24" path="res://scripts/control.gd" id="24_exd58"]
+[ext_resource type="FontFile" uid="uid://3eqmusd2djdg" path="res://shaders/digital_7/digital-7 (italic).ttf" id="25_ujh1g"]
+[ext_resource type="FontFile" uid="uid://myd1opyyypwv" path="res://shaders/digital_7/digital-7 (mono).ttf" id="26_4igco"]
+[ext_resource type="Texture2D" uid="uid://b3rdlp5jfm67i" path="res://assets/player/icone morto/sprite_0.png" id="27_yicag"]
+[ext_resource type="FontFile" uid="uid://dnl5j86pwt7fi" path="res://shaders/new_font_file.tres" id="28_nsci5"]
+[ext_resource type="PackedScene" uid="uid://8571smwwi113" path="res://scenes/plano_de_fundo.tscn" id="29_03vxd"]
+[ext_resource type="AudioStream" uid="uid://4pi1q2i7bp2h" path="res://assets/Sons/musica de fundo/B8bit (mp3cut.net).mp3" id="30_lt4l5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n40sw"]
 size = Vector2(144, 21)
@@ -62,7 +62,7 @@ size = Vector2(278.976, 20)
 size = Vector2(259.634, 41.0279)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wwkh"]
-texture = ExtResource("8_omirp")
+texture = ExtResource("10_p0dah")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.09364, -9.71237, 7.73392, -9.71237, 8, 8, -8, 8)
 1:0/0 = 0
@@ -510,7 +510,7 @@ texture = ExtResource("8_omirp")
 17:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ajcyp"]
-texture = ExtResource("11_xuap2")
+texture = ExtResource("11_uju0k")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.2735, -10.0721, 8.63322, -10.2519, 8, 8, -8, 8)
 1:0/0 = 0
@@ -521,7 +521,7 @@ texture = ExtResource("11_xuap2")
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.2735, -10.0721, 8.63322, -10.2519, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jg3e3"]
-texture = ExtResource("11_xuap2")
+texture = ExtResource("11_uju0k")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.45336, -9.89223, 7.73392, -9.71237, 8, 8, -8, 8)
 1:0/0 = 0
@@ -532,7 +532,7 @@ texture = ExtResource("11_xuap2")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.45336, -9.89223, 7.73392, -9.71237, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jb6db"]
-texture = ExtResource("12_yiso5")
+texture = ExtResource("12_kcwa7")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.63322, -9.89223, 8.45336, -9.89223, 8, 8, -8, 8)
 1:0/0 = 0
@@ -543,7 +543,7 @@ texture = ExtResource("12_yiso5")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.63322, -9.89223, 8.45336, -9.89223, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7wkh"]
-texture = ExtResource("13_jg3e3")
+texture = ExtResource("13_b0cyi")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.2735, -9.71237, 8.09364, -9.89223, 8, 8, -8, 8)
 1:0/0 = 0
@@ -554,41 +554,41 @@ texture = ExtResource("13_jg3e3")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.2735, -9.71237, 8.09364, -9.89223, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgv28"]
-texture = ExtResource("12_hq2km")
+texture = ExtResource("14_3lhax")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ehen"]
-texture = ExtResource("13_5teiu")
+texture = ExtResource("15_y81tf")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ylxf"]
-texture = ExtResource("14_cnh1q")
+texture = ExtResource("16_iwdl3")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6djav"]
-texture = ExtResource("15_useg7")
+texture = ExtResource("17_4edxl")
 0:0/0 = 0
 1:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ueqb"]
-texture = ExtResource("16_684s2")
+texture = ExtResource("18_b6ski")
 0:0/0 = 0
 1:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ybdly"]
-texture = ExtResource("17_lh6k0")
+texture = ExtResource("19_6mged")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3uhlj"]
-texture = ExtResource("18_yiso5")
+texture = ExtResource("20_4u45q")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.00371, -9.44258, 7.82386, -9.62244, 8, 8, 8, 8, -8, 8)
 0:0/0/physics_layer_0/polygon_0/one_way = true
@@ -597,7 +597,7 @@ texture = ExtResource("18_yiso5")
 1:0/0/physics_layer_0/polygon_0/one_way = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yhjt5"]
-texture = ExtResource("19_jg3e3")
+texture = ExtResource("21_dplkx")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.00371, -9.44258, 8.00371, -9.98216, 8, 8, -8, 8)
 0:0/0/physics_layer_0/polygon_0/one_way = true
@@ -621,14 +621,14 @@ sources/10 = SubResource("TileSetAtlasSource_jg3e3")
 sources/11 = SubResource("TileSetAtlasSource_jb6db")
 sources/12 = SubResource("TileSetAtlasSource_q7wkh")
 
-[node name="Fase1" type="Node2D"]
+[node name="Fase2" type="Node2D"]
 position = Vector2(2, -7)
 
-[node name="Player" parent="." instance=ExtResource("1_1l4ar")]
+[node name="Player" parent="." instance=ExtResource("1_epl52")]
 position = Vector2(62, -25)
 wall_jump_force = Vector2(400, -400)
 
-[node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_n40sw")]
+[node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_nbj0r")]
 limit_left = -100
 limit_top = -600
 limit_right = 6000
@@ -637,338 +637,338 @@ player = NodePath("../Player")
 room_position = Vector2(-400, -1000)
 room_size = Vector2(4500, 2000)
 
-[node name="pause" parent="." instance=ExtResource("6_puiwa")]
+[node name="pause" parent="." instance=ExtResource("3_bocla")]
 visible = false
 
-[node name="CheckpointManager" parent="." instance=ExtResource("7_omirp")]
+[node name="CheckpointManager" parent="." instance=ExtResource("4_v3clm")]
 
-[node name="Checkpoint" parent="CheckpointManager" instance=ExtResource("5_72ss2")]
+[node name="Checkpoint" parent="CheckpointManager" instance=ExtResource("5_aptqx")]
 position = Vector2(692, -241)
 scale = Vector2(4.788, -1.39348)
 
-[node name="Checkpoint2" parent="CheckpointManager" instance=ExtResource("5_72ss2")]
+[node name="Checkpoint2" parent="CheckpointManager" instance=ExtResource("5_aptqx")]
 position = Vector2(1479, -468)
 scale = Vector2(3.63361, 1.49863)
 
-[node name="Checkpoint3" parent="CheckpointManager" instance=ExtResource("5_72ss2")]
+[node name="Checkpoint3" parent="CheckpointManager" instance=ExtResource("5_aptqx")]
 position = Vector2(1735, -38)
 scale = Vector2(2.25616, 1)
 
-[node name="Checkpoint4" parent="CheckpointManager" instance=ExtResource("5_72ss2")]
+[node name="Checkpoint4" parent="CheckpointManager" instance=ExtResource("5_aptqx")]
 position = Vector2(3223, -322)
 scale = Vector2(2, 5.057)
 
 [node name="traps" type="Node2D" parent="."]
 
-[node name="Spike" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(697, 145)
 rotation = -1.5708
 eternal = true
 
-[node name="Spike2" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike2" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(697, 113)
 rotation = -1.5708
 eternal = true
 
-[node name="Spike3" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike3" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(697, 69)
 rotation = -1.5708
 eternal = true
 
-[node name="Spike4" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike4" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(697, 49)
 rotation = -1.5708
 eternal = true
 
-[node name="Spike5" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike5" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(697, 17)
 rotation = -1.5708
 eternal = true
 
-[node name="Spike6" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike6" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(697, -15)
 rotation = -1.5708
 eternal = true
 
-[node name="Spike7" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike7" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(697, -47)
 rotation = -1.5708
 eternal = true
 
-[node name="Spike8" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike8" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(697, -79)
 rotation = -1.5708
 eternal = true
 
-[node name="Spike9" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike9" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(697, -111)
 rotation = -1.5708
 eternal = true
 
-[node name="Spike10" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike10" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(697, -143)
 rotation = -1.5708
 eternal = true
 
-[node name="Spike11" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike11" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(1375, -294)
 rotation = 3.14159
 eternal = true
 
-[node name="Wall_blades" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, -414)
 eternal = true
 
-[node name="Wall_blades16" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades16" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1664, -419)
 eternal = true
 
-[node name="Wall_blades17" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades17" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1664, -387)
 eternal = true
 
-[node name="Wall_blades18" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades18" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1664, -355)
 eternal = true
 
-[node name="Wall_blades19" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades19" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1664, -323)
 eternal = true
 
-[node name="Wall_blades20" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades20" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1664, -291)
 eternal = true
 
-[node name="Wall_blades21" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades21" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1664, -259)
 eternal = true
 
-[node name="Wall_blades22" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades22" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1664, -227)
 eternal = true
 
-[node name="Wall_blades23" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades23" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1664, -195)
 eternal = true
 
-[node name="Wall_blades24" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades24" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1664, -163)
 eternal = true
 
-[node name="Wall_blades25" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades25" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1664, -131)
 eternal = true
 
-[node name="Wall_blades26" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades26" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1664, -100)
 eternal = true
 
-[node name="Wall_blades27" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades27" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1694, -419)
 eternal = true
 
-[node name="Wall_blades28" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades28" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1694, -387)
 eternal = true
 
-[node name="Wall_blades29" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades29" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1694, -355)
 eternal = true
 
-[node name="Wall_blades30" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades30" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1694, -323)
 eternal = true
 
-[node name="Wall_blades31" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades31" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1694, -291)
 eternal = true
 
-[node name="Wall_blades32" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades32" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1694, -259)
 eternal = true
 
-[node name="Wall_blades33" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades33" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1694, -227)
 eternal = true
 
-[node name="Wall_blades34" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades34" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1694, -195)
 eternal = true
 
-[node name="Wall_blades35" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades35" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1694, -163)
 eternal = true
 
-[node name="Wall_blades36" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades36" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1694, -131)
 eternal = true
 
-[node name="Wall_blades37" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades37" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1694, -100)
 eternal = true
 
-[node name="Wall_blades2" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades2" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, -382)
 eternal = true
 
-[node name="Wall_blades3" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades3" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, -350)
 eternal = true
 
-[node name="Wall_blades4" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades4" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, -318)
 eternal = true
 
-[node name="Wall_blades5" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades5" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, -286)
 eternal = true
 
-[node name="Wall_blades6" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades6" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, -254)
 eternal = true
 
-[node name="Wall_blades7" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades7" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, -222)
 eternal = true
 
-[node name="Wall_blades8" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades8" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, -190)
 eternal = true
 
-[node name="Wall_blades9" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades9" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, -158)
 eternal = true
 
-[node name="Wall_blades10" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades10" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, -126)
 eternal = true
 
-[node name="Wall_blades11" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades11" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, -94)
 eternal = true
 
-[node name="Wall_blades12" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades12" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, -62)
 eternal = true
 
-[node name="Wall_blades13" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades13" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, -30)
 eternal = true
 
-[node name="Wall_blades14" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades14" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, 2)
 eternal = true
 
-[node name="Wall_blades15" parent="traps" instance=ExtResource("6_omirp")]
+[node name="Wall_blades15" parent="traps" instance=ExtResource("7_d4fs8")]
 position = Vector2(1586, 34)
 eternal = true
 
-[node name="Spike12" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike12" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2437, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike13" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike13" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2472, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike14" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike14" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2506, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike15" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike15" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2540, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike16" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike16" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2574, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike17" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike17" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2609, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike18" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike18" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2644, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike19" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike19" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2679, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike20" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike20" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2714, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike21" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike21" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2749, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike22" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike22" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2783, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike23" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike23" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2817, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike24" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike24" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2851, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike25" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike25" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2886, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike26" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike26" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2921, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike27" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike27" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2956, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike28" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike28" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(2991, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike29" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike29" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(3026, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike30" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike30" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(3060, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike31" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike31" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(3095, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike32" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike32" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(3130, -232)
 active_duration = 2.5
 repeat_interval = 0.5
 
-[node name="Spike33" parent="traps" instance=ExtResource("4_n40sw")]
+[node name="Spike33" parent="traps" instance=ExtResource("6_tyl20")]
 position = Vector2(3165, -232)
 active_duration = 2.5
 repeat_interval = 0.5
@@ -1056,34 +1056,34 @@ shape = SubResource("RectangleShape2D_5teiu")
 
 [node name="Elementos" type="Node2D" parent="."]
 
-[node name="falling-platform" parent="Elementos" instance=ExtResource("6_ti0he")]
+[node name="falling-platform" parent="Elementos" instance=ExtResource("8_lta7d")]
 position = Vector2(807, -177)
 reset_time = 5.0
 
-[node name="falling-platform2" parent="Elementos" instance=ExtResource("6_ti0he")]
+[node name="falling-platform2" parent="Elementos" instance=ExtResource("8_lta7d")]
 position = Vector2(1034, -155)
 
-[node name="falling-platform4" parent="Elementos" instance=ExtResource("6_ti0he")]
+[node name="falling-platform4" parent="Elementos" instance=ExtResource("8_lta7d")]
 position = Vector2(1285, -152)
 
-[node name="falling-platform5" parent="Elementos" instance=ExtResource("6_ti0he")]
+[node name="falling-platform5" parent="Elementos" instance=ExtResource("8_lta7d")]
 position = Vector2(2585, -318)
 
-[node name="moving_platform" parent="Elementos" instance=ExtResource("9_sl7v6")]
+[node name="moving_platform" parent="Elementos" instance=ExtResource("9_o3hg6")]
 position = Vector2(1999, -119)
 move_speed = 4.0
 distance = 120
 move_horizontal = false
 
-[node name="moving_platform2" parent="Elementos" instance=ExtResource("9_sl7v6")]
+[node name="moving_platform2" parent="Elementos" instance=ExtResource("9_o3hg6")]
 position = Vector2(2158, -216)
 move_speed = 4.0
 distance = 120
 
-[node name="falling-platform6" parent="Elementos" instance=ExtResource("6_ti0he")]
+[node name="falling-platform6" parent="Elementos" instance=ExtResource("8_lta7d")]
 position = Vector2(2923.63, -317.817)
 
-[node name="falling-platform7" parent="Elementos" instance=ExtResource("6_ti0he")]
+[node name="falling-platform7" parent="Elementos" instance=ExtResource("8_lta7d")]
 position = Vector2(915, -203)
 
 [node name="Node" type="Node" parent="."]
@@ -1096,23 +1096,23 @@ tile_set = SubResource("TileSet_72ss2")
 [node name="deco" type="TileMapLayer" parent="Node"]
 position = Vector2(0, -6)
 
-[node name="Fallzone" parent="." instance=ExtResource("9_7wwkh")]
+[node name="Fallzone" parent="." instance=ExtResource("22_men3a")]
 position = Vector2(222, 70)
 scale = Vector2(30.64, 1)
 
-[node name="Fallzone2" parent="." instance=ExtResource("9_7wwkh")]
+[node name="Fallzone2" parent="." instance=ExtResource("22_men3a")]
 position = Vector2(653, 38)
 scale = Vector2(17.56, 1.84035)
 
-[node name="Fallzone3" parent="." instance=ExtResource("9_7wwkh")]
+[node name="Fallzone3" parent="." instance=ExtResource("22_men3a")]
 position = Vector2(1140, 35)
 scale = Vector2(42.6952, 1.50925)
 
-[node name="Fallzone4" parent="." instance=ExtResource("9_7wwkh")]
+[node name="Fallzone4" parent="." instance=ExtResource("22_men3a")]
 position = Vector2(2102, 43)
 scale = Vector2(52.6377, -2.06543)
 
-[node name="goal" parent="." instance=ExtResource("21_hq2km")]
+[node name="goal" parent="." instance=ExtResource("23_cpg78")]
 position = Vector2(3378, -256)
 next_level = "res://scenes/levels/tutorial.tscn"
 
@@ -1128,7 +1128,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
-script = ExtResource("22_lh6k0")
+script = ExtResource("24_exd58")
 
 [node name="clock_timer" type="Timer" parent="HUD/HUDControl"]
 autostart = true
@@ -1160,7 +1160,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("23_yiso5")
+theme_override_fonts/font = ExtResource("25_ujh1g")
 theme_override_font_sizes/font_size = 40
 text = "TIME:"
 
@@ -1168,7 +1168,7 @@ text = "TIME:"
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("24_jg3e3")
+theme_override_fonts/font = ExtResource("26_4igco")
 theme_override_font_sizes/font_size = 40
 text = "00:00"
 
@@ -1181,22 +1181,22 @@ size_flags_vertical = 0
 custom_minimum_size = Vector2(70, 60)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("25_ajcyp")
+texture = ExtResource("27_yicag")
 
 [node name="death_counter" type="Label" parent="HUD/HUDControl/container/death_container"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("26_xgv28")
+theme_override_fonts/font = ExtResource("28_nsci5")
 theme_override_font_sizes/font_size = 40
 text = "000"
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("29_ajcyp")]
+[node name="ParallaxBackground" parent="." instance=ExtResource("29_03vxd")]
 position = Vector2(746, -599)
 scale = Vector2(1.3, 1.56)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("30_xgv28")
+stream = ExtResource("30_lt4l5")
 volume_db = -15.0
 autoplay = true
 parameters/looping = true
