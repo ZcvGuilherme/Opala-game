@@ -43,7 +43,7 @@ _data = {
 &"shake": SubResource("Animation_cgkqx")
 }
 
-[node name="falling-platform" type="AnimatableBody2D"]
+[node name="falling-platform" type="AnimatableBody2D" groups=["cannot_slide"]]
 script = ExtResource("1_eyv7q")
 
 [node name="texture" type="Sprite2D" parent="."]
