@@ -1,0 +1,121 @@
+[gd_scene load_steps=21 format=3 uid="uid://brt1k1qn0ug30"]
+
+[ext_resource type="Script" uid="uid://c4p86d5a4edna" path="res://scripts/laser_turret.gd" id="1_36vhk"]
+[ext_resource type="Texture2D" uid="uid://bjm3xlgo0vbw3" path="res://assets/Traps/Individual_PNGs/laser_turret/tile016.png" id="2_rkiae"]
+[ext_resource type="Texture2D" uid="uid://b7w5fjear2q7e" path="res://assets/Traps/Individual_PNGs/laser_turret/tile000.png" id="3_k01h2"]
+[ext_resource type="Texture2D" uid="uid://d23vk0dbpokgi" path="res://assets/Traps/Individual_PNGs/laser_turret/tile001.png" id="4_u6nao"]
+[ext_resource type="Texture2D" uid="uid://dc8xh2vur215v" path="res://assets/Traps/Individual_PNGs/laser_turret/tile002.png" id="5_w2qu3"]
+[ext_resource type="Texture2D" uid="uid://dxrcjfqm2bh7p" path="res://assets/Traps/Individual_PNGs/laser_turret/tile003.png" id="6_h8eh1"]
+[ext_resource type="Texture2D" uid="uid://cemibncicaosa" path="res://assets/Traps/Individual_PNGs/laser_turret/tile004.png" id="7_5xfwn"]
+[ext_resource type="Texture2D" uid="uid://cgpojaqw7avjw" path="res://assets/Traps/Individual_PNGs/laser_turret/tile005.png" id="8_txgh3"]
+[ext_resource type="Texture2D" uid="uid://dvlwaquctryyt" path="res://assets/Traps/Individual_PNGs/laser_turret/tile006.png" id="9_p5sfa"]
+[ext_resource type="Texture2D" uid="uid://c75aw4svb4vl4" path="res://assets/Traps/Individual_PNGs/laser_turret/tile007.png" id="10_2k7ox"]
+[ext_resource type="Texture2D" uid="uid://bu26rqjd600v8" path="res://assets/Traps/Individual_PNGs/laser_turret/tile008.png" id="11_okddi"]
+[ext_resource type="Texture2D" uid="uid://copv1drushhlq" path="res://assets/Traps/Individual_PNGs/laser_turret/tile009.png" id="12_7x2o0"]
+[ext_resource type="Texture2D" uid="uid://dg3db5u3nrqw1" path="res://assets/Traps/Individual_PNGs/laser_turret/tile010.png" id="13_6xify"]
+[ext_resource type="Texture2D" uid="uid://ci1h505q1idd0" path="res://assets/Traps/Individual_PNGs/laser_turret/tile011.png" id="14_qx46r"]
+[ext_resource type="Texture2D" uid="uid://l6x6pu3jn8bi" path="res://assets/Traps/Individual_PNGs/laser_turret/tile012.png" id="15_5mejx"]
+[ext_resource type="Texture2D" uid="uid://beicyixoen53n" path="res://assets/Traps/Individual_PNGs/laser_turret/tile013.png" id="16_p5fxq"]
+[ext_resource type="Texture2D" uid="uid://d25lk20edbgvu" path="res://assets/Traps/Individual_PNGs/laser_turret/tile014.png" id="17_oi3m1"]
+[ext_resource type="Texture2D" uid="uid://b8g46mp7k20ki" path="res://assets/Traps/Individual_PNGs/laser_turret/tile015.png" id="18_53t5l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nax60"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_5mejx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_p5fxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_oi3m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_53t5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rkiae")
+}],
+"loop": true,
+"name": &"after_shot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rkiae")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k01h2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u6nao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w2qu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h8eh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5xfwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_txgh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_p5sfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k7ox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_okddi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7x2o0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6xify")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qx46r")
+}],
+"loop": false,
+"name": &"shooting",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36vhk"]
+size = Vector2(20, 23)
+
+[node name="Laser_turret" type="Node2D"]
+script = ExtResource("1_36vhk")
+
+[node name="anim_sprites" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nax60")
+animation = &"idle"
+
+[node name="shoot_timer" type="Timer" parent="."]
+autostart = true
+
+[node name="colisor" type="StaticBody2D" parent="."]
+
+[node name="colisao" type="CollisionShape2D" parent="colisor"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_36vhk")
+
+[node name="marcador" type="Marker2D" parent="."]
+modulate = Color(0.239216, 1, 1, 1)
+self_modulate = Color(1, 0.121569, 0.105882, 1)
+show_behind_parent = true
+
+[connection signal="animation_finished" from="anim_sprites" to="." method="_on_anim_sprites_animation_finished"]
+[connection signal="timeout" from="shoot_timer" to="." method="_on_shoot_timer_timeout"]
