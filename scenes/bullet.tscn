@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://ic4squh58us6"]
+
+[ext_resource type="Texture2D" uid="uid://b08fx4tc1ixuj" path="res://assets/Traps/Tiro - Baixo/sprite_0.png" id="1_k76ql"]
+[ext_resource type="Texture2D" uid="uid://md5os6h7j2rj" path="res://assets/Traps/laser/sprite_0.png" id="1_y25gk"]
+[ext_resource type="Texture2D" uid="uid://d3aomo0jsbos0" path="res://assets/Traps/Tiro - Baixo/sprite_1.png" id="2_in4mv"]
+[ext_resource type="Texture2D" uid="uid://3tjngupy7leu" path="res://assets/Traps/laser/sprite_1.png" id="2_l5glv"]
+[ext_resource type="Script" uid="uid://xnckh3bxuawj" path="res://scripts/bullet.gd" id="3_l5glv"]
+[ext_resource type="Texture2D" uid="uid://cxh3ft5s4ju0w" path="res://assets/Traps/Tiro - esquerda/sprite_0.png" id="3_s437g"]
+[ext_resource type="Texture2D" uid="uid://d0g3i4y26w7gm" path="res://assets/Traps/Tiro - esquerda/sprite_1.png" id="4_iqq7w"]
+[ext_resource type="Texture2D" uid="uid://bt4ynuu3cmud5" path="res://assets/Traps/Tiro - Cima/sprite_0.png" id="7_6umxm"]
+[ext_resource type="Texture2D" uid="uid://qnnw366kls11" path="res://assets/Traps/Tiro - Cima/sprite_1.png" id="8_0apvr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eoqba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_k76ql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_in4mv")
+}],
+"loop": true,
+"name": &"down_shot",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"explosion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_s437g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iqq7w")
+}],
+"loop": true,
+"name": &"left_shot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y25gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l5glv")
+}],
+"loop": true,
+"name": &"right_shot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_6umxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0apvr")
+}],
+"loop": true,
+"name": &"up_shot",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l5glv"]
+radius = 5.0
+height = 16.0
+
+[node name="Bullet" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_eoqba")
+animation = &"down_shot"
+script = ExtResource("3_l5glv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="colisao" type="CollisionShape2D" parent="hitbox"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_l5glv")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
