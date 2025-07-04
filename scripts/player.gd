@@ -44,6 +44,12 @@ func _physics_process(delta: float) -> void:
 	var is_touching_left_wall = ray_left.is_colliding()
 	var is_touching_right_wall = ray_right.is_colliding()
 	
+	var left_collider = ray_left.get_collider()
+	var right_collider = ray_right.get_collider()
+	
+	var can_slide_left = is_touching_left_wall and (left_collider is Node and not left_collider.is_in_group("cannot_slide"))
+	var can_slide_right = is_touching_right_wall and (right_collider is Node and not right_collider.is_in_group("cannot_slide"))
+
 	if move_input.x != 0:
 		facing_direction = sign(move_input.x)
 	
@@ -69,9 +75,8 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() and not isDashing :
 		canDash = true
 		
-	if (is_touching_left_wall or is_touching_right_wall) and not is_on_floor() and velocity.y > 0:
+	if (can_slide_left or can_slide_right) and not is_on_floor() and velocity.y > 0:
 		start_wall_slide(is_touching_left_wall, is_touching_right_wall)
-		
 		
 	elif is_wall_sliding and not (is_touching_left_wall or is_touching_right_wall) or is_on_floor():
 		stop_wall_slide() 
