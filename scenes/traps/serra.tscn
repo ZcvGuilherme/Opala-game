@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://sibfb4xqamr5"]
+[gd_scene load_steps=9 format=3 uid="uid://pyhd0rkdibvk"]
 
-[ext_resource type="Script" uid="uid://baajl6tp1awrl" path="res://scripts/serra.gd" id="1_4aklp"]
+[ext_resource type="Script" uid="uid://hqta3mug4h5p" path="res://scripts/serra.gd" id="1_4aklp"]
 [ext_resource type="Texture2D" uid="uid://b47h31w3b7lqx" path="res://assets/Traps/Individual_PNGs/saw_idle/tile000.png" id="2_gxy35"]
 [ext_resource type="Texture2D" uid="uid://dx7exygx2o0fp" path="res://assets/Traps/Individual_PNGs/saw_idle/tile001.png" id="3_ucp2m"]
 [ext_resource type="Texture2D" uid="uid://3r6cggppqu52" path="res://assets/Traps/Individual_PNGs/saw_idle/tile002.png" id="4_jwqpx"]
@@ -8,109 +8,42 @@
 [ext_resource type="Texture2D" uid="uid://bvq3e1nn240li" path="res://assets/Traps/Individual_PNGs/saw_idle/tile004.png" id="6_qaxa8"]
 [ext_resource type="Texture2D" uid="uid://dwjttv3v51h5x" path="res://assets/Traps/Individual_PNGs/saw_idle/tile005.png" id="7_vaopk"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a18kp"]
-radius = 8.5
-height = 28.0
-
-[sub_resource type="Animation" id="Animation_j3j3y"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_gxy35")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(7, -1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_2dv2e"]
-resource_name = "idle"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.107864, 0.209383, 0.309996, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_gxy35"), ExtResource("3_ucp2m"), ExtResource("4_jwqpx"), ExtResource("5_x7fwf"), ExtResource("6_qaxa8"), ExtResource("7_vaopk")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(7, -1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.446945),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_aphs4"]
-_data = {
-&"RESET": SubResource("Animation_j3j3y"),
-&"idle": SubResource("Animation_2dv2e")
-}
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1xix"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gxy35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ucp2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jwqpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x7fwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qaxa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vaopk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="Serra" type="Area2D"]
 script = ExtResource("1_4aklp")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_gxy35")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p1xix")
+animation = &"idle"
+frame_progress = 0.955436
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7, -1)
-shape = SubResource("CapsuleShape2D_a18kp")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_aphs4")
-}
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PackedVector2Array(12, -10, 11, 13, 5, 11, 0, 7, -2, -1, 0, -9, 11, -14)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
