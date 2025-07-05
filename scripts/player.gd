@@ -161,9 +161,6 @@ func die():
 	
 	var knockback = Vector2(-facing_direction * 200, -400)
 	die_sfx.play()
-	
-	#await knockback_effect(Vector2(global_position.x * KNOCKBACK_MULTIPLIER, -400))
-	#await knockback_effect(Vector2(-global_position.x * KNOCKBACK_MULTIPLIER, -400))
 	await knockback_effect(knockback)
 	velocity = Vector2.ZERO
 	set_physics_process(false)  
@@ -189,12 +186,15 @@ func respawn():
 
 	global_position = checkpoint_manager.last_location
 	velocity = Vector2.ZERO
-
+	
+	facing_direction = 1
+	animacaoPlayer.flip_h = false
+	
 	await RespawnTransition.show_new_scene()
 	
 	animacaoPlayer.play("awake")
 	await animacaoPlayer.animation_finished
-	
+
 	set_physics_process(true)  
 	
 func start_wall_slide(left, right):
