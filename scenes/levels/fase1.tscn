@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://hrb3be14ita6"]
+[gd_scene load_steps=21 format=4 uid="uid://hrb3be14ita6"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_f125c"]
 [ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="2_bnu8c"]
@@ -13,15 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://n72pkau08um6" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_74.png" id="10_d1ex0"]
 [ext_resource type="Texture2D" uid="uid://dsq7j6hwojogp" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_75.png" id="11_h28po"]
 [ext_resource type="Texture2D" uid="uid://chpuj8tt53awm" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_76.png" id="12_ymah1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnu8c"]
-size = Vector2(172, 256)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_051w3"]
-size = Vector2(525, 150.419)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhm5o"]
-size = Vector2(339, 25.3244)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7irko"]
 texture = ExtResource("9_7irko")
@@ -923,17 +914,19 @@ sources/0 = SubResource("TileSetAtlasSource_8uqc6")
 [node name="Checkpoint" parent="CheckpointManager" instance=ExtResource("4_4bc74")]
 position = Vector2(530, -184)
 scale = Vector2(2.56612, 0.809021)
-respawn_offset = Vector2(150, -55)
+respawn_offset = Vector2(130, -53)
 
 [node name="Checkpoint2" parent="CheckpointManager" instance=ExtResource("4_4bc74")]
 position = Vector2(719, -498)
+respawn_offset = Vector2(0, 20)
 
 [node name="Checkpoint3" parent="CheckpointManager" instance=ExtResource("4_4bc74")]
 position = Vector2(916, -9)
 scale = Vector2(3.6587, 1.24221)
+respawn_offset = Vector2(0, 25)
 
 [node name="Player" parent="." instance=ExtResource("1_f125c")]
-position = Vector2(659, -238)
+position = Vector2(-8, 3)
 wall_jump_force = Vector2(400, -400)
 
 [node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_051w3")]
@@ -944,31 +937,6 @@ limit_bottom = 40
 player = NodePath("../Player")
 room_position = Vector2(-400, -1000)
 room_size = Vector2(4500, 2000)
-
-[node name="Collision" type="Node2D" parent="."]
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Collision"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/StaticBody2D2"]
-position = Vector2(656, -92)
-shape = SubResource("RectangleShape2D_bnu8c")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Collision"]
-position = Vector2(429.702, -160.419)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/StaticBody2D3"]
-position = Vector2(-194.202, -1.58131)
-shape = SubResource("RectangleShape2D_051w3")
-
-[node name="StaticBody2D8" type="StaticBody2D" parent="Collision"]
-position = Vector2(804.534, -279.324)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/StaticBody2D8"]
-position = Vector2(105.966, 330.324)
-shape = SubResource("RectangleShape2D_mhm5o")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Collision"]
-position = Vector2(2681.52, -298.495)
 
 [node name="traps" type="Node2D" parent="."]
 
@@ -1073,6 +1041,7 @@ position = Vector2(2354, -317)
 rotation = 1.5708
 active_duration = 1.5
 repeat_interval = 2.8
+eternal = true
 
 [node name="Spike23" parent="traps" instance=ExtResource("4_bnu8c")]
 position = Vector2(2272, -317)
@@ -1143,6 +1112,11 @@ position = Vector2(1899.4, -303.588)
 
 [node name="falling-platform11" parent="platforms" instance=ExtResource("5_051w3")]
 position = Vector2(1975, -304)
+
+[node name="moving_platform7" parent="platforms" instance=ExtResource("7_mffd4")]
+position = Vector2(1288, 0)
+move_speed = 5.0
+move_horizontal = false
 
 [node name="Fallzone" parent="." instance=ExtResource("6_745wh")]
 position = Vector2(1487, 105)
