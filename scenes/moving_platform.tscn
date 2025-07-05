@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1tdcd"]
 size = Vector2(33, 14)
 
-[node name="moving_platform" type="Node2D"]
+[node name="moving_platform" type="Node2D" groups=["cannot_slide"]]
 script = ExtResource("1_1tdcd")
 
 [node name="platform" type="AnimatableBody2D" parent="."]
