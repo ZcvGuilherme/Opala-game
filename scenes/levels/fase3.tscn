@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvgg5w5s6tvby"]
+
+[ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_0t8py"]
+[ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="2_4pu5b"]
+
+[node name="Fase3" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_0t8py")]
+
+[node name="CheckpointManager" parent="." instance=ExtResource("2_4pu5b")]
