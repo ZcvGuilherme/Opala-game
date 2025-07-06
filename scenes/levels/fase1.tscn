@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://hrb3be14ita6"]
+[gd_scene load_steps=36 format=4 uid="uid://hrb3be14ita6"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_f125c"]
 [ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="2_bnu8c"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://8571smwwi113" path="res://scenes/plano_de_fundo.tscn" id="14_h28po"]
 [ext_resource type="Texture2D" uid="uid://c7t8jxgx3tsvy" path="res://assets/Tileset/Individual_PNGs/Level_Tileset/tile005.png" id="15_fpbt8"]
 [ext_resource type="Texture2D" uid="uid://ck3vdq6v8q8j0" path="res://assets/Tileset/Individual_PNGs/Level_Tileset/tile010.png" id="16_2y8a1"]
+[ext_resource type="PackedScene" uid="uid://bdfb4aiwgywud" path="res://scenes/hud.tscn" id="19_2y8a1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnu8c"]
 size = Vector2(172, 256)
@@ -584,13 +585,15 @@ respawn_offset = Vector2(150, -55)
 
 [node name="Checkpoint2" parent="CheckpointManager" instance=ExtResource("4_4bc74")]
 position = Vector2(719, -498)
+respawn_offset = Vector2(0, 20)
 
 [node name="Checkpoint3" parent="CheckpointManager" instance=ExtResource("4_4bc74")]
 position = Vector2(916, -9)
 scale = Vector2(3.6587, 1.24221)
+respawn_offset = Vector2(0, 27)
 
 [node name="Player" parent="." instance=ExtResource("1_f125c")]
-position = Vector2(-14, -5)
+position = Vector2(-4, 3)
 wall_jump_force = Vector2(400, -400)
 
 [node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_051w3")]
@@ -730,6 +733,7 @@ position = Vector2(2354, -317)
 rotation = 1.5708
 active_duration = 1.5
 repeat_interval = 2.8
+eternal = true
 
 [node name="Spike23" parent="traps" instance=ExtResource("4_bnu8c")]
 position = Vector2(2272, -317)
@@ -770,7 +774,7 @@ position = Vector2(1777, -214)
 [node name="moving_platform" parent="platforms" instance=ExtResource("7_mffd4")]
 position = Vector2(177.476, -454.014)
 move_speed = 5.0
-distance = -120
+distance = -100
 
 [node name="moving_platform2" parent="platforms" instance=ExtResource("7_mffd4")]
 position = Vector2(212, -454)
@@ -801,6 +805,11 @@ position = Vector2(1899.4, -303.588)
 [node name="falling-platform11" parent="platforms" instance=ExtResource("5_051w3")]
 position = Vector2(1975, -304)
 
+[node name="moving_platform7" parent="platforms" instance=ExtResource("7_mffd4")]
+position = Vector2(1304, -56)
+distance = 150
+move_horizontal = false
+
 [node name="Fallzone" parent="." instance=ExtResource("6_745wh")]
 position = Vector2(1487, 105)
 scale = Vector2(154.503, -2.59699)
@@ -817,7 +826,7 @@ position = Vector2(-5, 0)
 tile_map_data = PackedByteArray("AAD+/+P/AAAAAAAAAAD//+P/AAABAAAAAAACAOP/AQAAAAAAAAADAOP/AQABAAAAAAAAAOP/AQAAAAAAAAABAOP/AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_3u7fm")
 
-[node name="parede_sem_delizar" type="TileMapLayer" parent="level"]
+[node name="parede_sem_delizar" type="TileMapLayer" parent="level" groups=["cannot_slide"]]
 position = Vector2(-7, 4)
 tile_map_data = PackedByteArray("AAD9/+L/AAABAAAAAAD9/+P/AAABAAEAAAD9/+D/AAABAAAAAAD9/+H/AAABAAEAAAD9/97/AAABAAAAAAD9/9//AAABAAEAAAD9/9z/AAABAAAAAAD9/93/AAABAAEAAAD9/9r/AAABAAAAAAD9/9v/AAABAAEAAAD9/9j/AAABAAAAAAD9/9n/AAABAAEAAAA0AOD/AAABAAAAAAA0AOH/AAABAAEAAAA0AOL/AAABAAAAAAA0AOP/AAABAAEAAAA0AOT/AAABAAAAAAA0AOX/AAABAAEAAAA0AOb/AAABAAAAAAA0AOf/AAABAAEAAAA0AOj/AAABAAAAAAA0AOn/AAABAAEAAAA0AOr/AAABAAAAAAA0AOv/AAABAAEAAAA0AOz/AAABAAAAAAA0AO3/AAABAAEAAAA0AO7/AAABAAAAAAA0AO//AAABAAEAAAA0APD/AAABAAAAAAA0APH/AAABAAEAAAA0APP/AAABAAEAAAA0APT/AAABAAEAAAA0APL/AAABAAAAAAA0APX/AAABAAAAAAA0APb/AAABAAEAAAA0APf/AAABAAAAAAA0APj/AAABAAEAAAA0APn/AAABAAAAAAA0APr/AAABAAEAAAA0APv/AAABAAEAAAA0APz/AQABAAEAAAAsAOP/AgAAAAAAAAAsAOT/AwAAAAAAAAAsAOX/AwAAAAEAAAAtAOT/AwABAAAAAAAtAOX/AwABAAEAAAAsAOb/AwAAAAAAAAAsAOf/AwAAAAEAAAAtAOb/AwABAAAAAAAtAOf/AwABAAEAAAAsAOj/AwAAAAAAAAAsAOn/AwAAAAEAAAAtAOj/AwABAAAAAAAtAOn/AwABAAEAAAAsAOr/AwAAAAAAAAAsAOv/AwAAAAEAAAAtAOr/AwABAAAAAAAtAOv/AwABAAEAAAAsAOz/AwAAAAAAAAAsAO3/AwAAAAEAAAAtAOz/AwABAAAAAAAtAO3/AwABAAEAAAAsAO7/AwAAAAAAAAAsAO//AwAAAAEAAAAtAO7/AwABAAAAAAAtAO//AwABAAEAAAAsAPD/AwAAAAAAAAAsAPH/AwAAAAEAAAAtAPD/AwABAAAAAAAtAPH/AwABAAEAAAA=")
 tile_set = SubResource("TileSet_thaxs")
@@ -829,3 +838,5 @@ next_level = "res://scenes/levels/fase_2.tscn"
 [node name="ParallaxBackground" parent="." instance=ExtResource("14_h28po")]
 position = Vector2(721, -607)
 scale = Vector2(1.91286, 1.62949)
+
+[node name="HUD" parent="." instance=ExtResource("19_2y8a1")]
