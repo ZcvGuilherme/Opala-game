@@ -979,7 +979,7 @@ scale = Vector2(3.6587, 1.24221)
 respawn_offset = Vector2(0, 25)
 
 [node name="Player" parent="." instance=ExtResource("1_f125c")]
-position = Vector2(-19, -262)
+position = Vector2(-21, -1)
 wall_jump_force = Vector2(400, -400)
 
 [node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_051w3")]
