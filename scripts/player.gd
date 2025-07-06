@@ -7,10 +7,9 @@ extends CharacterBody2D
 @onready var dash_sfx: AudioStreamPlayer = $dash_sfx
 @onready var wall_slide_sfx: AudioStreamPlayer = $"wall-slide_sfx"
 @onready var die_sfx: AudioStreamPlayer = $die_sfx
+@onready var colisor_player: CollisionShape2D = $"Colisor-Player"
 
 @export var ghost_trail_scene : PackedScene
-@export var wall_slide_speed: float = 50.0
-@export var wall_jump_force: Vector2 = Vector2(400, -400)
 
 const SPEED := 200
 const ACCELERATION := 1200
@@ -23,6 +22,8 @@ const DASH_VERTICAL_MULTIPLIER := 0.7
 const DASH_HORIZONTAL_MULTIPLIER := 0.9
 const KNOCKBACK_MULTIPLIER := 3
 
+var wall_slide_speed: float = 50.0
+var wall_jump_force: Vector2 = Vector2(400, -400)
 var isDashing = false
 var dashDirection := Vector2.ZERO
 var canDash := true
@@ -33,13 +34,13 @@ var is_wall_sliding: bool = false
 var wall_direction: int = 0
 var knockback_vector := Vector2.ZERO
 var facing_direction := 1
-
 var checkpoint_manager
 
 func _ready() -> void:
 	checkpoint_manager = get_parent().get_node("CheckpointManager")
 
 func _physics_process(delta: float) -> void:
+	
 	var move_input := Input.get_vector("left", "right", "up", "down")
 	var is_touching_left_wall = ray_left.is_colliding()
 	var is_touching_right_wall = ray_right.is_colliding()
@@ -49,7 +50,7 @@ func _physics_process(delta: float) -> void:
 	
 	var can_slide_left = is_touching_left_wall and (left_collider is Node and not left_collider.is_in_group("cannot_slide"))
 	var can_slide_right = is_touching_right_wall and (right_collider is Node and not right_collider.is_in_group("cannot_slide"))
-
+	
 	if move_input.x != 0:
 		facing_direction = sign(move_input.x)
 	
@@ -157,6 +158,8 @@ func spawn_ghost_trail():
 	ghost.setup(animacaoPlayer)
 
 func die():
+	
+	colisor_player.call_deferred("set_disabled", true)
 	Globals.death_count += 1
 	
 	var knockback = Vector2(-facing_direction * 200, -400)
@@ -196,6 +199,8 @@ func respawn():
 	await animacaoPlayer.animation_finished
 
 	set_physics_process(true)  
+	
+	colisor_player.disabled = false
 	
 func start_wall_slide(left, right):
 	is_wall_sliding = true
