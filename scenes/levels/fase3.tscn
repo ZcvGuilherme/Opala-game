@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dvgg5w5s6tvby"]
+[gd_scene load_steps=32 format=3 uid="uid://dvgg5w5s6tvby"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_0t8py"]
 [ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="2_4pu5b"]
@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://dxakgldjoyaif" path="res://scenes/traps/laser.tscn" id="3_4pu5b"]
 [ext_resource type="PackedScene" uid="uid://pyhd0rkdibvk" path="res://scenes/traps/serra.tscn" id="5_dt4s1"]
 [ext_resource type="PackedScene" uid="uid://brt1k1qn0ug30" path="res://scenes/traps/laser_turret.tscn" id="6_itssg"]
+[ext_resource type="PackedScene" uid="uid://bddxs40f6ojro" path="res://scenes/traps/spike.tscn" id="7_ja2kb"]
 [ext_resource type="PackedScene" uid="uid://b86x6mdk1t5k6" path="res://scenes/moving_platform.tscn" id="7_xxghc"]
 [ext_resource type="PackedScene" uid="uid://csofo5xhaaxen" path="res://scenes/falling_platform.tscn" id="8_amn0y"]
+[ext_resource type="PackedScene" uid="uid://b81bpplah8k8a" path="res://scenes/traps/wall_blades.tscn" id="8_q6rbk"]
+[ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="11_vx6bl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd00o"]
 size = Vector2(282.5, 20)
@@ -45,10 +48,34 @@ size = Vector2(144, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1037l"]
 size = Vector2(20, 104)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mcfv"]
+size = Vector2(152, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_106u8"]
+size = Vector2(24.45, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krgfx"]
+size = Vector2(612, 77.9999)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7le7b"]
+size = Vector2(531, 13.6754)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qdyn"]
+size = Vector2(28.5001, 76.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2vc5"]
+size = Vector2(218, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wyv7"]
+size = Vector2(4.00003, 32.2939)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvmr3"]
+size = Vector2(308, 27.5056)
+
 [node name="Fase3" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_0t8py")]
-position = Vector2(48, -328)
+position = Vector2(23, -3)
 wall_jump_force = Vector2(400, -400)
 
 [node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_sd00o")]
@@ -64,215 +91,760 @@ room_size = Vector2(4500, 2000)
 
 [node name="Armadilhas" type="Node2D" parent="."]
 
-[node name="laser" parent="Armadilhas" instance=ExtResource("3_4pu5b")]
+[node name="NODE_LASER" type="Node2D" parent="Armadilhas"]
+
+[node name="laser" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
 position = Vector2(128, -8)
 active_duration = 1.5
 repeat_interval = 0.01
 
-[node name="laser2" parent="Armadilhas" instance=ExtResource("3_4pu5b")]
+[node name="laser2" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
 position = Vector2(151, -8)
 active_duration = 1.5
 repeat_interval = 0.01
 
-[node name="laser3" parent="Armadilhas" instance=ExtResource("3_4pu5b")]
+[node name="laser3" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
 position = Vector2(175, -8)
 active_duration = 1.5
 repeat_interval = 0.01
 
-[node name="laser4" parent="Armadilhas" instance=ExtResource("3_4pu5b")]
+[node name="laser4" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
 position = Vector2(577, 29)
 rotation = 1.5708
 eternal = true
 
-[node name="Serra" parent="Armadilhas" instance=ExtResource("5_dt4s1")]
-position = Vector2(535, -21)
-rotation = 4.71239
-
-[node name="Serra3" parent="Armadilhas" instance=ExtResource("5_dt4s1")]
-position = Vector2(255, -21)
-rotation = 4.71239
-
-[node name="Serra4" parent="Armadilhas" instance=ExtResource("5_dt4s1")]
-position = Vector2(287, -21)
-rotation = 4.71239
-
-[node name="Serra5" parent="Armadilhas" instance=ExtResource("5_dt4s1")]
-position = Vector2(318, -21)
-rotation = 4.71239
-
-[node name="Serra6" parent="Armadilhas" instance=ExtResource("5_dt4s1")]
-position = Vector2(349, -21)
-rotation = 4.71239
-
-[node name="Serra2" parent="Armadilhas" instance=ExtResource("5_dt4s1")]
-position = Vector2(567, -65)
-rotation = 3.14159
-
-[node name="laser5" parent="Armadilhas" instance=ExtResource("3_4pu5b")]
-position = Vector2(301, 28)
-rotation = 1.5708
-eternal = true
-
-[node name="Laser_turret" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(504, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret2" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(483, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret3" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(463, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret4" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(443, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret5" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(423, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret6" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(403, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret7" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(383, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret8" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(363, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret9" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(343, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret10" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(323, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret11" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(302, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret12" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(282, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret15" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(222, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret16" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(202, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret17" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(182, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret18" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(162, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret19" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(142, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret20" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(122, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret21" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(102, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret22" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(82, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret23" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(62, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="Laser_turret24" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(42, -238)
-rotation = 3.14159
-shoot_cooldown = 0.5
-shot_direction = 1
-
-[node name="laser6" parent="Armadilhas" instance=ExtResource("3_4pu5b")]
+[node name="laser6" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
 position = Vector2(9, -288)
 rotation = 1.5708
 active_duration = 1.0
 repeat_interval = 3.0
 
-[node name="laser7" parent="Armadilhas" instance=ExtResource("3_4pu5b")]
+[node name="laser7" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
 position = Vector2(9, -265)
 rotation = 1.5708
 active_duration = 1.0
 repeat_interval = 3.0
 
-[node name="Laser_turret13" parent="Armadilhas" instance=ExtResource("6_itssg")]
-position = Vector2(590, -317)
+[node name="laser8" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(728, -318)
+rotation = 0.785398
+eternal = true
+
+[node name="laser9" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(779, -316)
+rotation = 2.35619
+eternal = true
+
+[node name="laser10" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(878, -295)
+rotation = 1.5708
+eternal = true
+
+[node name="laser11" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(950, -174)
+rotation = 1.5708
+eternal = true
+
+[node name="laser5" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(301, 28)
+rotation = 1.5708
+eternal = true
+
+[node name="laser12" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(707, -255)
+eternal = true
+
+[node name="laser13" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(958, -34)
+repeat_interval = 0.5
+
+[node name="laser14" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(982, -34)
+repeat_interval = 0.5
+
+[node name="laser15" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1086, -34)
+repeat_interval = 0.5
+
+[node name="laser16" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1110, -34)
+repeat_interval = 0.5
+
+[node name="laser17" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1206, -34)
+repeat_interval = 0.5
+
+[node name="laser18" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1230, -34)
+repeat_interval = 0.5
+
+[node name="laser19" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1407, 5)
+rotation = 1.5708
+eternal = true
+
+[node name="laser20" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1407, -67)
+rotation = 1.5708
+eternal = true
+
+[node name="laser21" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1463, -67)
+rotation = 1.5708
+eternal = true
+
+[node name="laser22" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1463, 5)
+rotation = 1.5708
+eternal = true
+
+[node name="laser23" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1519, 5)
+rotation = 1.5708
+eternal = true
+
+[node name="laser24" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1519, -67)
+rotation = 1.5708
+eternal = true
+
+[node name="laser25" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1575, -67)
+rotation = 1.5708
+eternal = true
+
+[node name="laser26" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1631, -67)
+rotation = 1.5708
+eternal = true
+
+[node name="laser27" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1631, 5)
+rotation = 1.5708
+eternal = true
+
+[node name="laser28" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1575, 5)
+rotation = 1.5708
+eternal = true
+
+[node name="laser29" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1687, 5)
+rotation = 1.5708
+eternal = true
+
+[node name="laser30" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1687, -67)
+rotation = 1.5708
+eternal = true
+
+[node name="laser31" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1743, -67)
+rotation = 1.5708
+eternal = true
+
+[node name="laser32" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1743, 5)
+rotation = 1.5708
+eternal = true
+
+[node name="laser33" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1799, 5)
+rotation = 1.5708
+eternal = true
+
+[node name="laser34" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1799, -67)
+rotation = 1.5708
+eternal = true
+
+[node name="laser35" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1855, -67)
+rotation = 1.5708
+eternal = true
+
+[node name="laser36" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1911, -67)
+rotation = 1.5708
+eternal = true
+
+[node name="laser37" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1911, 5)
+rotation = 1.5708
+eternal = true
+
+[node name="laser38" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1855, 5)
+rotation = 1.5708
+eternal = true
+
+[node name="laser39" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1967, 5)
+rotation = 1.5708
+eternal = true
+
+[node name="laser40" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(1967, -67)
+rotation = 1.5708
+eternal = true
+
+[node name="laser41" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(2023, -67)
+rotation = 1.5708
+eternal = true
+
+[node name="laser42" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(2079, -67)
+rotation = 1.5708
+eternal = true
+
+[node name="laser43" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(2079, 5)
+rotation = 1.5708
+eternal = true
+
+[node name="laser44" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
+position = Vector2(2023, 5)
+rotation = 1.5708
+eternal = true
+
+[node name="NODE_SERRA" type="Node2D" parent="Armadilhas"]
+
+[node name="Serra" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(535, -21)
+rotation = -1.5708
+
+[node name="Serra3" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(255, -21)
+rotation = -1.5708
+
+[node name="Serra4" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(287, -21)
+rotation = -1.5708
+
+[node name="Serra5" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(318, -21)
+rotation = -1.5708
+
+[node name="Serra6" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(349, -21)
+rotation = -1.5708
+
+[node name="Serra2" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(567, -65)
+rotation = 3.14159
+
+[node name="Serra7" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(825, -294)
+rotation = 1.5708
+
+[node name="Serra8" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(971.586, -294.932)
+
+[node name="Serra13" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(971.586, -270.932)
+
+[node name="Serra14" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(971.586, -246.932)
+
+[node name="Serra16" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(971.586, -222.932)
+
+[node name="Serra17" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(971.586, -198.932)
+
+[node name="Serra9" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(971.586, -318.932)
+
+[node name="Serra10" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(971.586, -342.932)
+
+[node name="Serra11" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(971.586, -366.932)
+
+[node name="Serra12" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(971.586, -390.932)
+
+[node name="Serra15" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(929, -295)
+rotation = -3.14159
+
+[node name="Serra18" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(766, -6)
+rotation = 1.5708
+
+[node name="Serra38" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(742, -6)
+rotation = 1.5708
+
+[node name="Serra39" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(718, -6)
+rotation = 1.5708
+
+[node name="Serra36" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(796, -6)
+rotation = 1.5708
+
+[node name="Serra37" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(826, -6)
+rotation = 1.5708
+
+[node name="Serra26" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(761, 8)
+rotation = 1.5708
+
+[node name="Serra28" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(809, 8)
+rotation = 1.5708
+
+[node name="Serra29" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(825, 8)
+rotation = 1.5708
+
+[node name="Serra30" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(849, 8)
+rotation = 1.5708
+
+[node name="Serra31" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(872, 8)
+rotation = 1.5708
+
+[node name="Serra27" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(787, 8)
+rotation = 1.5708
+
+[node name="Serra22" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(789, 19)
+rotation = 1.5708
+
+[node name="Serra32" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(813, 19)
+rotation = 1.5708
+
+[node name="Serra33" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(837, 19)
+rotation = 1.5708
+
+[node name="Serra34" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(861, 19)
+rotation = 1.5708
+
+[node name="Serra35" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(885, 19)
+rotation = 1.5708
+
+[node name="Serra24" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(738, 8)
+rotation = 1.5708
+
+[node name="Serra20" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(741, 19)
+rotation = 1.5708
+
+[node name="Serra25" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(765, 19)
+rotation = 1.5708
+
+[node name="Serra23" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(716, 9)
+rotation = 1.5708
+
+[node name="Serra21" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(717, 19)
+rotation = 1.5708
+
+[node name="Serra19" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(779, -46)
 rotation = 4.71239
+
+[node name="Serra43" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(811, -46)
+rotation = 4.71239
+
+[node name="Serra44" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(843, -46)
+rotation = 4.71239
+
+[node name="Serra45" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(875, -46)
+rotation = 4.71239
+
+[node name="Serra40" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(1645, -130)
+rotation = 4.71239
+
+[node name="Serra41" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(1677, -130)
+rotation = 4.71239
+
+[node name="Serra42" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(1709, -130)
+rotation = 4.71239
+
+[node name="Serra46" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(1741, -130)
+rotation = 4.71239
+
+[node name="Serra47" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(1773, -130)
+rotation = 4.71239
+
+[node name="Serra48" parent="Armadilhas/NODE_SERRA" instance=ExtResource("5_dt4s1")]
+position = Vector2(1805, -130)
+rotation = 4.71239
+
+[node name="NODE_LASER_TURRET" type="Node2D" parent="Armadilhas"]
+
+[node name="Laser_turret" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(504, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret2" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(483, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret3" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(463, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret4" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(443, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret5" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(423, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret6" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(403, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret7" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(383, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret8" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(363, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret9" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(343, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret10" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(323, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret11" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(302, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret12" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(282, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret15" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(222, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret16" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(202, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret17" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(182, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret18" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(162, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret19" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(142, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret20" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(122, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret21" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(102, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret22" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(82, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret23" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(62, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret24" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(42, -238)
+rotation = 3.14159
+shoot_cooldown = 0.5
+shot_direction = 1
+
+[node name="Laser_turret13" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(590, -317)
+rotation = -1.5708
 shot_direction = 2
 
-[node name="Laser_turret14" parent="Armadilhas" instance=ExtResource("6_itssg")]
+[node name="Laser_turret14" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
 position = Vector2(590, -348)
-rotation = 4.71239
+rotation = -1.5708
 shoot_cooldown = 3.0
 shot_direction = 2
 
-[node name="Laser_turret25" parent="Armadilhas" instance=ExtResource("6_itssg")]
+[node name="Laser_turret25" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
 position = Vector2(590, -377)
-rotation = 4.71239
+rotation = -1.5708
 shoot_cooldown = 3.5
 shot_direction = 2
+
+[node name="Laser_turret26" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(753, -438)
+rotation = -3.14159
+shoot_cooldown = 1.0
+shot_direction = 1
+
+[node name="Laser_turret27" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(1392, -89)
+rotation = 1.5708
+shoot_cooldown = 0.5
+shot_direction = 0
+
+[node name="Laser_turret28" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(1392, -114)
+rotation = 1.5708
+shoot_cooldown = 0.5
+shot_direction = 0
+
+[node name="Laser_turret29" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(1392, -137)
+rotation = 1.5708
+shoot_cooldown = 0.5
+shot_direction = 0
+
+[node name="Laser_turret30" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(1568, -89)
+rotation = 4.71239
+shoot_cooldown = 0.5
+shot_direction = 0
+
+[node name="Laser_turret31" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(1568, -114)
+rotation = 4.71239
+shoot_cooldown = 0.5
+shot_direction = 0
+
+[node name="Laser_turret32" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
+position = Vector2(1568, -137)
+rotation = 4.71239
+shoot_cooldown = 0.5
+shot_direction = 0
+
+[node name="NODE_SPIKE" type="Node2D" parent="Armadilhas"]
+
+[node name="Spike" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(692, -446)
+rotation = -3.14159
+eternal = true
+
+[node name="Spike2" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(780, -446)
+rotation = -3.14159
+eternal = true
+
+[node name="Spike4" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(814, -446)
+rotation = -3.14159
+eternal = true
+
+[node name="Spike5" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(848, -446)
+rotation = -3.14159
+eternal = true
+
+[node name="Spike6" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(882, -446)
+rotation = -3.14159
+eternal = true
+
+[node name="Spike7" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(916, -446)
+rotation = -3.14159
+eternal = true
+
+[node name="Spike8" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(950, -446)
+rotation = -3.14159
+eternal = true
+
+[node name="Spike3" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(726, -446)
+rotation = -3.14159
+eternal = true
+
+[node name="Spike9" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(884, -263)
+rotation = 3.14159
+eternal = true
+
+[node name="Spike10" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(850, -263)
+rotation = 3.14159
+eternal = true
+
+[node name="Spike11" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(816, -263)
+rotation = 3.14159
+eternal = true
+
+[node name="Spike12" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(782, -263)
+rotation = 3.14159
+eternal = true
+
+[node name="Spike13" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(917, -150)
+eternal = true
+
+[node name="Spike14" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(882, -150)
+eternal = true
+
+[node name="Spike15" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(848, -150)
+eternal = true
+
+[node name="Spike16" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(814, -150)
+eternal = true
+
+[node name="Spike17" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(780, -150)
+eternal = true
+
+[node name="Spike18" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(1622, -129)
+rotation = 1.5708
+eternal = true
+
+[node name="Spike19" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(1622, -95)
+rotation = 1.5708
+eternal = true
+
+[node name="Spike20" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(1822, -129)
+rotation = 4.71239
+eternal = true
+
+[node name="Spike21" parent="Armadilhas/NODE_SPIKE" instance=ExtResource("7_ja2kb")]
+position = Vector2(1822, -95)
+rotation = 4.71239
+eternal = true
+
+[node name="NODE_WALL_SPIKE" type="Node2D" parent="Armadilhas"]
+
+[node name="Wall_blades" parent="Armadilhas/NODE_WALL_SPIKE" instance=ExtResource("8_q6rbk")]
+position = Vector2(764, -78)
+
+[node name="Wall_blades2" parent="Armadilhas/NODE_WALL_SPIKE" instance=ExtResource("8_q6rbk")]
+position = Vector2(764, -110)
+
+[node name="Wall_blades3" parent="Armadilhas/NODE_WALL_SPIKE" instance=ExtResource("8_q6rbk")]
+position = Vector2(764, -126)
+
+[node name="Wall_blades4" parent="Armadilhas/NODE_WALL_SPIKE" instance=ExtResource("8_q6rbk")]
+position = Vector2(1860, -92)
+
+[node name="Wall_blades5" parent="Armadilhas/NODE_WALL_SPIKE" instance=ExtResource("8_q6rbk")]
+position = Vector2(1860, -124)
+
+[node name="Wall_blades6" parent="Armadilhas/NODE_WALL_SPIKE" instance=ExtResource("8_q6rbk")]
+position = Vector2(2079, -92)
+
+[node name="Wall_blades7" parent="Armadilhas/NODE_WALL_SPIKE" instance=ExtResource("8_q6rbk")]
+position = Vector2(2079, -124)
+
+[node name="Wall_blades8" parent="Armadilhas/NODE_WALL_SPIKE" instance=ExtResource("8_q6rbk")]
+position = Vector2(1888, -146)
+rotation = 1.5708
+eternal = true
+
+[node name="Wall_blades9" parent="Armadilhas/NODE_WALL_SPIKE" instance=ExtResource("8_q6rbk")]
+position = Vector2(1920, -146)
+rotation = 1.5708
+eternal = true
+
+[node name="Wall_blades10" parent="Armadilhas/NODE_WALL_SPIKE" instance=ExtResource("8_q6rbk")]
+position = Vector2(1952, -146)
+rotation = 1.5708
+eternal = true
+
+[node name="Wall_blades11" parent="Armadilhas/NODE_WALL_SPIKE" instance=ExtResource("8_q6rbk")]
+position = Vector2(1984, -146)
+rotation = 1.5708
+eternal = true
+
+[node name="Wall_blades12" parent="Armadilhas/NODE_WALL_SPIKE" instance=ExtResource("8_q6rbk")]
+position = Vector2(2016, -146)
+rotation = 1.5708
+eternal = true
+
+[node name="Wall_blades13" parent="Armadilhas/NODE_WALL_SPIKE" instance=ExtResource("8_q6rbk")]
+position = Vector2(2048, -146)
+rotation = 1.5708
+eternal = true
+
+[node name="Wall_blades14" parent="Armadilhas/NODE_WALL_SPIKE" instance=ExtResource("8_q6rbk")]
+position = Vector2(1964.85, -109.367)
+active_duration = 0.5
+repeat_interval = 0.5
 
 [node name="Colisoes" type="Node2D" parent="."]
 
@@ -354,6 +926,74 @@ position = Vector2(615.182, -370.727)
 position = Vector2(0.818176, 14.7273)
 shape = SubResource("RectangleShape2D_1037l")
 
+[node name="StaticBody2D13" type="StaticBody2D" parent="Colisoes"]
+position = Vector2(838.882, -258.358)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisoes/StaticBody2D13"]
+position = Vector2(2.11768, -16.1421)
+shape = SubResource("RectangleShape2D_7mcfv")
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="Colisoes"]
+position = Vector2(703.55, -199.73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisoes/StaticBody2D14"]
+position = Vector2(2.22504, 105.73)
+shape = SubResource("RectangleShape2D_106u8")
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="Colisoes"]
+position = Vector2(770.367, -120.063)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisoes/StaticBody2D15"]
+position = Vector2(298.633, 19.063)
+shape = SubResource("RectangleShape2D_krgfx")
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="Colisoes"]
+position = Vector2(860.672, -1.32458)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisoes/StaticBody2D16"]
+position = Vector2(248.828, 3.16229)
+shape = SubResource("RectangleShape2D_7le7b")
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="Colisoes"]
+position = Vector2(1602.5, -113.1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisoes/StaticBody2D17"]
+position = Vector2(-4.25012, 0.59996)
+shape = SubResource("RectangleShape2D_4qdyn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colisoes/StaticBody2D17"]
+position = Vector2(243.5, -0.65004)
+shape = SubResource("RectangleShape2D_4qdyn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Colisoes/StaticBody2D17"]
+position = Vector2(491.5, -0.65004)
+shape = SubResource("RectangleShape2D_4qdyn")
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="Colisoes"]
+position = Vector2(1802.7, -109)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisoes/StaticBody2D18"]
+position = Vector2(-79.7, -67)
+shape = SubResource("RectangleShape2D_o2vc5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colisoes/StaticBody2D18"]
+position = Vector2(168.3, -67)
+shape = SubResource("RectangleShape2D_o2vc5")
+
+[node name="StaticBody2D19" type="StaticBody2D" parent="Colisoes"]
+position = Vector2(1965.49, -110.588)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisoes/StaticBody2D19"]
+position = Vector2(-0.494751, 1.44084)
+shape = SubResource("RectangleShape2D_0wyv7")
+
+[node name="StaticBody2D20" type="StaticBody2D" parent="Colisoes"]
+position = Vector2(2170.28, 0.49437)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisoes/StaticBody2D20"]
+position = Vector2(95.7183, 3.75282)
+shape = SubResource("RectangleShape2D_fvmr3")
+
 [node name="plataformas" type="Node2D" parent="."]
 
 [node name="moving_platform" parent="plataformas" instance=ExtResource("7_xxghc")]
@@ -392,3 +1032,18 @@ position = Vector2(567, -413)
 
 [node name="falling-platform9" parent="plataformas" instance=ExtResource("8_amn0y")]
 position = Vector2(599, -413)
+
+[node name="falling-platform10" parent="plataformas" instance=ExtResource("8_amn0y")]
+position = Vector2(825, -301)
+reset_time = 5.0
+
+[node name="falling-platform11" parent="plataformas" instance=ExtResource("8_amn0y")]
+position = Vector2(794, -171)
+
+[node name="moving_platform3" parent="plataformas" instance=ExtResource("7_xxghc")]
+position = Vector2(1389, -13)
+distance = 600
+
+[node name="goal" parent="." instance=ExtResource("11_vx6bl")]
+position = Vector2(2365, -57)
+next_level = "res://scenes/tela_final.tscn"
