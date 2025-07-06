@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=3 uid="uid://dfdjx2tya6nlg"]
+
+[ext_resource type="Texture2D" uid="uid://blswdrh3gq2rd" path="res://assets/Traps/Individual_PNGs/laser_idle/tile000.png" id="1_olfjl"]
+[ext_resource type="Texture2D" uid="uid://c2jx7ucqn1set" path="res://assets/Traps/Individual_PNGs/laser_idle/tile001.png" id="2_ualla"]
+[ext_resource type="Texture2D" uid="uid://b54deubagvydo" path="res://assets/Traps/Individual_PNGs/laser_idle/tile002.png" id="3_gvq8m"]
+[ext_resource type="Texture2D" uid="uid://bqfnmq6eseo3r" path="res://assets/Traps/Individual_PNGs/laser_idle/tile003.png" id="4_d117j"]
+[ext_resource type="Texture2D" uid="uid://co2xywowbuju" path="res://assets/Traps/Individual_PNGs/laser_idle/tile004.png" id="5_svowy"]
+[ext_resource type="Texture2D" uid="uid://csqxwa7xcmgu4" path="res://assets/Traps/Individual_PNGs/laser_idle/tile005.png" id="6_ab3sa"]
+[ext_resource type="Texture2D" uid="uid://bcx4h2wrsv077" path="res://assets/Traps/Individual_PNGs/laser_idle/tile006.png" id="7_1qrmq"]
+[ext_resource type="Texture2D" uid="uid://bm4sv2xxpi4sk" path="res://assets/Traps/Individual_PNGs/laser_idle/tile007.png" id="8_pjjla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vg20h"]
+size = Vector2(6, 22)
+
+[sub_resource type="Animation" id="Animation_hs6hd"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0384188, 0.096047, 0.152197, 0.212781, 0.28223, 0.283708, 0.360546, 0.429995),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_olfjl"), ExtResource("2_ualla"), ExtResource("3_gvq8m"), ExtResource("4_d117j"), ExtResource("5_svowy"), ExtResource("6_ab3sa"), ExtResource("7_1qrmq"), ExtResource("7_1qrmq"), ExtResource("8_pjjla")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:region_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0384188, 0.152197, 0.28223, 0.283708, 0.360546, 0.429995),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0384188, 0.0413741, 0.096047, 0.152197, 0.212781, 0.28223, 0.283708, 0.360546, 0.429995),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(7.75667, 4.9991, 14.459, 21.9705), Rect2(7.75667, 5.90732, 14.459, 20.2132), Rect2(7.75667, 5.98237, 14.459, 19.981), Rect2(7.75667, 5.98237, 14.459, 19.981), Rect2(7.75667, 7.01375, 14.459, 17.9852), Rect2(7.75667, 7.01375, 14.459, 17.9852), Rect2(7.75667, 7.01375, 14.459, 17.9852), Rect2(7.75667, 6.01259, 14.459, 19.9795), Rect2(7.75667, 6.00986, 14.459, 20.0608), Rect2(7.75667, 5.01072, 14.459, 21.98)]
+}
+
+[sub_resource type="Animation" id="Animation_5fqfu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_olfjl")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(7.75667, 4.9991, 14.459, 21.9705)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:region_enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l00ty"]
+_data = {
+&"RESET": SubResource("Animation_5fqfu"),
+&"idle": SubResource("Animation_hs6hd")
+}
+
+[node name="LaserOnly" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_olfjl")
+region_enabled = true
+region_rect = Rect2(7.75667, 4.9991, 14.459, 21.9705)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vg20h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_l00ty")
+}
+speed_scale = 0.5
