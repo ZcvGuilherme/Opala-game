@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtgxidiljpjtx"]
+
+[ext_resource type="Texture2D" uid="uid://c24xkjlwfdgul" path="res://assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_oawmr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Parallax2D" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("1_oawmr")
