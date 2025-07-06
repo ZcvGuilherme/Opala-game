@@ -88,7 +88,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"shooting",
-"speed": 10.0
+"speed": 18.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36vhk"]
@@ -99,7 +99,9 @@ script = ExtResource("1_36vhk")
 
 [node name="anim_sprites" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nax60")
-animation = &"idle"
+animation = &"shooting"
+frame = 11
+frame_progress = 1.0
 
 [node name="shoot_timer" type="Timer" parent="."]
 autostart = true
