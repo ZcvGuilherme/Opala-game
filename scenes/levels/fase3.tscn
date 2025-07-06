@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dvgg5w5s6tvby"]
+[gd_scene load_steps=33 format=3 uid="uid://dvgg5w5s6tvby"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_0t8py"]
 [ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="2_4pu5b"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://csofo5xhaaxen" path="res://scenes/falling_platform.tscn" id="8_amn0y"]
 [ext_resource type="PackedScene" uid="uid://b81bpplah8k8a" path="res://scenes/traps/wall_blades.tscn" id="8_q6rbk"]
 [ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="11_vx6bl"]
+[ext_resource type="PackedScene" uid="uid://bdfb4aiwgywud" path="res://scenes/hud.tscn" id="12_vx6bl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd00o"]
 size = Vector2(282.5, 20)
@@ -1047,3 +1048,5 @@ distance = 600
 [node name="goal" parent="." instance=ExtResource("11_vx6bl")]
 position = Vector2(2365, -57)
 next_level = "res://scenes/tela_final.tscn"
+
+[node name="HUD" parent="." instance=ExtResource("12_vx6bl")]

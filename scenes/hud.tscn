@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdfb4aiwgywud"]
+
+[ext_resource type="Script" uid="uid://dys17irfjwn24" path="res://scripts/control.gd" id="1_uo2fv"]
+[ext_resource type="FontFile" uid="uid://3eqmusd2djdg" path="res://shaders/digital_7/digital-7 (italic).ttf" id="2_047uy"]
+[ext_resource type="FontFile" uid="uid://myd1opyyypwv" path="res://shaders/digital_7/digital-7 (mono).ttf" id="3_5pdws"]
+[ext_resource type="Texture2D" uid="uid://b3rdlp5jfm67i" path="res://assets/player/icone morto/sprite_0.png" id="4_hd3ao"]
+[ext_resource type="FontFile" uid="uid://dnl5j86pwt7fi" path="res://shaders/new_font_file.tres" id="5_0i1j5"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="HUDControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+script = ExtResource("1_uo2fv")
+
+[node name="clock_timer" type="Timer" parent="HUDControl"]
+autostart = true
+
+[node name="container" type="MarginContainer" parent="HUDControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="timer_container" type="HBoxContainer" parent="HUDControl/container"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="timer_label" type="Label" parent="HUDControl/container/timer_container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_047uy")
+theme_override_font_sizes/font_size = 40
+text = "TIME:"
+
+[node name="timer_counter" type="Label" parent="HUDControl/container/timer_container"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_5pdws")
+theme_override_font_sizes/font_size = 40
+text = "00:00"
+
+[node name="death_container" type="HBoxContainer" parent="HUDControl/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="dead_icon" type="TextureRect" parent="HUDControl/container/death_container"]
+custom_minimum_size = Vector2(70, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_hd3ao")
+
+[node name="death_counter" type="Label" parent="HUDControl/container/death_container"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_0i1j5")
+theme_override_font_sizes/font_size = 40
+text = "000"
+
+[connection signal="timeout" from="HUDControl/clock_timer" to="HUDControl" method="_on_clock_timer_timeout"]
