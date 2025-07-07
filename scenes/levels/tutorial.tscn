@@ -29,18 +29,18 @@
 [ext_resource type="PackedScene" uid="uid://fusworvtr21l" path="res://scenes/respawn_transition.tscn" id="28_giya0"]
 [ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="29_arvqe"]
 [ext_resource type="Script" uid="uid://x074aglu8jga" path="res://scripts/teclas.gd" id="30_4xybc"]
-[ext_resource type="Texture2D" uid="uid://b1mkmh4beaql7" path="res://assets/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_0.png" id="31_ts0k5"]
+[ext_resource type="Texture2D" uid="uid://b1mkmh4beaql7" path="res://assets/teclas/projetojogo-teclaswasdaedpressionando/sprite_0.png" id="31_ts0k5"]
 [ext_resource type="Texture2D" uid="uid://c24xkjlwfdgul" path="res://assets/Free Industrial Zone Tileset/2 Background/Background.png" id="31_uc87h"]
-[ext_resource type="Texture2D" uid="uid://cadp0ffwgqt8m" path="res://assets/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_1.png" id="32_hscia"]
-[ext_resource type="Texture2D" uid="uid://bnfmc81kgl5qd" path="res://assets/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_2.png" id="33_dhjpr"]
-[ext_resource type="Texture2D" uid="uid://bcy65tj71q605" path="res://assets/teclas/projeto jogo - teclas wasd a e d pressionando/sprite_3.png" id="34_d2ubi"]
-[ext_resource type="Texture2D" uid="uid://c5w267sg3qtuv" path="res://assets/teclas/projeto jogo - teclas wasd w pressionando/sprite_0.png" id="37_440id"]
-[ext_resource type="Texture2D" uid="uid://djmh572ibyv22" path="res://assets/teclas/projeto jogo - teclas wasd w pressionando/sprite_1.png" id="38_xrhv2"]
-[ext_resource type="Texture2D" uid="uid://d2pbxyejxytp2" path="res://assets/teclas/projeto jogo - tecla shift/sprite_0.png" id="39_6817e"]
-[ext_resource type="Texture2D" uid="uid://2a5ow2eig5g" path="res://assets/teclas/projeto jogo - tecla espaço /sprite_0.png" id="39_y3nfp"]
-[ext_resource type="Texture2D" uid="uid://bua4tmgtrw5tq" path="res://assets/teclas/projeto jogo - tecla espaço /sprite_1.png" id="40_lpmnw"]
+[ext_resource type="Texture2D" uid="uid://cadp0ffwgqt8m" path="res://assets/teclas/projetojogo-teclaswasdaedpressionando/sprite_1.png" id="32_hscia"]
+[ext_resource type="Texture2D" uid="uid://bnfmc81kgl5qd" path="res://assets/teclas/projetojogo-teclaswasdaedpressionando/sprite_2.png" id="33_dhjpr"]
+[ext_resource type="Texture2D" uid="uid://bcy65tj71q605" path="res://assets/teclas/projetojogo-teclaswasdaedpressionando/sprite_3.png" id="34_d2ubi"]
+[ext_resource type="Texture2D" uid="uid://c5w267sg3qtuv" path="res://assets/teclas/projetojogo-teclaswasdwpressionando/sprite_0.png" id="37_440id"]
+[ext_resource type="Texture2D" uid="uid://djmh572ibyv22" path="res://assets/teclas/projetojogo-teclaswasdwpressionando/sprite_1.png" id="38_xrhv2"]
+[ext_resource type="Texture2D" uid="uid://d2pbxyejxytp2" path="res://assets/teclas/projetojogo-teclashift/sprite_0.png" id="39_6817e"]
+[ext_resource type="Texture2D" uid="uid://2a5ow2eig5g" path="res://assets/teclas/projetojogo-teclaespaço/sprite_0.png" id="39_y3nfp"]
+[ext_resource type="Texture2D" uid="uid://bua4tmgtrw5tq" path="res://assets/teclas/projetojogo-teclaespaço/sprite_1.png" id="40_lpmnw"]
 [ext_resource type="AudioStream" uid="uid://cql16e84h5e0s" path="res://assets/Sons/musica de fundo/Stickerbush Symphony Restored to HD [lndBgOrTWxo].mp3" id="40_x04ov"]
-[ext_resource type="Texture2D" uid="uid://bvvqu84bvflgk" path="res://assets/teclas/projeto jogo - tecla shift/sprite_1.png" id="40_y3nfp"]
+[ext_resource type="Texture2D" uid="uid://bvvqu84bvflgk" path="res://assets/teclas/projetojogo-teclashift/sprite_1.png" id="40_y3nfp"]
 [ext_resource type="PackedScene" uid="uid://cbmcsbvcq62h4" path="res://scenes/fallzone.tscn" id="44_8j442"]
 [ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="44_ts0k5"]
 [ext_resource type="PackedScene" uid="uid://va3hkxibxej6" path="res://scenes/checkpoint.tscn" id="45_hscia"]
@@ -3484,7 +3484,6 @@ position = Vector2(8, -108)
 [node name="Player" parent="." instance=ExtResource("1_khcq3")]
 position = Vector2(83, 243)
 scale = Vector2(1.1, 1.1)
-wall_jump_force = Vector2(400, -400)
 
 [node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("51_440id")]
 player = NodePath("../Player")

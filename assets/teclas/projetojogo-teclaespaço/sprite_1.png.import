@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2a5ow2eig5g"
-path="res://.godot/imported/sprite_0.png-6f760ba77809b7d820a937ec527751c4.ctex"
+uid="uid://bua4tmgtrw5tq"
+path="res://.godot/imported/sprite_1.png-61d9f7efe61c037fcee2db3cd346d690.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/teclas/projeto jogo - tecla espaço /sprite_0.png"
-dest_files=["res://.godot/imported/sprite_0.png-6f760ba77809b7d820a937ec527751c4.ctex"]
+source_file="res://assets/teclas/projetojogo-teclaespaço/sprite_1.png"
+dest_files=["res://.godot/imported/sprite_1.png-61d9f7efe61c037fcee2db3cd346d690.ctex"]
 
 [params]
 
