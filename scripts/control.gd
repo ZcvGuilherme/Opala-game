@@ -22,3 +22,7 @@ func _on_clock_timer_timeout() -> void:
 		minutes += 1
 		seconds = 0 
 	timer_counter.text = str("%02d" % minutes) + ":" + str("%02d" % seconds) 
+
+	var root = get_tree().current_scene
+	if root.has_method("set_current_time"):
+		root.set_current_time(minutes, seconds)

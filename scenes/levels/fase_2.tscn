@@ -1,6 +1,7 @@
-[gd_scene load_steps=48 format=4 uid="uid://dnilanhm8vbah"]
+[gd_scene load_steps=49 format=4 uid="uid://dnilanhm8vbah"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_epl52"]
+[ext_resource type="Script" uid="uid://d204hcs8ccveb" path="res://scripts/fase.gd" id="1_nbj0r"]
 [ext_resource type="PackedScene" uid="uid://dpukxr4slfheb" path="res://scenes/camera_player.tscn" id="2_nbj0r"]
 [ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="3_bocla"]
 [ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="4_v3clm"]
@@ -631,6 +632,7 @@ sources/4 = SubResource("TileSetAtlasSource_o3hg6")
 
 [node name="Fase2" type="Node2D"]
 position = Vector2(2, -7)
+script = ExtResource("1_nbj0r")
 
 [node name="Player" parent="." instance=ExtResource("1_epl52")]
 position = Vector2(-11, 13)

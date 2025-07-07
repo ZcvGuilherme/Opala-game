@@ -1,6 +1,7 @@
-[gd_scene load_steps=36 format=4 uid="uid://hrb3be14ita6"]
+[gd_scene load_steps=37 format=4 uid="uid://hrb3be14ita6"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_f125c"]
+[ext_resource type="Script" uid="uid://d204hcs8ccveb" path="res://scripts/fase.gd" id="1_thaxs"]
 [ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="2_bnu8c"]
 [ext_resource type="PackedScene" uid="uid://dpukxr4slfheb" path="res://scenes/camera_player.tscn" id="3_051w3"]
 [ext_resource type="PackedScene" uid="uid://va3hkxibxej6" path="res://scenes/checkpoint.tscn" id="4_4bc74"]
@@ -575,6 +576,7 @@ sources/2 = SubResource("TileSetAtlasSource_j5fng")
 sources/3 = SubResource("TileSetAtlasSource_6ycbe")
 
 [node name="Fase1" type="Node2D"]
+script = ExtResource("1_thaxs")
 
 [node name="CheckpointManager" parent="." instance=ExtResource("2_bnu8c")]
 
