@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://dvgg5w5s6tvby"]
+[gd_scene load_steps=34 format=3 uid="uid://dvgg5w5s6tvby"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_0t8py"]
+[ext_resource type="Script" uid="uid://d204hcs8ccveb" path="res://scripts/fase.gd" id="1_ixqpn"]
 [ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="2_4pu5b"]
 [ext_resource type="PackedScene" uid="uid://dpukxr4slfheb" path="res://scenes/camera_player.tscn" id="2_sd00o"]
 [ext_resource type="PackedScene" uid="uid://dxakgldjoyaif" path="res://scenes/traps/laser.tscn" id="3_4pu5b"]
@@ -74,6 +75,7 @@ size = Vector2(4.00003, 32.2939)
 size = Vector2(308, 27.5056)
 
 [node name="Fase3" type="Node2D"]
+script = ExtResource("1_ixqpn")
 
 [node name="Player" parent="." instance=ExtResource("1_0t8py")]
 position = Vector2(23, -3)
