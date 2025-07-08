@@ -40,11 +40,10 @@ func _ready() -> void:
 	checkpoint_manager = get_parent().get_node("CheckpointManager")
 
 func _physics_process(delta: float) -> void:
-	
 	var move_input := Input.get_vector("left", "right", "up", "down")
+	
 	var is_touching_left_wall = ray_left.is_colliding()
 	var is_touching_right_wall = ray_right.is_colliding()
-	
 	var left_collider = ray_left.get_collider()
 	var right_collider = ray_right.get_collider()
 	
@@ -106,14 +105,13 @@ func _physics_process(delta: float) -> void:
 			
 	if knockback_vector != Vector2.ZERO:
 		velocity = knockback_vector
-	handle_animation(move_input.x)
+	handle_animation()
 	move_and_slide()
 	
 	for platforms in get_slide_collision_count():
 		var collision = get_slide_collision(platforms)
 		if collision.get_collider().has_method("has_collided_with"):
 			collision.get_collider().has_collided_with(collision, self)
-
 
 func handle_jump_animation() -> void:
 	animacaoPlayer.flip_h = facing_direction < 0 
@@ -124,7 +122,7 @@ func handle_jump_animation() -> void:
 		if animacaoPlayer.animation != "jump_down":
 			animacaoPlayer.play("jump_down")
 
-func handle_animation(direction: float) -> void:
+func handle_animation() -> void:
 	if isDashing:
 		animacaoPlayer.play("dash")
 	elif is_wall_sliding:
@@ -132,7 +130,7 @@ func handle_animation(direction: float) -> void:
 		animacaoPlayer.flip_h = wall_direction < 0
 	elif not is_on_floor() and not is_wall_sliding:
 		handle_jump_animation()
-	elif direction != 0:
+	elif velocity.x != 0:
 		animacaoPlayer.play("run")
 		animacaoPlayer.flip_h = facing_direction < 0
 	else:
@@ -158,7 +156,6 @@ func spawn_ghost_trail():
 	ghost.setup(animacaoPlayer)
 
 func die():
-	
 	colisor_player.call_deferred("set_disabled", true)
 	Globals.death_count += 1
 	
@@ -171,9 +168,7 @@ func die():
 	animacaoPlayer.play("death")
 	
 	await get_tree().create_timer(0.7).timeout
-	
 	await RespawnTransition.close_scene(0.1)
-	
 	await respawn()
 	
 func knockback_effect(knockback_force := Vector2.ZERO, duration := 0.25):
@@ -183,10 +178,8 @@ func knockback_effect(knockback_force := Vector2.ZERO, duration := 0.25):
 		var knockback_tween := get_tree().create_tween() 
 		knockback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
 		await knockback_tween.finished
-		
+	
 func respawn():
-	#global_position = Vector2(100, 200)
-
 	global_position = checkpoint_manager.last_location
 	velocity = Vector2.ZERO
 	
