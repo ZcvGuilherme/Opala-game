@@ -115,8 +115,8 @@ func _physics_process(delta: float) -> void:
 			collision.get_collider().has_collided_with(collision, self)
 
 
-func handle_jump_animation(direction: float) -> void:
-	animacaoPlayer.flip_h = direction < 0 
+func handle_jump_animation() -> void:
+	animacaoPlayer.flip_h = facing_direction < 0 
 	if velocity.y < 0:
 		if animacaoPlayer.animation != "jump_up":
 			animacaoPlayer.play("jump_up")
@@ -131,7 +131,7 @@ func handle_animation(direction: float) -> void:
 		animacaoPlayer.play("wall_slide")
 		animacaoPlayer.flip_h = wall_direction < 0
 	elif not is_on_floor() and not is_wall_sliding:
-		handle_jump_animation(direction)
+		handle_jump_animation()
 	elif direction != 0:
 		animacaoPlayer.play("run")
 		animacaoPlayer.flip_h = facing_direction < 0
