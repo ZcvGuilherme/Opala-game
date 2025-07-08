@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4m326hhwqtdn"]
+[gd_scene load_steps=8 format=3 uid="uid://d4m326hhwqtdn"]
 
 [ext_resource type="Script" uid="uid://d3y2dm27qfrcd" path="res://scripts/botoes.gd" id="1_4ytvr"]
 [ext_resource type="Theme" uid="uid://clkqlyjtf2mc8" path="res://assets/Tela de titulo/default_btn.tres" id="1_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://c24xkjlwfdgul" path="res://assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://lo8b1atc7x08" path="res://assets/Tela de titulo/projeto jogo - logo (2).png" id="3_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://dx528ramtu67s" path="res://assets/Tela de titulo/Cabeshhh.png" id="4_4ytvr"]
+[ext_resource type="AudioStream" uid="uid://cn4rfqsv7dxbl" path="res://assets/Sons/musica de fundo/Menu.mp3" id="6_g3eks"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhnvy"]
 
@@ -93,6 +94,11 @@ offset_right = 376.0
 offset_bottom = 477.0
 grow_horizontal = 2
 texture = ExtResource("3_mhnvy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_g3eks")
+volume_db = -15.0
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Start" to="CanvasLayer/Control" method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Quit" to="CanvasLayer/Control" method="_on_quit_pressed"]

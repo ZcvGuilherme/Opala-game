@@ -40,7 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://d2pbxyejxytp2" path="res://assets/teclas/projetojogo-teclashift/sprite_0.png" id="39_6817e"]
 [ext_resource type="Texture2D" uid="uid://2a5ow2eig5g" path="res://assets/teclas/projetojogo-teclaespaço/sprite_0.png" id="39_y3nfp"]
 [ext_resource type="Texture2D" uid="uid://bua4tmgtrw5tq" path="res://assets/teclas/projetojogo-teclaespaço/sprite_1.png" id="40_lpmnw"]
-[ext_resource type="AudioStream" uid="uid://cql16e84h5e0s" path="res://assets/Sons/musica de fundo/Stickerbush Symphony Restored to HD [lndBgOrTWxo].mp3" id="40_x04ov"]
+[ext_resource type="AudioStream" uid="uid://dfhmstgfi4hhj" path="res://assets/Sons/musica de fundo/tutorial.mp3" id="40_x04ov"]
 [ext_resource type="Texture2D" uid="uid://bvvqu84bvflgk" path="res://assets/teclas/projetojogo-teclashift/sprite_1.png" id="40_y3nfp"]
 [ext_resource type="PackedScene" uid="uid://cbmcsbvcq62h4" path="res://scenes/fallzone.tscn" id="44_8j442"]
 [ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="44_ts0k5"]
@@ -3548,7 +3548,7 @@ sprite_frames = SubResource("SpriteFrames_x04ov")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("40_x04ov")
-volume_db = -20.0
+volume_db = -15.0
 autoplay = true
 
 [node name="Fallzone" parent="." instance=ExtResource("44_8j442")]

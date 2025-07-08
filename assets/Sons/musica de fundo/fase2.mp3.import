@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsu3imtaf2smn"
+path="res://.godot/imported/fase2.mp3-c4003556260d13154f28a825d21d0489.mp3str"
+
+[deps]
+
+source_file="res://assets/Sons/musica de fundo/fase2.mp3"
+dest_files=["res://.godot/imported/fase2.mp3-c4003556260d13154f28a825d21d0489.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
