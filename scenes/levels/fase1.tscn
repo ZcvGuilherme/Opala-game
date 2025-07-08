@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://hrb3be14ita6"]
+[gd_scene load_steps=39 format=4 uid="uid://hrb3be14ita6"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_f125c"]
 [ext_resource type="Script" uid="uid://d204hcs8ccveb" path="res://scripts/fase.gd" id="1_thaxs"]
@@ -20,7 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://c7t8jxgx3tsvy" path="res://assets/Tileset/Individual_PNGs/Level_Tileset/tile005.png" id="15_fpbt8"]
 [ext_resource type="Texture2D" uid="uid://ck3vdq6v8q8j0" path="res://assets/Tileset/Individual_PNGs/Level_Tileset/tile010.png" id="16_2y8a1"]
 [ext_resource type="PackedScene" uid="uid://bdfb4aiwgywud" path="res://scenes/hud.tscn" id="19_2y8a1"]
-[ext_resource type="AudioStream" uid="uid://4pi1q2i7bp2h" path="res://assets/Sons/musica de fundo/B8bit (mp3cut.net).mp3" id="21_j5fng"]
+[ext_resource type="AudioStream" uid="uid://dfhmstgfi4hhj" path="res://assets/Sons/musica de fundo/tutorial.mp3" id="21_6ycbe"]
+[ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="22_6ycbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnu8c"]
 size = Vector2(172, 256)
@@ -844,6 +845,9 @@ scale = Vector2(1.91286, 1.62949)
 [node name="HUD" parent="." instance=ExtResource("19_2y8a1")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_j5fng")
+stream = ExtResource("21_6ycbe")
 volume_db = -15.0
 autoplay = true
+
+[node name="pause" parent="." instance=ExtResource("22_6ycbe")]
+visible = false
