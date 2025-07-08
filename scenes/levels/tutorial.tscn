@@ -40,11 +40,11 @@
 [ext_resource type="Texture2D" uid="uid://d2pbxyejxytp2" path="res://assets/teclas/projetojogo-teclashift/sprite_0.png" id="39_6817e"]
 [ext_resource type="Texture2D" uid="uid://2a5ow2eig5g" path="res://assets/teclas/projetojogo-teclaespaço/sprite_0.png" id="39_y3nfp"]
 [ext_resource type="Texture2D" uid="uid://bua4tmgtrw5tq" path="res://assets/teclas/projetojogo-teclaespaço/sprite_1.png" id="40_lpmnw"]
-[ext_resource type="AudioStream" uid="uid://dfhmstgfi4hhj" path="res://assets/Sons/musica de fundo/tutorial.mp3" id="40_x04ov"]
 [ext_resource type="Texture2D" uid="uid://bvvqu84bvflgk" path="res://assets/teclas/projetojogo-teclashift/sprite_1.png" id="40_y3nfp"]
 [ext_resource type="PackedScene" uid="uid://cbmcsbvcq62h4" path="res://scenes/fallzone.tscn" id="44_8j442"]
 [ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="44_ts0k5"]
 [ext_resource type="PackedScene" uid="uid://va3hkxibxej6" path="res://scenes/checkpoint.tscn" id="45_hscia"]
+[ext_resource type="AudioStream" uid="uid://4pi1q2i7bp2h" path="res://assets/Sons/musica de fundo/B8bit (mp3cut.net).mp3" id="46_440id"]
 [ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="46_hscia"]
 [ext_resource type="PackedScene" uid="uid://bdfb4aiwgywud" path="res://scenes/hud.tscn" id="47_hhicy"]
 [ext_resource type="PackedScene" uid="uid://dpukxr4slfheb" path="res://scenes/camera_player.tscn" id="51_440id"]
@@ -3547,7 +3547,7 @@ scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_x04ov")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("40_x04ov")
+stream = ExtResource("46_440id")
 volume_db = -15.0
 autoplay = true
 
