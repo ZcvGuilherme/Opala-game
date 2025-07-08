@@ -84,6 +84,7 @@ offset_bottom = 40.0
 script = ExtResource("6_e1n2v")
 
 [node name="tempo_fase1" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 156.0
 offset_top = 39.0
 offset_right = 254.0
@@ -91,6 +92,7 @@ offset_bottom = 88.0
 text = "Fase 1: 00:00"
 
 [node name="icon_fase1" type="TextureRect" parent="Control"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 26.0
 offset_right = 52.0
@@ -99,6 +101,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("7_ak3p8")
 
 [node name="tempo_fase2" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 156.0
 offset_top = 119.0
 offset_right = 254.0
@@ -106,6 +109,7 @@ offset_bottom = 168.0
 text = "Fase 1: 00:00"
 
 [node name="icon_fase2" type="TextureRect" parent="Control"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 106.0
 offset_right = 52.0
@@ -114,6 +118,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("7_ak3p8")
 
 [node name="tempo_fase3" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 156.0
 offset_top = 215.0
 offset_right = 254.0
@@ -121,6 +126,7 @@ offset_bottom = 264.0
 text = "Fase 1: 00:00"
 
 [node name="icon_fase3" type="TextureRect" parent="Control"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 202.0
 offset_right = 52.0
@@ -129,15 +135,17 @@ scale = Vector2(4, 4)
 texture = ExtResource("7_ak3p8")
 
 [node name="dead_icon" type="TextureRect" parent="Control"]
-offset_left = 1151.0
-offset_top = 60.0
-offset_right = 1175.0
-offset_bottom = 76.0
+layout_mode = 0
+offset_left = 1170.0
+offset_top = 56.0
+offset_right = 1194.0
+offset_bottom = 72.0
 scale = Vector2(4, 4)
 texture = ExtResource("8_ak3p8")
 flip_h = true
 
 [node name="death_counter" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 1081.0
 offset_top = 68.0
 offset_right = 1146.0

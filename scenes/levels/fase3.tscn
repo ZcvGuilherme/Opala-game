@@ -1,10 +1,11 @@
-[gd_scene load_steps=36 format=3 uid="uid://dvgg5w5s6tvby"]
+[gd_scene load_steps=37 format=3 uid="uid://dvgg5w5s6tvby"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_0t8py"]
 [ext_resource type="Script" uid="uid://d204hcs8ccveb" path="res://scripts/fase.gd" id="1_ixqpn"]
 [ext_resource type="PackedScene" uid="uid://bbe4n278ildud" path="res://scenes/checkpoint_manager.tscn" id="2_4pu5b"]
 [ext_resource type="PackedScene" uid="uid://dpukxr4slfheb" path="res://scenes/camera_player.tscn" id="2_sd00o"]
 [ext_resource type="PackedScene" uid="uid://dxakgldjoyaif" path="res://scenes/traps/laser.tscn" id="3_4pu5b"]
+[ext_resource type="PackedScene" uid="uid://va3hkxibxej6" path="res://scenes/checkpoint.tscn" id="5_7mcfv"]
 [ext_resource type="PackedScene" uid="uid://pyhd0rkdibvk" path="res://scenes/traps/serra.tscn" id="5_dt4s1"]
 [ext_resource type="PackedScene" uid="uid://brt1k1qn0ug30" path="res://scenes/traps/laser_turret.tscn" id="6_itssg"]
 [ext_resource type="PackedScene" uid="uid://bddxs40f6ojro" path="res://scenes/traps/spike.tscn" id="7_ja2kb"]
@@ -80,7 +81,6 @@ size = Vector2(308, 27.5056)
 script = ExtResource("1_ixqpn")
 
 [node name="Player" parent="." instance=ExtResource("1_0t8py")]
-position = Vector2(23, -3)
 
 [node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_sd00o")]
 limit_left = -100
@@ -92,6 +92,24 @@ room_position = Vector2(-400, -1000)
 room_size = Vector2(4500, 2000)
 
 [node name="CheckpointManager" parent="." instance=ExtResource("2_4pu5b")]
+
+[node name="Checkpoint" parent="CheckpointManager" instance=ExtResource("5_7mcfv")]
+position = Vector2(525, -119)
+respawn_offset = Vector2(0, 20)
+
+[node name="Checkpoint2" parent="CheckpointManager" instance=ExtResource("5_7mcfv")]
+position = Vector2(75.6141, -439.604)
+scale = Vector2(2.50505, 0.636364)
+respawn_offset = Vector2(10, 5)
+
+[node name="Checkpoint3" parent="CheckpointManager" instance=ExtResource("5_7mcfv")]
+position = Vector2(660, -342)
+scale = Vector2(-1.5, 1.7)
+respawn_offset = Vector2(0, 20)
+
+[node name="Checkpoint4" parent="CheckpointManager" instance=ExtResource("5_7mcfv")]
+position = Vector2(917.013, -27.0658)
+respawn_offset = Vector2(0, 5)
 
 [node name="Armadilhas" type="Node2D" parent="."]
 
@@ -130,12 +148,12 @@ active_duration = 1.0
 repeat_interval = 3.0
 
 [node name="laser8" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
-position = Vector2(728, -318)
+position = Vector2(726, -315)
 rotation = 0.785398
 eternal = true
 
 [node name="laser9" parent="Armadilhas/NODE_LASER" instance=ExtResource("3_4pu5b")]
-position = Vector2(779, -316)
+position = Vector2(783, -314)
 rotation = 2.35619
 eternal = true
 
@@ -676,19 +694,19 @@ shot_direction = 0
 position = Vector2(1568, -89)
 rotation = 4.71239
 shoot_cooldown = 0.5
-shot_direction = 0
+shot_direction = 2
 
 [node name="Laser_turret31" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
 position = Vector2(1568, -114)
 rotation = 4.71239
 shoot_cooldown = 0.5
-shot_direction = 0
+shot_direction = 2
 
 [node name="Laser_turret32" parent="Armadilhas/NODE_LASER_TURRET" instance=ExtResource("6_itssg")]
 position = Vector2(1568, -137)
 rotation = 4.71239
 shoot_cooldown = 0.5
-shot_direction = 0
+shot_direction = 2
 
 [node name="NODE_SPIKE" type="Node2D" parent="Armadilhas"]
 
@@ -1061,3 +1079,6 @@ autoplay = true
 
 [node name="pause" parent="." instance=ExtResource("15_1037l")]
 visible = false
+
+[node name="falling-platform" parent="." instance=ExtResource("8_amn0y")]
+position = Vector2(946, -198)
