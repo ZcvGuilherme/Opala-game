@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=42 format=4 uid="uid://dvgg5w5s6tvby"]
+[gd_scene load_steps=36 format=3 uid="uid://dvgg5w5s6tvby"]
 
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_0t8py"]
@@ -20,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dq0hblkh3ro8m" path="res://assets/Tileset/level_tileset.png" id="15_1037l"]
 
 [ext_resource type="AudioStream" uid="uid://vrsd6m50awgy" path="res://assets/Sons/musica de fundo/fase3.mp3" id="14_vwtkp"]
+[ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="15_1037l"]
 
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd00o"]
@@ -2402,4 +2402,7 @@ tile_set = SubResource("TileSet_krgfx")
 stream = ExtResource("14_vwtkp")
 volume_db = -15.0
 autoplay = true
+
+[node name="pause" parent="." instance=ExtResource("15_1037l")]
+visible = false
 
