@@ -597,7 +597,7 @@ scale = Vector2(3.6587, 1.24221)
 respawn_offset = Vector2(0, 27)
 
 [node name="Player" parent="." instance=ExtResource("1_f125c")]
-position = Vector2(-22, 1)
+position = Vector2(-24, 1)
 
 [node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_051w3")]
 limit_left = -100
