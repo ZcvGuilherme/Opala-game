@@ -531,7 +531,7 @@ sources/0 = SubResource("TileSetAtlasSource_krgfx")
 script = ExtResource("1_ixqpn")
 
 [node name="Player" parent="." instance=ExtResource("1_0t8py")]
-position = Vector2(884, -17)
+position = Vector2(15, -8)
 
 [node name="CameraPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_sd00o")]
 limit_left = -100
@@ -545,7 +545,7 @@ room_size = Vector2(4500, 2000)
 [node name="CheckpointManager" parent="." instance=ExtResource("2_4pu5b")]
 
 [node name="Checkpoint" parent="CheckpointManager" instance=ExtResource("5_7mcfv")]
-position = Vector2(525, -198)
+position = Vector2(521, -116)
 respawn_offset = Vector2(0, 20)
 
 [node name="Checkpoint2" parent="CheckpointManager" instance=ExtResource("5_7mcfv")]
