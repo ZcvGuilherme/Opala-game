@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c7t8jxgx3tsvy" path="res://assets/Tileset/Individual_PNGs/Level_Tileset/tile005.png" id="15_fpbt8"]
 [ext_resource type="Texture2D" uid="uid://ck3vdq6v8q8j0" path="res://assets/Tileset/Individual_PNGs/Level_Tileset/tile010.png" id="16_2y8a1"]
 [ext_resource type="PackedScene" uid="uid://bdfb4aiwgywud" path="res://scenes/hud.tscn" id="19_2y8a1"]
-[ext_resource type="AudioStream" uid="uid://dfhmstgfi4hhj" path="res://assets/Sons/musica de fundo/tutorial.mp3" id="21_6ycbe"]
+[ext_resource type="AudioStream" uid="uid://btm1wwbiq682v" path="res://assets/Sons/musica de fundo/tutorial (mp3cut.net).mp3" id="21_6ycbe"]
 [ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="22_6ycbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnu8c"]
@@ -848,6 +848,7 @@ scale = Vector2(1.91286, 1.62949)
 stream = ExtResource("21_6ycbe")
 volume_db = -15.0
 autoplay = true
+parameters/looping = true
 
 [node name="pause" parent="." instance=ExtResource("22_6ycbe")]
 visible = false

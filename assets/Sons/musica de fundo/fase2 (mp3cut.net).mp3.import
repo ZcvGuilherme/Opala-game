@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://br8u8nordeorj"
+path="res://.godot/imported/fase2 (mp3cut.net).mp3-8e6823bbc7a1c25b251dd76fe4c3e349.mp3str"
+
+[deps]
+
+source_file="res://assets/Sons/musica de fundo/fase2 (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/fase2 (mp3cut.net).mp3-8e6823bbc7a1c25b251dd76fe4c3e349.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
