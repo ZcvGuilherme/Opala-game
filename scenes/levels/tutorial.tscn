@@ -3550,6 +3550,7 @@ sprite_frames = SubResource("SpriteFrames_x04ov")
 stream = ExtResource("46_440id")
 volume_db = -15.0
 autoplay = true
+parameters/looping = true
 
 [node name="Fallzone" parent="." instance=ExtResource("44_8j442")]
 position = Vector2(1973, 322)

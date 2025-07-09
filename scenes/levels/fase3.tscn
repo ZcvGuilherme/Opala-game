@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b81bpplah8k8a" path="res://scenes/traps/wall_blades.tscn" id="8_q6rbk"]
 [ext_resource type="PackedScene" uid="uid://denjq8vqw7an" path="res://scenes/goal.tscn" id="11_vx6bl"]
 [ext_resource type="PackedScene" uid="uid://bdfb4aiwgywud" path="res://scenes/hud.tscn" id="12_vx6bl"]
-[ext_resource type="AudioStream" uid="uid://vrsd6m50awgy" path="res://assets/Sons/musica de fundo/fase3.mp3" id="14_vwtkp"]
+[ext_resource type="AudioStream" uid="uid://c8fmc2hssooip" path="res://assets/Sons/musica de fundo/fase3 (mp3cut.net).mp3" id="15_106u8"]
 [ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="15_1037l"]
 [ext_resource type="Texture2D" uid="uid://dq0hblkh3ro8m" path="res://assets/Tileset/level_tileset.png" id="17_106u8"]
 
@@ -1452,9 +1452,10 @@ next_level = "res://scenes/tela_final.tscn"
 visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_vwtkp")
+stream = ExtResource("15_106u8")
 volume_db = -15.0
 autoplay = true
+parameters/looping = true
 
 [node name="pause" parent="." instance=ExtResource("15_1037l")]
 visible = false

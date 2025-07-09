@@ -99,6 +99,7 @@ texture = ExtResource("3_mhnvy")
 stream = ExtResource("6_g3eks")
 volume_db = -15.0
 autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Start" to="CanvasLayer/Control" method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Quit" to="CanvasLayer/Control" method="_on_quit_pressed"]
