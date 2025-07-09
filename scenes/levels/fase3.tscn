@@ -1469,5 +1469,5 @@ tile_map_data = PackedByteArray("AAD5/wIAAAAAAAcAAAD6/wIAAAABAAcAAAD7/wIAAAACAAc
 tile_set = SubResource("TileSet_7le7b")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("18_krgfx")]
-position = Vector2(1328, -609)
-scale = Vector2(1.42281, 1.62561)
+position = Vector2(1591, -543)
+scale = Vector2(1.42281, 1.42561)
