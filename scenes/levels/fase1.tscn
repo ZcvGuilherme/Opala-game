@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://hrb3be14ita6"]
+[gd_scene load_steps=36 format=4 uid="uid://hrb3be14ita6"]
 
 [ext_resource type="PackedScene" uid="uid://cec0nusoho146" path="res://scenes/Player.tscn" id="1_f125c"]
 [ext_resource type="Script" uid="uid://d204hcs8ccveb" path="res://scripts/fase.gd" id="1_thaxs"]
@@ -22,15 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://bdfb4aiwgywud" path="res://scenes/hud.tscn" id="19_2y8a1"]
 [ext_resource type="AudioStream" uid="uid://btm1wwbiq682v" path="res://assets/Sons/musica de fundo/tutorial (mp3cut.net).mp3" id="21_6ycbe"]
 [ext_resource type="PackedScene" uid="uid://dhfilao31kfd8" path="res://scenes/pause.tscn" id="22_6ycbe"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnu8c"]
-size = Vector2(172, 256)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_051w3"]
-size = Vector2(525, 150.419)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhm5o"]
-size = Vector2(339, 25.3244)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7irko"]
 texture = ExtResource("9_7irko")
@@ -607,31 +598,6 @@ limit_bottom = 40
 player = NodePath("../Player")
 room_position = Vector2(-400, -1000)
 room_size = Vector2(4500, 2000)
-
-[node name="Collision" type="Node2D" parent="."]
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Collision"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/StaticBody2D2"]
-position = Vector2(656, -92)
-shape = SubResource("RectangleShape2D_bnu8c")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Collision"]
-position = Vector2(429.702, -160.419)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/StaticBody2D3"]
-position = Vector2(-194.202, -1.58131)
-shape = SubResource("RectangleShape2D_051w3")
-
-[node name="StaticBody2D8" type="StaticBody2D" parent="Collision"]
-position = Vector2(804.534, -279.324)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/StaticBody2D8"]
-position = Vector2(105.966, 330.324)
-shape = SubResource("RectangleShape2D_mhm5o")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Collision"]
-position = Vector2(2681.52, -298.495)
 
 [node name="traps" type="Node2D" parent="."]
 
