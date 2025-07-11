@@ -9,14 +9,14 @@ size = Vector2(33, 14)
 [node name="moving_platform" type="Node2D" groups=["cannot_slide"]]
 script = ExtResource("1_1tdcd")
 
-[node name="platform" type="AnimatableBody2D" parent="."]
+[node name="platform" type="AnimatableBody2D" parent="." groups=["cannot_slide"]]
 
 [node name="Sprite" type="Sprite2D" parent="platform"]
 texture = ExtResource("1_ms375")
 region_enabled = true
 region_rect = Rect2(0, 76, 32.8271, 13.3506)
 
-[node name="Collision" type="CollisionShape2D" parent="platform"]
+[node name="Collision" type="CollisionShape2D" parent="platform" groups=["cannot_slide"]]
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_1tdcd")
 one_way_collision = true
