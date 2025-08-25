@@ -27,10 +27,8 @@ desktop.ini
 *.converted.tres
 
 # Builds exportadas
-*.exe
 *.apk
 *.zip
-*.x86_64
 *.pck
 *.wasm
 *.html
